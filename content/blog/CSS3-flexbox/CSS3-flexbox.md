@@ -1,6 +1,6 @@
 ---
 title: CSS3:Flexbox
-date: "2021-8-17T08:18:00.284Z"
+date: "2021-08-17T08:18:00.284Z"
 description: 学习CSS布局(4)
 ---
 ## Why Flexbox?
