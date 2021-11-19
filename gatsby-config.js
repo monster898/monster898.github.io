@@ -6,12 +6,12 @@ module.exports = {
       summary: `Learn & Share & Love`,
     },
     description: `Sam's personal blog.`,
-    siteUrl: `https://samguo.me/`,
+    siteUrl: `https://blog.samguo.me/`,
     social: {
       twitter: `fengzzf2`,
     },
   },
-  pathPrefix: '/',
+  pathPrefix: "/",
   plugins: [
     `gatsby-plugin-image`,
     {

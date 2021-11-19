@@ -44,7 +44,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fengzzf/blog.git"
+    "url": "git+https://github.com/monster/monster.github.io.git"
   },
   "scripts": {
     "build": "gatsby build",

@@ -1,7 +1,7 @@
 ---
 title: 分析浏览器和 NodeJS 的事件循环
 date: "2021-11-09T11:12:03.284Z"
-description:
+description: event loop
 ---
 
 ## 总述
@@ -166,6 +166,46 @@ NodeJS 的事件循环的核心是 **[libuv](https://zh.wikipedia.org/wiki/Libuv
 
 事件循环的启动从定时器（timers）阶段开始，**一旦一个阶段完成**，事件循环就会检查上面说到的两个中间队列中是否有可用的回调。如果有，事件循环将立即开始处理它们，直到清空这两个队列为止。
 
+2021-11-19 修正:
+
+上面说到的一旦一个阶段完成再去检查两个中间队列(nextTick queue 和 Other Microtasks queue)中是否有可用的回调**有误**
+
+实际上在高低版本的 Node 中表现不同，低版本（v11.0 以前）的 Node 表现的行为和浏览器环境有很大的不同，是因为低版本下的 Node 在执行完一个阶段的所有宏任务再执行微任务；而高版本的 Node 表现和浏览器一致，即执行完一个宏任务再执行微任务。
+
+以下的这段代码在不同版本的 Node 下表现的行为就会有所不同
+
+```js
+setImmediate(function () {
+  console.log(1)
+  process.nextTick(function () {
+    console.log(4)
+  })
+})
+process.nextTick(function () {
+  console.log(2)
+  setImmediate(function () {
+    console.log(3)
+  })
+})
+```
+
+1. 当我们遇到 setImmediate 后，将其回调函数放进 check 阶段的宏队列中。
+2. 当我们遇到 process.nextTick 后，将其回调函数放进 nextTick 队列中。因为此时同步代码（或者说最初的宏任务）执行完毕，那么执行 nextTick 队列中的任务。
+3. 输出 2， 遇到 setImmediate 后，将其回调函数放进 check 阶段的宏队列中。
+4. 开始执行 check 队列中的宏任务。
+5. 执行 check 第一个宏任务，输出 1，将 nextTick 的回调放进队列里。
+   以上五步，无论版本如何都是一致的，接下来就是高低版本 Node 的不同。
+
+低版本 Node
+
+因为低版本 Node 是执行完一个阶段中的全部宏任务后，再执行微队列的全部任务。所以先输出 3，再输出 4。
+
+高版本 Node
+
+因为高版本 Node 是执行完一个宏任务，就执行微队列的全部任务。所以先输出 4，再输出 3。
+
+在`nextTick queue`和`Other Microtasks Queue`中，表现与低版本相同，会执行完`Other Microtasks Queue`中的所有任务再去执行`nextTick queue`中的任务。
+
 ### Timer 阶段
 
 这是事件循环的第一个阶段，Node 会去检查有无已过期的**timer**，如果有则把它的回调压入**timer**的任务队列中等待执行，事实上，Node 并不能保证**timer**在预设时间到了就会立即执行，因为 Node 对**timer**的过期检查不一定靠谱，它会受机器上其它运行程序影响，或者那个时间点主线程不空闲。比如下面的代码，`setTimeout()` 和 `setImmediate()` 的执行顺序是不确定的。
@@ -267,7 +307,7 @@ setImmediate(() => console.log("set immediate4"))
 - 两个 `setImmediate` 回调将进入 **Check Queue**。
 - 事件循环将开始检查并处理 process.nextTick 队列。
 - 检查 **Other Microtasks Queue**，处理相应的 promise 回调。
-- 在上一步的过程中，一个新的 `nextTick` 回调被加入**nextTick queue**。node 会去处理它。直至没有更多的微任务(注意是执行完一个阶段后才会去检查 nextTick queue 或 Other Microtasks Queue)。
+- 在上一步的过程中，一个新的 `nextTick` 回调被加入**nextTick queue**。node 会去处理它。直至没有更多的微任务(在 nextTick queue 或 Other Microtasks Queue 这两个队列中，会执行完一个队列中所有的任务才会检查另一个队列)。
 - 事件循环进入计时器阶段，处理一个计时器回调。
 - 进入检测（check）阶段，处理所有的 `set immediate`。
 
