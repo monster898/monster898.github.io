@@ -146,18 +146,14 @@ NodeJS 的事件循环的核心是 **[libuv](https://zh.wikipedia.org/wiki/Libuv
 
 下图是事件循环的流程，一次事件循环又被称为一次 **Tick**，**每个阶段都有一个队列来执行回调**。不同类型的事件在它们自己的队列中排队。
 
-- **定时器（timers）**：本阶段执行已经被 `setTimeout()` 和 `setInterval()` 的调度回调函数。
-- **待定回调（pending callbacks）**：执行延迟到下一个循环迭代的 I/O 回调。
-- **idle, prepare**：仅系统内部使用。
-- **轮询（poll）**：检索新的 I/O 事件、执行与 I/O 相关的回调（几乎所有情况下，除了关闭的回调函数，那些由计时器和 `setImmediate()` 调度的之外），其余情况 node 将在适当的时候在此阻塞。
-- **检测（check）**：`setImmediate()` 回调函数在这里执行。
-- **关闭的回调函数（close callbacks）**：一些关闭的回调函数，如：`socket.on('close', ...)`。
+- **Expired Timers And Intervals Queue**：本阶段执行已经被 `setTimeout()` 和 `setInterval()` 的调度回调函数。
+- **IO Events Queue**：已完成的 IO 事件
+- **Immediate Queue**：`setImmediate()` 回调函数在这里执行。
+- **Close Handlers Queue**：一些关闭的回调函数，如：`socket.on('close', ...)`。
 
 下图展示了这个流程：
 
 ![](./images/1_2yXbhvpf1kj5YT-m_fXgEQ.png)
-
-可以看出，**Expired timers** 即上面的定时器阶段、**IO Events** 即上面的 `poll` 阶段、`close Handlers` 即上面的 `close callbacks` 阶段。
 
 我们还注意到两个中间队列，（这两个队列不属于 libuv，属于 nodeJS 运行环境）：
 
@@ -329,3 +325,82 @@ set immediate2
 set immediate3
 set immediate4
 ```
+
+### 最佳实践(BEST PRACTICE)
+
+#### 避免在重复调用的代码块中进行同步 IO
+
+尽量避免在重复调用的代码块中同步 I/O 函数(fs.readFileSync、 fs.renameSync 等) ，比如循环和经常调用的函数。
+
+这会在很大程度上降低应用程序的性能，因为每次执行同步 I/O 操作时，事件循环都会一直被阻塞，直到完成。
+
+#### 函数应该完全异步或者完全同步
+
+请看下面代码
+
+```js
+const cache = {}
+function ReadFile(filename, callback) {
+  if (cache[filename]) {
+    return callback(null, cache[filename])
+  }
+
+  fs.readFile(filename, (err, content) => {
+    if (err) return callback(err)
+
+    cache[filename] = content
+    return callback(null, content)
+  })
+}
+
+function letsRead() {
+  readFile("myfile.txt", (err, result) => {
+    // error handler redacted
+    console.log("file read complete")
+  })
+  console.log("file read initiated")
+}
+```
+
+如果我们调用两次 `letsRead` 将输出：
+
+```plain
+file read initiated
+file read complete
+file read complete
+file read initiated
+```
+
+前后顺序不一致！不难推测出后面的代码是完全同步的，而前面的代码执行掺杂了异步的操作。
+
+当我们的应用程序变得越来越复杂时，这种不一致的同步 - 异步混合函数可能会导致许多问题，这些问题极难调试和修复。
+
+因此，强烈建议始终遵循上面的同步或异步规则，例如上面的代码可以改为：
+
+```js
+const cache = {}
+function ReadFile(filename, callback) {
+  if (cache[filename]) {
+    return process.nextTick(() => callback(null, cache[filename]))
+  }
+
+  fs.readFile(filename, (err, content) => {
+    if (err) return callback(err)
+
+    cache[filename] = content
+    return callback(null, content)
+  })
+}
+
+function letsRead() {
+  readFile("myfile.txt", (err, result) => {
+    // error handler redacted
+    console.log("file read complete")
+  })
+  console.log("file read initiated")
+}
+```
+
+## 参考资料
+
+nodejs
