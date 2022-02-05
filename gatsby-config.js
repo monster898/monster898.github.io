@@ -1,15 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `let today = new beginnings()`,
+    title: `好成的blog`,
     author: {
-      name: `Sam Guo`,
-      summary: `Learn & Share & Love`,
+      name: `hao chen`,
     },
-    description: `Sam's personal blog.`,
-    siteUrl: `https://blog.samguo.me/`,
-    social: {
-      twitter: `fengzzf2`,
-    },
+    description: `Hao Chen's  blog.`,
+    siteUrl: `https://haochen.me`,
+    email: `hey@haochen.me`,
+    github: `https://github.com/monster898`,
   },
   pathPrefix: "/",
   plugins: [
@@ -26,6 +24,27 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `about`,
+        path: `${__dirname}/content/about`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `coding365`,
+        path: `${__dirname}/content/coding365`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `resource`,
+        path: `${__dirname}/content/resource`,
       },
     },
     {

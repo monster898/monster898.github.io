@@ -2,6 +2,8 @@
 title: HTTPS如何确保安全性？
 date: "2021-09-02T10:36:03.284Z"
 description: 计算机网络
+tags:
+  - HTTP
 ---
 
 在了解 HTTPS 如何确保安全性之前，我们需要先了解一些密码学相关的知识。

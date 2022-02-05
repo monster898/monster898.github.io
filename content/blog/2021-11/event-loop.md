@@ -2,6 +2,9 @@
 title: 分析浏览器和 NodeJS 的事件循环
 date: "2021-11-09T11:12:03.284Z"
 description: event loop
+tags:
+  - JavaScript
+  - Node
 ---
 
 ## 总述

@@ -3,12 +3,29 @@ import { Link } from "gatsby"
 import sun from "../images/sun.png"
 import moon from "../images/moon.png"
 import Toggle from "./Toggle"
+import { useStaticQuery, graphql } from "gatsby"
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ children }) => {
+  const data = useStaticQuery(
+    graphql`
+      {
+        site {
+          siteMetadata {
+            description
+            github
+            email
+          }
+        }
+      }
+    `
+  )
+
   const [theme, setTheme] = React.useState({ theme: null })
+  const description = data.site.siteMetadata.description
+  const githubLink = data.site.siteMetadata.github
+  const email = data.site.siteMetadata.email
 
   React.useEffect(() => {
-    console.log(window.__theme)
     setTheme({ theme: window.__theme })
     window.__onThemeChange = () => {
       setTheme({ theme: window.__theme })
@@ -19,7 +36,7 @@ const Layout = ({ location, title, children }) => {
       <header className="header">
         <div className="header__top">
           <Link className="header__title" to="/">
-            Hao Chen's blog
+            {description}
           </Link>
           <div className="header__toggle">
             <Toggle
@@ -52,22 +69,19 @@ const Layout = ({ location, title, children }) => {
         </div>
         <ul className="header__tags">
           <li>
-            <Link to="/">notes</Link>
+            <Link to="/coding365">Coding365</Link>
           </li>
           <li>
-            <Link to="/">Coding365</Link>
+            <Link to="/tags">分类</Link>
           </li>
           <li>
-            <Link to="/">分类</Link>
+            <Link to="/resource">珍藏资料</Link>
           </li>
           <li>
-            <Link to="/">珍藏资料</Link>
+            <a href={githubLink}>Github</a>
           </li>
           <li>
-            <a href="https://github.com/monster898">Github</a>
-          </li>
-          <li>
-            <Link to="/">About</Link>
+            <Link to="/about">About</Link>
           </li>
           <li>
             <a href="./rss.xml">RSS</a>
@@ -78,13 +92,13 @@ const Layout = ({ location, title, children }) => {
       <main>{children}</main>
       <footer>
         <div className="header__line"></div>
-        <div className="footer__content">
+        <div className="footer__content" style={{ color: `#005b99` }}>
           <span>
             © {new Date().getFullYear()} Hao Chen, Built with
             {` `}
             <a href="https://www.gatsbyjs.com">Gatsby</a>
           </span>
-          <span>email:hey@haochen.me</span>
+          <span>email:{email}</span>
         </div>
       </footer>
     </div>

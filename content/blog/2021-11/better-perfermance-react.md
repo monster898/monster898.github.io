@@ -2,6 +2,9 @@
 title: 谈谈React的性能优化
 date: "2021-11-28T19:11:03.284Z"
 description: React
+tags:
+  - React
+  - 性能优化
 ---
 
 ## 总述

@@ -2,6 +2,8 @@
 title: 一些有趣的es6案例分析
 date: "2021-11-10T18:16:03.284Z"
 description: es6
+tags:
+  - JavaScript
 ---
 
 ## 总述
