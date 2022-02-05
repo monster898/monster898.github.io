@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkhaochen_me=self.webpackChunkhaochen_me||[]).push([[35],{3909:function(e,n,t){t.r(n);var a=t(7294),r=t(3751),l=t(5779);n.default=function(e){var n=e.data;return a.createElement(l.Z,null,a.createElement(r.Z,{title:"resource"}),a.createElement("section",{dangerouslySetInnerHTML:{__html:n.allMarkdownRemark.nodes[0].html}}))}}}]);
+//# sourceMappingURL=component---src-pages-resource-js-afdf57295a9a7336a0b8.js.map

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkhaochen_me=self.webpackChunkhaochen_me||[]).push([[682],{5518:function(e,t,n){n.r(t);var a=n(7294),l=n(3751),r=n(5779);t.default=function(e){var t=e.data;return a.createElement(r.Z,null,a.createElement(l.Z,{title:"About",description:"关于"}),a.createElement("section",{dangerouslySetInnerHTML:{__html:t.allMarkdownRemark.nodes[0].html}}))}}}]);
+//# sourceMappingURL=component---src-pages-about-js-6be42dad5916dff017d0.js.map

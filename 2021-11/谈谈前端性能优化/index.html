@@ -1,0 +1,754 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.d10f3b41d6d3a61135b8.css" data-identity="gatsby-global-css">@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/static/montserrat-latin-100-8d7d79679b70dbe27172b6460e7a7910.woff2) format("woff2"),url(/static/montserrat-latin-100-ec38980a9e0119a379e2a9b3dbb1901a.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/static/montserrat-latin-100italic-e279051046ba1286706adc886cf1c96b.woff2) format("woff2"),url(/static/montserrat-latin-100italic-3b325a3173c8207435cd1b76e19bf501.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/static/montserrat-latin-200-9d266fbbfa6cab7009bd56003b1eeb67.woff2) format("woff2"),url(/static/montserrat-latin-200-2d8ba08717110d27122e54c34b8a5798.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/static/montserrat-latin-200italic-6e5b3756583bb2263eb062eae992735e.woff2) format("woff2"),url(/static/montserrat-latin-200italic-a0d6f343e4b536c582926255367a57da.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/static/montserrat-latin-300-00b3e893aab5a8fd632d6342eb72551a.woff2) format("woff2"),url(/static/montserrat-latin-300-ea303695ceab35f17e7d062f30e0173b.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/static/montserrat-latin-300italic-56f34ea368f6aedf89583d444bbcb227.woff2) format("woff2"),url(/static/montserrat-latin-300italic-54b0bf2c8c4c12ffafd803be2466a790.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/static/montserrat-latin-400-b71748ae4f80ec8c014def4c5fa8688b.woff2) format("woff2"),url(/static/montserrat-latin-400-0659a9f4e90db5cf51b50d005bff1e41.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/static/montserrat-latin-400italic-6eed6b4cbb809c6efc7aa7ddad6dbe3e.woff2) format("woff2"),url(/static/montserrat-latin-400italic-7583622cfde30ae49086d18447ab28e7.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/static/montserrat-latin-500-091b209546e16313fd4f4fc36090c757.woff2) format("woff2"),url(/static/montserrat-latin-500-edd311588712a96bbf435fad264fff62.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/static/montserrat-latin-500italic-c90ced68b46050061d1a41842d6dfb43.woff2) format("woff2"),url(/static/montserrat-latin-500italic-5146cbfe02b1deea5dffea27a5f2f998.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/static/montserrat-latin-600-0480d2f8a71f38db8633b84d8722e0c2.woff2) format("woff2"),url(/static/montserrat-latin-600-b77863a375260a05dd13f86a1cee598f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/static/montserrat-latin-600italic-cf46ffb11f3a60d7df0567f8851a1d00.woff2) format("woff2"),url(/static/montserrat-latin-600italic-c4fcfeeb057724724097167e57bd7801.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/static/montserrat-latin-700-7dbcc8a5ea2289d83f657c25b4be6193.woff2) format("woff2"),url(/static/montserrat-latin-700-99271a835e1cae8c76ef8bba99a8cc4e.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/static/montserrat-latin-700italic-c41ad6bdb4bd504a843d546d0a47958d.woff2) format("woff2"),url(/static/montserrat-latin-700italic-6779372f04095051c62ed36bc1dcc142.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/static/montserrat-latin-800-db9a3e0ba7eaea32e5f55328ace6cf23.woff2) format("woff2"),url(/static/montserrat-latin-800-4e3c615967a2360f5db87d2f0fd2456f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/static/montserrat-latin-800italic-bf45bfa14805969eda318973947bc42b.woff2) format("woff2"),url(/static/montserrat-latin-800italic-fe82abb0bcede51bf724254878e0c374.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/static/montserrat-latin-900-e66c7edc609e24bacbb705175669d814.woff2) format("woff2"),url(/static/montserrat-latin-900-8211f418baeb8ec880b80ba3c682f957.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/static/montserrat-latin-900italic-4454c775e48152c1a72510ceed3603e2.woff2) format("woff2"),url(/static/montserrat-latin-900italic-efcaa0f6a82ee0640b83a0916e6e8d68.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:300;src:local("Merriweather Light "),local("Merriweather-Light"),url(/static/merriweather-latin-300-fc117160c69a8ea0851b26dd14748ee4.woff2) format("woff2"),url(/static/merriweather-latin-300-58b18067ebbd21fda77b67e73c241d3b.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:300;src:local("Merriweather Light italic"),local("Merriweather-Lightitalic"),url(/static/merriweather-latin-300italic-fe29961474f8dbf77c0aa7b9a629e4bc.woff2) format("woff2"),url(/static/merriweather-latin-300italic-23c3f1f88683618a4fb8d265d33d383a.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:400;src:local("Merriweather Regular "),local("Merriweather-Regular"),url(/static/merriweather-latin-400-d9479e8023bef9cbd9bf8d6eabd6bf36.woff2) format("woff2"),url(/static/merriweather-latin-400-040426f99ff6e00b86506452e0d1f10b.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:400;src:local("Merriweather Regular italic"),local("Merriweather-Regularitalic"),url(/static/merriweather-latin-400italic-2de7bfeaf08fb03d4315d49947f062f7.woff2) format("woff2"),url(/static/merriweather-latin-400italic-79db67aca65f5285964ab332bd65f451.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:700;src:local("Merriweather Bold "),local("Merriweather-Bold"),url(/static/merriweather-latin-700-4b08e01d805fa35d7bf777f1b24314ae.woff2) format("woff2"),url(/static/merriweather-latin-700-22fb8afba4ab1f093b6ef9e28a9b6e92.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:700;src:local("Merriweather Bold italic"),local("Merriweather-Bolditalic"),url(/static/merriweather-latin-700italic-cd92541b177652fffb6e3b952f1c33f1.woff2) format("woff2"),url(/static/merriweather-latin-700italic-f87f3d87cea0dd0979bfc8ac9ea90243.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:900;src:local("Merriweather Black "),local("Merriweather-Black"),url(/static/merriweather-latin-900-f813fc6a4bee46eda5224ac7ebf1b7be.woff2) format("woff2"),url(/static/merriweather-latin-900-5d4e42cb44410674acd99153d57df032.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:900;src:local("Merriweather Black italic"),local("Merriweather-Blackitalic"),url(/static/merriweather-latin-900italic-b7901d85486871c1779c0e93ddd85656.woff2) format("woff2"),url(/static/merriweather-latin-900italic-9647f9fdab98756989a8a5550eb205c3.woff) format("woff")}
+
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{-webkit-text-size-adjust:100%;line-height:1.15}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden]{display:none}:root{--maxWidth-none:"none";--maxWidth-xs:20rem;--maxWidth-sm:24rem;--maxWidth-md:28rem;--maxWidth-lg:32rem;--maxWidth-xl:36rem;--maxWidth-2xl:42rem;--maxWidth-3xl:48rem;--maxWidth-4xl:56rem;--maxWidth-full:"100%";--maxWidth-wrapper:var(--maxWidth-4xl);--spacing-px:"1px";--spacing-0:0;--spacing-1:0.25rem;--spacing-2:0.5rem;--spacing-3:0.75rem;--spacing-4:1rem;--spacing-5:1.25rem;--spacing-6:1.5rem;--spacing-8:2rem;--spacing-10:2.5rem;--spacing-12:3rem;--spacing-16:4rem;--spacing-20:5rem;--spacing-24:6rem;--spacing-32:8rem;--fontFamily-sans:monospace,Montserrat,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--fontFamily-serif:"Merriweather","Georgia",Cambria,"Times New Roman",Times,serif;--font-body:var(--fontFamily-serif);--font-heading:var(--fontFamily-sans);--fontWeight-normal:400;--fontWeight-medium:500;--fontWeight-semibold:600;--fontWeight-bold:700;--fontWeight-extrabold:800;--fontWeight-black:900;--fontSize-root:16px;--lineHeight-none:1;--lineHeight-tight:1.1;--lineHeight-normal:1.5;--lineHeight-relaxed:1.625;--fontSize-0:0.833rem;--fontSize-1:1rem;--fontSize-2:1.2rem;--fontSize-3:1.44rem;--fontSize-4:1.728rem;--fontSize-5:2.074rem;--fontSize-6:2.488rem;--fontSize-7:2.986rem}body{transition:background-color .5s ease}body.light{--color-primary:#005b99;--color-text:#2e353f;--color-text-light:#4f5969;--color-heading:#1a202c;--color-heading-black:#000;--color-accent:#d1dce5;--inlineCode-text:#1a1a1a;--inlineCode-bg:rgba(255,229,100,0.2)}body.dark{--color-primary:#005b99;--color-text-light:hsla(0,0%,100%,0.88);--color-heading:#fff;--color-heading-black:#fff;--color-text:hsla(0,0%,100%,0.88);--color-accent:hsla(0,0%,100%,0.2);--inlineCode-text:#e6e6e6;--inlineCode-bg:rgba(115,124,153,0.2);background-color:#282c35}*,:after,:before{box-sizing:border-box}html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:var(--fontSize-root);line-height:var(--lineHeight-normal)}body{color:var(--color-text);font-family:var(--font-body);font-size:var(--fontSize-1)}footer{padding:var(--spacing-6) var(--spacing-0)}hr{background:var(--color-accent);border:0;height:1px}h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);letter-spacing:-.025em;line-height:var(--lineHeight-tight);margin-bottom:var(--spacing-6);margin-top:var(--spacing-12)}h2,h3,h4,h5,h6{color:var(--color-heading);font-weight:var(--fontWeight-bold)}h1{color:var(--color-heading-black);font-size:var(--fontSize-6);font-weight:var(--fontWeight-black)}h2{font-size:var(--fontSize-5)}h3{font-size:var(--fontSize-4)}h4{font-size:var(--fontSize-3)}h5{font-size:var(--fontSize-2)}h6{font-size:var(--fontSize-1)}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:inherit;text-decoration:none}p{--baseline-multiplier:0.179;--x-height-multiplier:0.35;line-height:var(--lineHeight-relaxed);margin:var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0)}ol,p,ul{padding:var(--spacing-0)}ol,ul{list-style-image:none;list-style-position:outside;margin-bottom:var(--spacing-8);margin-left:var(--spacing-0);margin-right:var(--spacing-0)}ol li,ul li{padding-left:var(--spacing-0)}li>p,ol li,ul li{margin-bottom:calc(var(--spacing-8)/2)}li :last-child{margin-bottom:var(--spacing-0)}li>ul{margin-left:var(--spacing-8);margin-top:calc(var(--spacing-8)/2)}blockquote{border-left:var(--spacing-1) solid var(--color-primary);color:var(--color-text-light);font-size:var(--fontSize-2);font-style:italic;margin-bottom:var(--spacing-8);margin-left:calc(var(--spacing-6)*-1);margin-right:var(--spacing-8);padding:var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6)}blockquote>:last-child{margin-bottom:var(--spacing-0)}blockquote>ol,blockquote>ul{list-style-position:inside}table{border-collapse:collapse;border-spacing:.25rem;margin-bottom:var(--spacing-8);width:100%}table thead tr th{border-bottom:1px solid var(--color-accent)}a{color:var(--color-primary)}a:focus,a:hover{text-decoration:none}.global-wrapper{margin:var(--spacing-0) auto;max-width:var(--maxWidth-wrapper);padding:var(--spacing-10) var(--spacing-5)}.header{display:flex;flex-direction:column;margin-bottom:var(--spacing-12)}.header .header__top{align-items:center;display:flex;flex-direction:row;justify-content:space-between;margin:0}.header .header__top .header__title{font-family:var(--font-heading);font-size:var(--fontSize-4);font-weight:var(--fontWeight-medium);text-decoration:none}.header .header__tags{align-items:center;display:flex;flex-flow:row nowrap;justify-content:flex-end;list-style-type:none;margin-bottom:var(--spacing-1)}.header .header__tags li{margin:0 0 0 var(--spacing-6)}.header .header__tags a{text-decoration:none}.footer__content{display:flex;flex-direction:row;justify-content:space-between}.header__line{border-top:2px solid #005b99;height:0}.post-list-item{margin-bottom:var(--spacing-8);margin-top:var(--spacing-8)}.post-list-item p{margin-bottom:var(--spacing-0)}.post-list-item h2{color:var(--color-primary);font-size:var(--fontSize-4);margin-bottom:var(--spacing-2);margin-top:var(--spacing-0)}.post-list-item header{margin-bottom:var(--spacing-4)}.bio{display:flex;margin-bottom:var(--spacing-16)}.bio-avatar,.bio p{margin-bottom:var(--spacing-0)}.bio-avatar{border-radius:100%;margin-right:var(--spacing-4);min-width:50px}.blog-post header h1{margin:var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0)}.blog-post header p{font-family:var(--font-heading);font-size:var(--fontSize-2)}.blog-post-nav ul{margin:var(--spacing-0)}.gatsby-highlight{margin-bottom:var(--spacing-8)}@media(max-width:42rem){blockquote{margin-left:var(--spacing-0);padding:var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4)}ol,ul{list-style-position:inside}.header{margin-bottom:var(--spacing-11)}.header .header__top .header__title{font-family:var(--font-heading);font-size:var(--fontSize-3);font-weight:var(--fontWeight-medium);text-decoration:none}.header .header__tags{align-items:center;display:flex;flex-flow:row nowrap;font-size:.7rem;justify-content:flex-end;list-style-type:none;margin-bottom:var(--spacing-1)}.header .header__tags li{margin:0 0 0 var(--spacing-5)}.header .header__tags a{text-decoration:none}.footer__content{align-items:center;flex-direction:column;justify-content:center}}.react-toggle{-webkit-touch-callout:none;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlight-color:transparent;background-color:transparent;border:0;cursor:pointer;display:inline-block;padding:0;position:relative;touch-action:pan-x;-webkit-user-select:none;-ms-user-select:none;user-select:none}.react-toggle-screenreader-only{clip:rect(0 0 0 0);border:0;height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.react-toggle-track{background-color:#0f1114;border-radius:30px;height:24px;padding:0;transition:all .2s ease;width:50px}.react-toggle-track-check{bottom:0;height:17px;left:5px;line-height:0;margin-bottom:auto;margin-top:auto;opacity:0;position:absolute;top:0;transition:opacity .25s ease;width:17px}.react-toggle--checked .react-toggle-track-check,.react-toggle-track-x{opacity:1;transition:opacity .25s ease}.react-toggle-track-x{bottom:0;height:17px;line-height:0;margin-bottom:auto;margin-top:auto;position:absolute;right:5px;top:0;width:17px}.react-toggle--checked .react-toggle-track-x{opacity:0}.react-toggle-thumb{background-color:#fafafa;border-radius:50%;box-sizing:border-box;height:22px;left:1px;position:absolute;top:1px;-webkit-transform:translateX(0);transform:translateX(0);transition:all .5s cubic-bezier(.23,1,.32,1) 0ms;width:22px}.react-toggle--checked .react-toggle-thumb{border-color:#19ab27;-webkit-transform:translateX(26px);transform:translateX(26px)}.react-toggle--focus .react-toggle-thumb{box-shadow:0 0 2px 3px #005b99}.react-toggle:active .react-toggle-thumb{box-shadow:0 0 5px 5px #005b99}code[class*=language-],pre[class*=language-]{-webkit-font-feature-settings:normal;font-feature-settings:normal;word-wrap:normal;background:#011627;color:#fff;font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;margin-bottom:0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{overflow:auto;padding:1.3125rem}pre[class*=language-]::selection{background:#27292a}pre[class*=language-]::selection,pre[class*=language-] ::selection{background:rgba(255,255,255,.15);text-shadow:none}:not(pre)>code[class*=language-]{background:var(--inlineCode-bg);border-radius:.3em;color:var(--inlineCode-text);padding:.15em .2em .05em;white-space:normal}.token.attr-name{color:#addb67;font-style:italic}.token.comment{color:#809393}.token.string,.token.url{color:#addb67}.token.variable{color:#d6deeb}.token.number{color:#f78c6c}.token.builtin,.token.char,.token.constant,.token.function{color:#82aaff}.token.punctuation{color:#c792ea}.token.doctype,.token.selector{color:#c792ea;font-style:"italic"}.token.class-name{color:#ffcb8b}.token.keyword,.token.operator,.token.tag{color:#ffa7c4}.token.boolean{color:#ff5874}.token.property{color:#80cbc4}.token.namespace{color:#b2ccd6}pre[data-line]{padding:1em 0 1em 3em;position:relative}</style><meta name="generator" content="Gatsby 3.11.0"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=bb25ca2011d7658635faca1dfc6f0d50" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=bb25ca2011d7658635faca1dfc6f0d50"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=bb25ca2011d7658635faca1dfc6f0d50"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=bb25ca2011d7658635faca1dfc6f0d50"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=bb25ca2011d7658635faca1dfc6f0d50"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=bb25ca2011d7658635faca1dfc6f0d50"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=bb25ca2011d7658635faca1dfc6f0d50"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=bb25ca2011d7658635faca1dfc6f0d50"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=bb25ca2011d7658635faca1dfc6f0d50"/><title data-react-helmet="true">谈谈前端性能优化 | 好成的blog</title><meta data-react-helmet="true" name="description" content="在使用框架进行前端开发的时候，针对特定框架我们有特定的性能优化手段，实际上，面向浏览器、资源请求也可以作出很多的优化，这篇文章简单总结一下。 合理利用缓存 第一部分我们聊聊缓存，这是前后端一个很重要的知识点。缓存可以减少冗余传输、减少带宽，降低源服务器的压力。 缓存的工作机制如下： 浏览器先根据这个资源的 http…"/><meta data-react-helmet="true" property="og:title" content="谈谈前端性能优化"/><meta data-react-helmet="true" property="og:description" content="在使用框架进行前端开发的时候，针对特定框架我们有特定的性能优化手段，实际上，面向浏览器、资源请求也可以作出很多的优化，这篇文章简单总结一下。 合理利用缓存 第一部分我们聊聊缓存，这是前后端一个很重要的知识点。缓存可以减少冗余传输、减少带宽，降低源服务器的压力。 缓存的工作机制如下： 浏览器先根据这个资源的 http…"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content=""/><meta data-react-helmet="true" name="twitter:title" content="谈谈前端性能优化"/><meta data-react-helmet="true" name="twitter:description" content="在使用框架进行前端开发的时候，针对特定框架我们有特定的性能优化手段，实际上，面向浏览器、资源请求也可以作出很多的优化，这篇文章简单总结一下。 合理利用缓存 第一部分我们聊聊缓存，这是前后端一个很重要的知识点。缓存可以减少冗余传输、减少带宽，降低源服务器的压力。 缓存的工作机制如下： 浏览器先根据这个资源的 http…"/><link as="script" rel="preload" href="/webpack-runtime-ec52642a1a8969212fd6.js"/><link as="script" rel="preload" href="/framework-507a82f8a4d219d3f184.js"/><link as="script" rel="preload" href="/app-79479099ecbe45b719e5.js"/><link as="script" rel="preload" href="/commons-351c1962957b02ce4724.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-a83ea2277426bf4b8caf.js"/><link as="fetch" rel="preload" href="/page-data/2021-11/谈谈前端性能优化/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2841359383.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3415673938.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body class="light"><script>
+            (function() {
+              window.__onThemeChange = function() {};
+              function setTheme(newTheme) {
+                window.__theme = newTheme;
+                preferredTheme = newTheme;
+                document.body.className = newTheme;
+                window.__onThemeChange(newTheme);
+              }
+              var preferredTheme;
+              try {
+                preferredTheme = localStorage.getItem('theme');
+              } catch (err) { }
+              window.__setPreferredTheme = function(newTheme) {
+                setTheme(newTheme);
+                try {
+                  localStorage.setItem('theme', newTheme);
+                } catch (err) {}
+              }
+              var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+              darkQuery.addListener(function(e) {
+                window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+              });
+              setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+            })();
+            </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="global-wrapper"><header class="header"><div class="header__top"><a class="header__title" href="/">Hao Chen&#x27;s  blog.</a><div class="header__toggle"><div class="react-toggle"><div class="react-toggle-track"><div class="react-toggle-track-check"><img src="data:image/png;base64,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" width="16" height="16" role="presentation" style="pointer-events:none"/></div><div class="react-toggle-track-x"><img src="data:image/png;base64,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" width="16" height="16" role="presentation" style="pointer-events:none"/></div></div><div class="react-toggle-thumb"></div><input type="checkbox" class="react-toggle-screenreader-only" aria-label="Switch between Dark and Light mode"/></div></div></div><ul class="header__tags"><li><a href="/coding365">Coding365</a></li><li><a href="/tags">分类</a></li><li><a href="/resource">珍藏资料</a></li><li><a href="https://github.com/monster898">Github</a></li><li><a href="/about">About</a></li><li><a href="./rss.xml">RSS</a></li></ul><div class="header__line"></div></header><main><article class="blog-post" itemscope="" itemType="http://schema.org/Article"><header><h1 itemProp="headline">谈谈前端性能优化</h1><p>November 07, 2021 • 17 min read</p></header><section itemProp="articleBody"><p>在使用框架进行前端开发的时候，针对特定框架我们有特定的性能优化手段，实际上，面向浏览器、资源请求也可以作出很多的优化，这篇文章简单总结一下。</p>
+<h2>合理利用缓存</h2>
+<p>第一部分我们聊聊<strong>缓存</strong>，这是前后端一个很重要的知识点。缓存可以减少冗余传输、减少带宽，降低源服务器的压力。</p>
+<p>缓存的工作机制如下：</p>
+<ul>
+<li>浏览器先根据这个资源的 http 头信息来判断是否命中强缓存。如果命中则直接加在缓存中的资源，并不会将请求发送到服务器。</li>
+<li>如果未命中强缓存，则浏览器会将资源加载请求发送到服务器(新鲜度再验证)。服务器来判断浏览器本地缓存是否失效。若可以使用，则服务器并不会返回资源信息，浏览器继续从缓存加载资源。</li>
+<li>如果未命中协商缓存，则服务器会将完整的资源返回给浏览器，浏览器加载新资源，并更新缓存。</li>
+</ul>
+<p>一图以蔽之：</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 468px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/bd0c12e8889a29ac478be94e7b658f09/90372/20201221142823.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 72.78481012658227%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAIAAABr+ngCAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACXUlEQVQoz1WTaVPbMBCG+/9/QClpWo5CC/SAAGFKaael/ZjmcHwmEwvsOLZjWbId34esju0pMe+nHUnv7O6j3ReU0pKUCGHD0C3LiuO4OqnVDhpxPH//+4/rus3VC0qp67o8L/A8r2mrolaWZYaucywbR1FeFE/mi4vezqvdx0dla4YQStJMURSO5R6ALIoiQggAcH15KQpC864x397enZycLpfLrRkh1O2+7XS6oigJLDsY/A2CIIrCKcMAACrn/8J7vauXO7sAPGzNRVG4DoYQEkLiOPY8j1KapalpmnlRlGVJCCnqwPM80zCeGqnMhBAHYwgtCKFt221OhJA2sOmU/fnr3nGcbWaMHZbleF5QVTUMoziOkyRZrVaj4TAMwyiKkiRJk0rn571Op/sMmGVZE4aRpBkzYWpgEsYYAHDT708ZxnWcmSTO53PTNM8+fjo6/qAqajszPnx3tLd/IC9kSeAHg0FcpY9ZllWUxzRNJ6PReMKEYXh51d/tvH6WmRAS+L7jOKQs8zxPkoRSmiZJBSyv2CR1I5TSwPet9ZoQsgVWliXGWNM0Q9eNle44OMvzskbVQH4CNh5P7r7/QAi1/xlzHC8KIgAAY2zbdhiGuq4Pa2AI2XNpJsvycqldXfe73TeK0ip7vbaGozEviKPRCMgLUZRs2xYF8abfZ6fTwPchhMi2MUKfv1zs7R8qbWCu552enh0dv19q2nwmTcaTNMsCP+BYVtM0f7N5AEBeLAzT/Hr7bf/gUFVb40mKYuNtEMYFIXmep0laTViWQgiL1lY0K2ToRp7nDbB/QOkzWxRIepoAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="20201221142823"
+        title="20201221142823"
+        src="/static/bd0c12e8889a29ac478be94e7b658f09/90372/20201221142823.png"
+        srcset="/static/bd0c12e8889a29ac478be94e7b658f09/c26ae/20201221142823.png 158w,
+/static/bd0c12e8889a29ac478be94e7b658f09/6bdcf/20201221142823.png 315w,
+/static/bd0c12e8889a29ac478be94e7b658f09/90372/20201221142823.png 468w"
+        sizes="(max-width: 468px) 100vw, 468px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<h3>强制缓存</h3>
+<p>强制缓存的状态码为 200，要实现强制缓存，需要依靠这些请求头：</p>
+<p><strong>Cache-Control</strong>，这个头的可能值如下：</p>
+<ul>
+<li><code class="language-text">private</code> 客户端可以缓存</li>
+<li><code class="language-text">public</code> 客户端和代理服务器都可以缓存</li>
+<li><code class="language-text">max-age=x</code> 缓存内容将在 x 秒后失效</li>
+<li><code class="language-text">no-cache</code> 需要使用对比缓存验证数据, 强制向源服务器再次验证 (没有强制缓存)</li>
+<li><code class="language-text">no-store</code> 所有内容都不会缓存，强制缓存和对比缓存都不会触发 (不缓存)</li>
+</ul>
+<p><strong>Expires</strong>，一个时间戳，表示在此时候之后，响应过期。</p>
+<p>如果在 Cache-Control 响应头设置了 <code class="language-text">max-age</code> 或者 <code class="language-text">s-max-age</code> 指令，那么 <code class="language-text">Expires</code> 头会被忽略。</p>
+<p>Cache-Control 中的 <code class="language-text">max-age=x</code> 和 <code class="language-text">Expires</code> 的值有所区别 --- 一个是相对时间、一个是绝对时间。</p>
+<h3>协商缓存</h3>
+<p>协商缓存的状态码为 304（3xx 属于重定向，这没毛病 — 重定向到本地的缓存），要想实现协商缓存，需要依赖下面这些请求/响应头：</p>
+<p><strong>ETag</strong></p>
+<p><code class="language-text">ETag</code> 用来标示资源是否改变。</p>
+<p>例如：服务器产生 ETag，并在 HTTP 响应头中将其传送到客户端，服务器用它来判断页面是否被修改过，如果未修改返回 304，无需传输整个对象。</p>
+<p><strong>If-None-Match</strong></p>
+<p>和 <code class="language-text">Etag</code> 匹配的请求头，客户端接收到 <code class="language-text">ETag</code> 之后，下次可以通过这个请求头来发送它，服务端可以通过比较来决定是否需要缓存。</p>
+<p><strong>Last-Modified</strong></p>
+<p>包含源头服务器认定的资源做出修改的日期及时间。它通常被用作一个验证器来判断接收到的或者存储的资源是否彼此一致。</p>
+<p><strong>If-Modified-Since</strong></p>
+<p>和 <code class="language-text">Last-Modified</code> 匹配的请求头，客户端会发送上一次的 <code class="language-text">Last-Modified</code>，服务端通过判断时间来决定是否返回 304。</p>
+<h3>实践 — 强制缓存和协商缓存</h3>
+<p><strong>Last-Modified + If-Modified-Since</strong></p>
+<p>下面的代码利用 <strong>Last-Modified</strong> 和 <strong>If-Modified-Since</strong> 来实现协商缓存，<strong>Last-Modified</strong> 是服务端返回的，可以是当前时间，下次浏览器请求这个资源时就会把这个
+<strong>Last-Modified</strong> 交给服务端，让服务端来进行验证。</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/15ce5ec381daa4e540ddf8e4e1538122/0d98f/Snipaste_2021-11-07_17-59-29.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 81.0126582278481%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAABJNAAASTQHzl8SnAAAB9UlEQVQoz4WTCYobQQxF+zRp1yLVJqnWLrc9Tgec+98ntGcgA2Ey8BEU6An09WuJbma6sxQjd2i/Q5upD435YtPF0v+1cHgbcvTRgxxtPmVcMTWFrCypb2HEHv0QEY3Fph1pcyIQy2pp/RZ2roc4oRyuHq7+hHIoeltdkVDFZ/RdAX8JG8iRdp7P1I/cjlxvPpXgsvfNxmnCdi5v0hcw5pqOIL9sf6I8KN9mvd/72NoMeeeyI+9WHiaOf0csNg7tigLRkBXmC2QF5VVFW9EoxtV3aVc+hB9aWBrVO9en8E14EE+XhgliYjGxnOMsK5CX+ecJLsAK5V2LBpLQsB2htdhbmt3XGnnr11m3QVTBMXoxNA1dTZoQ6mfDuPMu7ZBWebS6tfKCaQwezXPTyAZYuXZxXfthXP4La8gx7lluJA/km+RHyQ9OPaB4zOQKxmJTdpSRxEaGWGwoH/AFmNOs5UE0kUYq19U3APZAAOROI8n4ZIKoIMqzRrlYXs15v2UFimH0tCGQwy24irFququ0W7pGziZtOu2IhTAHzCYIcnZcjcuLcQVcRiADbLGBK8YX7bv2zfjmgmhfdWgGxaEAinZsgxgnCniBcHavkDWyAlrf82Tiq6Yf5v2ZVks/LK2vnKzm1LlzTOJ5M/yWpUWq336Gzwn7AwwruvhAG8kSAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Snipaste 2021 11 07 17 59 29"
+        title="Snipaste 2021 11 07 17 59 29"
+        src="/static/15ce5ec381daa4e540ddf8e4e1538122/f058b/Snipaste_2021-11-07_17-59-29.png"
+        srcset="/static/15ce5ec381daa4e540ddf8e4e1538122/c26ae/Snipaste_2021-11-07_17-59-29.png 158w,
+/static/15ce5ec381daa4e540ddf8e4e1538122/6bdcf/Snipaste_2021-11-07_17-59-29.png 315w,
+/static/15ce5ec381daa4e540ddf8e4e1538122/f058b/Snipaste_2021-11-07_17-59-29.png 630w,
+/static/15ce5ec381daa4e540ddf8e4e1538122/40601/Snipaste_2021-11-07_17-59-29.png 945w,
+/static/15ce5ec381daa4e540ddf8e4e1538122/78612/Snipaste_2021-11-07_17-59-29.png 1260w,
+/static/15ce5ec381daa4e540ddf8e4e1538122/0d98f/Snipaste_2021-11-07_17-59-29.png 1276w"
+        sizes="(max-width: 630px) 100vw, 630px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><strong>ETag + If-None-Match</strong></p>
+<p>下面的代码利用 <strong>ETag + If-None-Match</strong> 实现缓存，服务端将文件计算 hash 值放入 Etag 返回，下次用户再次访问时 If-None-Match 会携带这个 ETag，服务端将新的文件计算
+hash，然后对比来判断是否 304。</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/fa653c3a6f89f53b606d34eb0ab96b6a/e4611/Snipaste_2021-11-07_18-02-39.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75.9493670886076%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAIAAABr+ngCAAAACXBIWXMAABJNAAASTQHzl8SnAAABwUlEQVQoz42T647cIAyF8zSTC2CuxsYkIXPfff8XapPRtmq1rUb6fiDkYx18TBfdOafmIml+QvmIdbZJBp3eoaPwWPjKUjw+5/aB0nSgEfJbYrDVhxoSjZZVbDqKxaIsDTr1R8UEeTT4vVh7DrzFcsVyQd6o3iKdqd4CNZRrWR6BmsNlUHHnL7HxkuVS1ptsn1gvZb3neuXljnKR9uT5bnxxuPi87l3S3Ksw6Pii864hNipVebFZPFUIdQI+oBFI2aLcF3a//EWXSRxfER8pbYizT+2oY+VZuTICjeZP4DcdmIRxteWWZokiss7akyX2hU3g0fxv7J0DKniJcs9rTbWu2xqTmEg2MyBPBk/q32IDkvyyhpJdKUEkVs7VYjGJTWQVakS2gQf9TVrdBFRi27DtRhOnVHoTdUDtcQQcHFuPCrDXeDqi6lXsv7x0o8HkZwqzhmxts450XFQ8T3FzqfpIQ2gqLN5SdgyOTCJAhlBGg3vOyiAYVJABREFWrkxORifakbY0OZks760hTwYnh8ria+067faR9gZHkwYd95V8LdNu73Cown7W6fR6qjp42UZkg83gWVjAc6/Sm1/qp/gHKcKvF9HELdoAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Snipaste 2021 11 07 18 02 39"
+        title="Snipaste 2021 11 07 18 02 39"
+        src="/static/fa653c3a6f89f53b606d34eb0ab96b6a/f058b/Snipaste_2021-11-07_18-02-39.png"
+        srcset="/static/fa653c3a6f89f53b606d34eb0ab96b6a/c26ae/Snipaste_2021-11-07_18-02-39.png 158w,
+/static/fa653c3a6f89f53b606d34eb0ab96b6a/6bdcf/Snipaste_2021-11-07_18-02-39.png 315w,
+/static/fa653c3a6f89f53b606d34eb0ab96b6a/f058b/Snipaste_2021-11-07_18-02-39.png 630w,
+/static/fa653c3a6f89f53b606d34eb0ab96b6a/40601/Snipaste_2021-11-07_18-02-39.png 945w,
+/static/fa653c3a6f89f53b606d34eb0ab96b6a/78612/Snipaste_2021-11-07_18-02-39.png 1260w,
+/static/fa653c3a6f89f53b606d34eb0ab96b6a/e4611/Snipaste_2021-11-07_18-02-39.png 1298w"
+        sizes="(max-width: 630px) 100vw, 630px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>有关缓存的详细知识，请参考此文章
+<a href="https://samguo.me/HTTP-cache/HTTP-cache/">谈谈 HTTP 缓存</a></p>
+<h2>优化资源的编码/大小</h2>
+<p>如果缓存是“获取速度快”，那么优化编码就是“拿得尽可能少”。</p>
+<p>就拿图片来说，将一个较大尺寸的图片后添加到页面的较小一块区域，显示部分还是那么大，但是我们下载的图片还是那个 “大尺寸的大小”。浪费了流量并损害了页面性能。</p>
+<h3>图片自适应</h3>
+<p>我们按照不同宽度准备好几张照片，达到<strong>为不同设备加载不同图片</strong>的目的，这便是响应式图片（图片自适应）。针对这种需求，我们使用 h5 的 <code class="language-text">&lt;img></code> 标签新特性 <strong>srcset</strong> 和 <strong>sizes</strong>。</p>
+<p>例如：</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span>
+  <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>img1.jpg 320w, img2.jpg 800w<span class="token punctuation">"</span></span>
+  <span class="token attr-name">sizes</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(max-width: 480px) 440px,
+            800px<span class="token punctuation">"</span></span>
+  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>img.jpg<span class="token punctuation">"</span></span>
+  <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hello world<span class="token punctuation">"</span></span>
+<span class="token punctuation">/></span></span></code></pre></div>
+<p>上面的代码中，<code class="language-text">srcset</code> 表示<strong>图像集</strong>。</p>
+<p><code class="language-text">sizes</code> 表示<strong>媒体条件</strong>：如果浏览器视窗宽度为 <code class="language-text">440px</code>，那么 <code class="language-text">(max-width: 480px)</code> 的媒体条件为真，显示图片的槽的宽度限制为 <code class="language-text">440px</code>，其余条件显示图片的槽的宽度限制为 <code class="language-text">800px</code>。</p>
+<p><code class="language-text">srcset</code> 表示<strong>图像集</strong>：<code class="language-text">320w</code>表示图片真实固有宽度大小，注意到这里使用<code class="language-text">w</code>单位，而不是你预计的<code class="language-text">px</code>，这是图像的真实大小。</p>
+<p>所以，有了这些属性，浏览器会：</p>
+<ol>
+<li>查看设备宽度</li>
+<li>检查 sizes 列表中哪个媒体条件是第一个为真</li>
+<li>查看给予该媒体查询的槽大小</li>
+<li>加载 srcset 列表中引用的最接近所选的槽大小的图像</li>
+</ol>
+<p>除了 IE 浏览器，主流浏览器均已兼容此功能。</p>
+<h3>代码压缩</h3>
+<p>按需加载代码：</p>
+<ul>
+<li>使用代码拆分将 JavaScript 分解成关键部分和非关键部分。我们可以使用<strong>webpack</strong>等工具实现。</li>
+<li>延迟加载非关键代码。（懒加载）</li>
+</ul>
+<p>例如：</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- test--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+      <span class="token comment">/* awesome-container is only used on the landing page */</span>
+      <span class="token selector">.awesome-container</span> <span class="token punctuation">{</span>
+        <span class="token property">font-size</span><span class="token punctuation">:</span> 120%<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token selector">.awesome-container</span> <span class="token punctuation">{</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- awesome container content: START --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>…<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- awesome container content: END --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+      <span class="token function">awesomeAnalytics</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// beacon conversion metrics</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre></div>
+<p>对于上面的代码，我们可以：</p>
+<ul>
+<li>直接删除注释可显著减小网页的总大小。</li>
+<li>可以将将两个 <code class="language-text">awesome-container</code> 选择器声明折叠为一个而不影响任何其他样式，从而节省更多字节。</li>
+<li>空白（空格和制表符）能够在 HTML、CSS 和 JavaScript 中给开发者提供方便。但是生产环境下体积会变大，我们可以增加一个压缩程序来去掉所有制表符和空格。</li>
+</ul>
+<h3>GZIP 压缩</h3>
+<p>说到资源的大小优化，一个经典的案例便是<strong>GZIP</strong>。这是一种用来改进 web 应用程序性能的技术，web 服务器和客户端（浏览器）必须共同支持 gzip。目前主流的浏览器，Chrome, firefox, IE
+等都支持该协议。常见的服务器如 Apache，Nginx，IIS 同样支持 gzip。</p>
+<p>gzip 压缩比率在 3 到 10 倍左右，可以大大节省服务器的网络带宽。</p>
+<p><strong>工作流程</strong></p>
+<p>下图是 gzip 的工作流程：</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7391f9631592a16d56786f8d9f575492/74866/20201101225138.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 68.9873417721519%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACAUlEQVQoz42Sy47iMBBF869sWMBn8AF8AGrNshtGqBE9PMSzEQQIhDzEmyAiQsABI0QibIckHtHWIDSMWnMW3th16/pWcfQBz/Mcx7Ft23EcjDFCyPM8dhX84f44CALO933P867XaxAEjuOMx+PhcKgoiiiKvV4PQkgpxRizsiAIMEI3VYR83+fuMpTS0+kky7IkSaqq9vt9QRB6vZ6mafV6fbfbIYQAAG2e77Tb3W5X13WO5/lMJpPL5dLptGEYEELLsvYPAADYCSGczWa/Pj4y7+/FQmEgilylUuF5PhaLjb6glPq+T59g1jRNS70lf7y8/EylZEniEolEOByORCLRaFTXdRZb8ARTnM/nxXzhs1avVqoDccBBCOPxeCgUarVaj2H+s/NqtYIQskFMJ9NbYISQ5XJJv4UVr9frarny9vpaq9Rm0+ltVK7rGobB3H4vQQgBAIxHI7DbXS4XjqluNhv636zXa9aGM01zuVwqiqLr+ul0uju8c/3CdV1K6Xa7nUwmzWZzsViYpsmVy+VkMpnP57PZbKPRYLvR7XZFUVQURVVV0zQBALqu27Yty3I2my2VSsViURAEDmN8uVwwxoSQ8/k8Go1kWVYUpdPp9Pt9SZKOx6NlWWzJCSH4C4SQ67rcX3lst1vTNPf7/eFw2Gw2hmGsVitN0wghz5//DSnu+q68+mi1AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="20201101225138"
+        title="20201101225138"
+        src="/static/7391f9631592a16d56786f8d9f575492/f058b/20201101225138.png"
+        srcset="/static/7391f9631592a16d56786f8d9f575492/c26ae/20201101225138.png 158w,
+/static/7391f9631592a16d56786f8d9f575492/6bdcf/20201101225138.png 315w,
+/static/7391f9631592a16d56786f8d9f575492/f058b/20201101225138.png 630w,
+/static/7391f9631592a16d56786f8d9f575492/74866/20201101225138.png 668w"
+        sizes="(max-width: 630px) 100vw, 630px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span>;</p>
+<ul>
+<li>浏览器请求 url，并在 request header 中设置属性 <code class="language-text">accept-encoding:gzip</code>。表明浏览器支持 gzip，例如下图：</li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4c7150294cbc85809a770e5607cce362/889a4/20201101225226.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 44.93670886075949%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABCElEQVQoz5WR2W7EMAhF8/9fOclDDF7iDbDjZaZKppXmqVWPBOIB0IW7IKLWaJ3rvaeURPj5zZxzjh96Hx/1xZxziSEAKAQEQFAKEZUCjVopZa1lopyJmYP3whxjTCmFGGMIpZQlxag1AoBzLqVkjCHiep6t9efz+fqVxTm3bdu6rogIiJlImFPOY4zPvveiz3wN55yNteESEkTk9R8Wo826bvu+G2PqeRJRjJGIUkq11j+GQwhK7YjaH14jhhBba/evx+vPm601j8dDKQBQSoH3vpQiIqUWZhaRS0VOxCylEFE9KzGxCAsvRNlZexyH9z6EK6SUOebbzDFGu7nr3i+PR2+t38Z/AYa+CB3mYzRiAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="20201101225226"
+        title="20201101225226"
+        src="/static/4c7150294cbc85809a770e5607cce362/f058b/20201101225226.png"
+        srcset="/static/4c7150294cbc85809a770e5607cce362/c26ae/20201101225226.png 158w,
+/static/4c7150294cbc85809a770e5607cce362/6bdcf/20201101225226.png 315w,
+/static/4c7150294cbc85809a770e5607cce362/f058b/20201101225226.png 630w,
+/static/4c7150294cbc85809a770e5607cce362/889a4/20201101225226.png 658w"
+        sizes="(max-width: 630px) 100vw, 630px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<ul>
+<li>服务器收到浏览器发送的请求之后，判断浏览器是否支持 gzip，如果支持 gzip，则向浏览器传送压缩过的内容，不支持则向浏览器发送未经压缩的内容。如果支持，response
+headers 返回 <code class="language-text">content-encoding:gzip</code></li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 613px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ea12b70a900a17c75d63b8f23137f6cb/5754a/20201101225238.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 30.37974683544304%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAIAAABM9SnKAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAhElEQVQY05XLyxKCMAxGYd7/NSEO/KWhlCS9AMXRcS36Lc7udMwecNM0hRD2fReRnPP1my6ZPd4AMC/XP7qUEtFARACccynnq7XjOFpr97OqOmDhhZnneY5xVVXZ4tnO+9nUaKC+HwCsYRURFf0wu5tNx3EE4L3fYqy1llJKfqXW+n1+AlssXpezGQZ/AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="20201101225238"
+        title="20201101225238"
+        src="/static/ea12b70a900a17c75d63b8f23137f6cb/5754a/20201101225238.png"
+        srcset="/static/ea12b70a900a17c75d63b8f23137f6cb/c26ae/20201101225238.png 158w,
+/static/ea12b70a900a17c75d63b8f23137f6cb/6bdcf/20201101225238.png 315w,
+/static/ea12b70a900a17c75d63b8f23137f6cb/5754a/20201101225238.png 613w"
+        sizes="(max-width: 613px) 100vw, 613px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<ul>
+<li>浏览器接收到服务器的响应之后判断内容是否被压缩，如果被压缩则解压缩并显示页面内容。</li>
+</ul>
+<p><strong>实践：NGINX 与 GZIP</strong></p>
+<p>下面是一个 nginx 配置，是本人部署的一个真实案例。</p>
+<div class="gatsby-highlight" data-language="nginxconfiguration"><pre class="language-nginxconfiguration"><code class="language-nginxconfiguration">
+server{
+    # 端口号
+    listen       80;
+    # 网站文件根目录
+    root  /home/web/build;
+    # 开启gzip压缩
+    gzip on;
+    gzip_min_length 1k;
+    gzip_buffers 4 16k;
+    gzip_comp_level 2;
+    gzip_types text/plain application/javascript application/x-javascript text/css application/xml text/javascript application/x-httpd-php image/jpeg image/gif image/png;
+
+    # 支持browser路由
+    location / {
+        try_files $uri $uri/  /index.html;
+    }
+}</code></pre></div>
+<h3>衡量 JavaScript 脚本</h3>
+<p>可以使用 <code class="language-text">&lt;script></code> 标签的 <code class="language-text">async</code> 和 <code class="language-text">defer</code>：</p>
+<p><strong>defer</strong> 意为“推迟”，在浏览器中体现为<strong>立即下载脚本但推迟执行</strong>。</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Example HTML Page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">defer</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example1.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">defer</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example2.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- 这里是页面内容 --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre></div>
+<p>defer 是有序的，它会自上而下按顺序执行。</p>
+<p>defer 的<strong>加载</strong>会在 <code class="language-text">DOMContentLoaded</code> 事件之前执行。</p>
+<p><strong>async</strong> 意为“异步”，来看下面代码：</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Example HTML Page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">async</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example1.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">async</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example2.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- 这里是页面内容 --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre></div>
+<p>标记为 <code class="language-text">async</code> 的脚本并不保证能按照它们出现的次序执行，但保证会在页面的 <code class="language-text">load</code> 事件前执行。</p>
+<p>这里我想到了一个前端模块化库 — <strong>require.js</strong>。它就是利用 <code class="language-text">async</code> 来实现模块化的。由于 <code class="language-text">async</code> 保证在 <code class="language-text">load</code> 之前执行完成，所以模块的加载顺序就不成问题。有兴趣的可以去了解一下它的原理。</p>
+<h2>面向浏览器的优化</h2>
+<p>浏览器是前端代码的主要载体，如何针对浏览器的一些机制来进行优化就显得非常重要。所以我们需要理解浏览器是如何显示网页的。</p>
+<h3>浏览器如何显示网页？</h3>
+<p>浏览器如何渲染一个网页？主要分为以下步骤：</p>
+<p><strong>DOM 树的生成</strong></p>
+<p>当渲染进程接收 HTML 数据时，<strong>主线程</strong>开始解析 HTML 并将其转换为文档对象模型（DOM）。</p>
+<p>当遇到外链时，会单独开启一个下载线程去下载资源。</p>
+<p>CSS 下载是异步的，不会阻塞浏览器构建 DOM 树，但它会阻塞渲染，也就是在构建渲染树时，会等到 css 下载解析完毕后才进行，这是为了防止 css 规则不断改变，避免了重复的构建。 对于 JS 也是一个道理，当 HTML</p>
+<p>对于 <code class="language-text"> &lt;script></code> 脚本，会暂停解析 HTML 文档，开始加载、解析并执行 JavaScript 代码。因为 JavaScript 可以使用 <code class="language-text">document.write()</code> 的方法来改写文档，这会改变整个 DOM 结构。</p>
+<p>遇到图片等资源时，异步下载，不会阻塞解析，下载完毕后直接用图片<strong>替换</strong>其应该所处的位置即可。</p>
+<p><strong>CSS 规则树的生成</strong></p>
+<p>主线程解析 CSS 并确定每个 DOM 节点计算后的样式。</p>
+<p><strong>布局</strong></p>
+<p>现在，渲染进程知道每个节点的样式和文档的结构，但这不足以渲染页面。</p>
+<p>布局是计算元素几何形状的过程。<strong>主线程</strong>遍历计算样式后的 DOM 树，计算样式并创建<strong>布局树（渲染树）</strong>，其中包含 x 、y 坐标和边界框大小等信息。</p>
+<p>布局树（渲染树）可能与 DOM 树结构类似，但它仅包含页面上<strong>可见内容</strong>相关的信息。</p>
+<p>例如，下面的这些 css 元素不是布局树的一部分：</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token selector">#element</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">p::before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"Hi!"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><strong>利用 <code class="language-text">visibility</code> 和 <code class="language-text">opacity</code> 隐藏的节点，还是会显示在渲染树上的。只有 <code class="language-text">display:none</code> 的节点才不会显示在渲染树上。</strong></p>
+<p><strong>绘制</strong></p>
+<p>拥有 DOM、样式和布局仍然不足以渲染页面。假设你正在尝试重现一幅画。你知道元素的大小、形状和位置，但你仍需要判断绘制它们的顺序。</p>
+<p>在绘制步骤中，<strong>主线程</strong>遍历<strong>布局树</strong>创建绘制记录。绘制记录可以看成是绘图过程的记录。</p>
+<p>下面总结一下全过程：</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4fd6e321ede7b36703ac7a36d7fbd129/889a4/20201031201457.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 47.46835443037975%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABd0lEQVQoz3WRzUorQRBG+wHcuHHhE/iivoArQVFBuQsVRUUENRfJIppoDKIGJjEhGc38ZZJp08lMpqurSjqKG7WoRVFQh49TgpmYgAiRCImI6bHWONz5XzgtSzliZoPEf5T4uTJAtZtW2EuY2dL+LpFlbj9aGSbXDU85XjSa6KGSzpsTSA8RX8Jh6cVNNTCzzWVZxAyzJqHGF76/EITrJ9XX3fJ9mKT1TvX0avO5XWbm206wd9cY5/b4ZwaBSADIzGBQA4LBt0Q+uqEvxxooTuKO182mKs2hJ1VfTbUZTfNilheMCcSM+CnLwjIN+3f11cL1peN68eCicnB0tdH12/We3CrdHz94XnwZRYt+OJdOtwURg2Fr2RJshBywN5ikOYABNXmXShKRQUxznWlAJIMDMH1ELZL3c6e11GwvFxvRv1LVjdVTq3JW3G6+1r5NE//uXIzGa0E074c73Th/9oK+VE23/tSsRMPQGkb8+tYM8DUxzpo+AHu09YqqknPBAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="20201031201457"
+        title="20201031201457"
+        src="/static/4fd6e321ede7b36703ac7a36d7fbd129/f058b/20201031201457.png"
+        srcset="/static/4fd6e321ede7b36703ac7a36d7fbd129/c26ae/20201031201457.png 158w,
+/static/4fd6e321ede7b36703ac7a36d7fbd129/6bdcf/20201031201457.png 315w,
+/static/4fd6e321ede7b36703ac7a36d7fbd129/f058b/20201031201457.png 630w,
+/static/4fd6e321ede7b36703ac7a36d7fbd129/889a4/20201031201457.png 658w"
+        sizes="(max-width: 630px) 100vw, 630px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>网页载入时，上述过程（至少）会执行一次，但是某些操作会导致网页重新渲染，即重新生成布局和重新绘制。前者叫做”回流”（<code class="language-text">reflow</code>），后者叫做”重绘”（<code class="language-text">repaint</code>）。</p>
+<p>结合上面的描述，我们不难得出以下结论：</p>
+<ul>
+<li>要想提高性能，就是要降低”回流”和”重绘”的频率和范围。</li>
+<li>回流必然导致重绘。</li>
+<li>布局改变（例如改变宽高、元素位置）会导致回流，而一些颜色的改变会导致重绘。</li>
+</ul>
+<p>浏览器对一些 DOM 操作行为做了一些优化，可能导致多次重新渲染的操作会被<strong>队列化</strong>，结合到一起：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// 理论上一次重绘 + 一次重排（很明显包括重绘了），但浏览器只会触发一次重排和重绘</span>
+div<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">"blue"</span>
+div<span class="token punctuation">.</span>style<span class="token punctuation">.</span>marginTop <span class="token operator">=</span> <span class="token string">"30px"</span></code></pre></div>
+<p>但有些操作会强制刷新队列，引起重绘：</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">offsetTop、offsetLeft、offsetWidth、offsetHeight
+scrollTop、scrollLeft、scrollWidth、scrollHeight
+clientTop、clientLeft、clientWidth、clientHeight
+getComputedStyle()
+getBoundingClientRect</code></pre></div>
+<p>这些操作会强制队列刷新，如果要利用他们，尽量将值缓存起来。</p>
+<p>总结一下，主要有下面这些方案：</p>
+<ul>
+<li>在过程中尽可能<strong>缓存</strong>一些布局信息。</li>
+<li>使用<strong>文档片段</strong>（<code class="language-text">fragement</code>），它存在于内存中，并不在 DOM 树中，所以将子元素插入到文档片段时不会引起页面回流（对元素位置和几何上的计算）。
+因此，使用文档片段通常会带来更好的性能。可参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/createDocumentFragment">MDN 的相关介绍</a>。</li>
+<li>注意样式的修改，不要一条一条地修改，而是一起修改或者改变类名。</li>
+<li><strong>利用 display 属性</strong>，上面提到，<code class="language-text">display:none</code> 不会进入布局树。如果对某个元素有大量的 DOM 操作，我们可以先为其 css 属性为 <code class="language-text">display:none</code>，然后再进行操作，操作完成再恢复，
+这样只会触发<strong>两次渲染</strong>。</li>
+<li>使用一些基于<strong>虚拟 DOM</strong> 的前端开发框架，例如 vue、React。</li>
+<li>优化 JavaScript 执行，例如 <code class="language-text">window.requestAnimationFrame()</code>，我们接下来会讲到这一部分。</li>
+</ul>
+<h3>优化 JavaScript 执行</h3>
+<p>首先得知晓一个名词：屏幕刷新率，一秒之间能够完成多少次重新渲染，这个指标就被称为”刷新率”（FPS）。大多数设备为 60 次/秒。</p>
+<p>如果在页面中有一个动画或渐变效果，或者用户正在滚动页面，那么浏览器渲染动画或页面的每一帧的速率也<strong>需要跟设备屏幕的刷新率保持一致</strong>。其中每个帧的预算时间为 (1 秒/ 60 = 16.66 毫秒)。</p>
+<p>实际上，浏览器有额外工作要做，因此您的所有工作需要在 10 毫秒内完成。如果无法符合此预算，帧率将下降，并且内容会在屏幕上抖动。 此现象通常称为卡顿，会对用户体验产生负面影响。</p>
+<p>每一帧的工作流程如下所示：</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/dc48e4bd5b41dac0b0e8cb64a8e603c9/193c9/frame-full.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 15.18987341772152%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAADABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAIDBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAAB1azKQJ//xAAXEAEBAQEAAAAAAAAAAAAAAAAAAQIR/9oACAEBAAEFAtRxI//EABURAQEAAAAAAAAAAAAAAAAAAAIQ/9oACAEDAQE/AVP/xAAWEQADAAAAAAAAAAAAAAAAAAACEDL/2gAIAQIBAT8BGF//xAAUEAEAAAAAAAAAAAAAAAAAAAAQ/9oACAEBAAY/An//xAAbEAABBAMAAAAAAAAAAAAAAAAAARExkUFRYf/aAAgBAQABPyFJlmdje2INmz//2gAMAwEAAgADAAAAEPfv/8QAFREBAQAAAAAAAAAAAAAAAAAAEDH/2gAIAQMBAT8Qg//EABYRAQEBAAAAAAAAAAAAAAAAAAABMf/aAAgBAgEBPxDRI//EABsQAAEEAwAAAAAAAAAAAAAAAAEAETFRIXHR/9oACAEBAAE/ECHDoJB2Z36nzMrr/9k='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="frame full"
+        title="frame full"
+        src="/static/dc48e4bd5b41dac0b0e8cb64a8e603c9/828fb/frame-full.jpg"
+        srcset="/static/dc48e4bd5b41dac0b0e8cb64a8e603c9/ff44c/frame-full.jpg 158w,
+/static/dc48e4bd5b41dac0b0e8cb64a8e603c9/a6688/frame-full.jpg 315w,
+/static/dc48e4bd5b41dac0b0e8cb64a8e603c9/828fb/frame-full.jpg 630w,
+/static/dc48e4bd5b41dac0b0e8cb64a8e603c9/0ede0/frame-full.jpg 945w,
+/static/dc48e4bd5b41dac0b0e8cb64a8e603c9/193c9/frame-full.jpg 1093w"
+        sizes="(max-width: 630px) 100vw, 630px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>我们上面一直在说减少重排、重绘，用类似的图来表达就是这样，这是我们最期望的效果：</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/c91ff089a7a0512aeffd63e0c53dfa97/193c9/frame-no-layout-paint.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 15.18987341772152%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAADABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAHVnJawI//EABcQAQEBAQAAAAAAAAAAAAAAAAEAAkL/2gAIAQEAAQUC0XIX/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABYRAAMAAAAAAAAAAAAAAAAAAAIQMv/aAAgBAgEBPwEZX//EABQQAQAAAAAAAAAAAAAAAAAAABD/2gAIAQEABj8Cf//EABsQAAICAwEAAAAAAAAAAAAAAAABETFBUZGh/9oACAEBAAE/IVQ7vY14ERnp/9oADAMBAAIAAwAAABD77//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABURAQEAAAAAAAAAAAAAAAAAAAAB/9oACAECAQE/EBI//8QAHBAAAQQDAQAAAAAAAAAAAAAAAQARITFBUWFx/9oACAEBAAE/ECHj4EhPE43xPk23X//Z'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="frame no layout paint"
+        title="frame no layout paint"
+        src="/static/c91ff089a7a0512aeffd63e0c53dfa97/828fb/frame-no-layout-paint.jpg"
+        srcset="/static/c91ff089a7a0512aeffd63e0c53dfa97/ff44c/frame-no-layout-paint.jpg 158w,
+/static/c91ff089a7a0512aeffd63e0c53dfa97/a6688/frame-no-layout-paint.jpg 315w,
+/static/c91ff089a7a0512aeffd63e0c53dfa97/828fb/frame-no-layout-paint.jpg 630w,
+/static/c91ff089a7a0512aeffd63e0c53dfa97/0ede0/frame-no-layout-paint.jpg 945w,
+/static/c91ff089a7a0512aeffd63e0c53dfa97/193c9/frame-no-layout-paint.jpg 1093w"
+        sizes="(max-width: 630px) 100vw, 630px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><strong>Style</strong> 指样式计算。此过程是根据匹配选择器计算出哪些元素应用哪些 CSS 规则的过程，这个过程不仅包括计算层叠样式表中的权重来确定样式，也包括内联的样式，来计算每个元素的最终样式。
+<strong>Composite</strong> 指合成。由于页面的各部分可能被绘制到多个层上，因此它们需要按正确顺序绘制到屏幕上，才能正确地渲染页面。</p>
+<h4>使用 requestAnimationFrame 执行动画</h4>
+<p>为什么要用它？使用 <code class="language-text">setTimeout()</code> 不好吗？事实上，JS 的执行会<strong>阻止渲染</strong>（js 主线程和渲染线程是互斥的），请看下图来理解：</p>
+<p>图中 <code class="language-text">Frame</code> 代表一帧，但是 <code class="language-text">js</code> 的执行让某些帧无法执行，导致丢帧，在用户面前体现为卡顿</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/6e35a283b1b93f266a18f739475db1ea/00d43/pagejank2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 22.78481012658228%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAAsTAAALEwEAmpwYAAABEElEQVQY02WOXUvCUACG93eiSymi/9A/DLqKVJAhzDaxIpq0ue+50fSoZ1+OmbZFw7k5zzkLqYug5+K9eS7eh6r/Qo6zzXPDtHXD8vxQHKmuFxwNIfU/qH2RI4QIPuyLHUYlqRIwMbI0WHp2li6Td7jLIlKluPrEqKrKAiGEMSaEYIyp5miRH7DuzHqTbf3F19LJx1OjfG0E3OWEPvPZ89q8wOJpbV8JpsY6yW/ez/OzNB48PLY6tGiBHtMdcJ23sXB3ey2JL9w93aWbji2xTJtl2oKi3rRoTVN5nuf6/eFwSME5gBAqihxHIQAzWdHWm1RWdADm0PVVVY+i1QJ6gihtNmvLNKbTaRiGruvGcfwNvBIA+ozyqlsAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="pagejank2"
+        title="pagejank2"
+        src="/static/6e35a283b1b93f266a18f739475db1ea/f058b/pagejank2.png"
+        srcset="/static/6e35a283b1b93f266a18f739475db1ea/c26ae/pagejank2.png 158w,
+/static/6e35a283b1b93f266a18f739475db1ea/6bdcf/pagejank2.png 315w,
+/static/6e35a283b1b93f266a18f739475db1ea/f058b/pagejank2.png 630w,
+/static/6e35a283b1b93f266a18f739475db1ea/40601/pagejank2.png 945w,
+/static/6e35a283b1b93f266a18f739475db1ea/00d43/pagejank2.png 1000w"
+        sizes="(max-width: 630px) 100vw, 630px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>于是我们使用 <code class="language-text">requestAnimationFrame()</code> 来解决这个问题，它的原理是在每一次重绘前执行相应的 js 代码，来达到下图的理想状态：</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7b1959d9953869798ba89282c6533bd2/00d43/raf.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 22.78481012658228%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAAsTAAALEwEAmpwYAAABEklEQVQY0z3Pa0+CUADGcb7/B6h3bW2mc3htuXDEZYhyFQR1ReblGFrERcjjCTbgtK6/V/+Xz0NwpoN2tfvlUp3pOOiqTrhyuscXkbX2x10dPD+ObLt8JceLYD7vYySVGOOywN8I2gk31kVPkJSNu1LOOvp+sRYVvnLroKV1yQ0FCfgr9bwtre2nMbDJjwz7b57rulEUESOB698NWw3SMsbXPfam05hNH65qDXnA9elBq9WeT0yKFpv16sScVqpNlmUYhqEoiud5osQ4TVOw3aZZhk4wThIIj1EUxsk7OkE/CA5xjBAMo0Oe/679R2CMi6LwPA8AoGmaoiiyLKuqahiGruuappmm+dMQwq+/f/I8/wS49gASG27MDgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="raf"
+        title="raf"
+        src="/static/7b1959d9953869798ba89282c6533bd2/f058b/raf.png"
+        srcset="/static/7b1959d9953869798ba89282c6533bd2/c26ae/raf.png 158w,
+/static/7b1959d9953869798ba89282c6533bd2/6bdcf/raf.png 315w,
+/static/7b1959d9953869798ba89282c6533bd2/f058b/raf.png 630w,
+/static/7b1959d9953869798ba89282c6533bd2/40601/raf.png 945w,
+/static/7b1959d9953869798ba89282c6533bd2/00d43/raf.png 1000w"
+        sizes="(max-width: 630px) 100vw, 630px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>下面的案例来自 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame">MDN</a> ：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> element <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"some-element-you-want-to-animate"</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> start
+<span class="token keyword">function</span> <span class="token function">step</span><span class="token punctuation">(</span><span class="token parameter">timestamp</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>start <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> start <span class="token operator">=</span> timestamp
+  <span class="token keyword">const</span> elapsed <span class="token operator">=</span> timestamp <span class="token operator">-</span> start
+  <span class="token comment">//这里使用 `Math.min()` 确保元素刚好停在200px的位置。</span>
+  element<span class="token punctuation">.</span>style<span class="token punctuation">.</span>transform <span class="token operator">=</span> <span class="token string">"translateX("</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token number">0.1</span> <span class="token operator">*</span> elapsed<span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"px)"</span>
+  <span class="token comment">// 在两秒后停止动画</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>elapsed <span class="token operator">&lt;</span> <span class="token number">2000</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 若你想在浏览器下次重绘之前继续更新下一帧动画，</span>
+    <span class="token comment">// 那么回调函数自身必须再次调用 window.requestAnimationFrame()</span>
+    window<span class="token punctuation">.</span><span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span>step<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+window<span class="token punctuation">.</span><span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span>step<span class="token punctuation">)</span></code></pre></div>
+<p><code class="language-text">window.requestAnimationFrame(callback)</code> 告诉浏览器——你希望执行一个动画，并且要求浏览器在下次重绘之前调用指定的回调函数更新动画，它的执行频率和屏幕刷新次数相匹配。</p>
+<h4>在 <code class="language-text">window.requestIdleCallback()</code> 执行低优先级的逻辑</h4>
+<p><code class="language-text">window.requestIdleCallback()</code> 指定只有当一帧的末尾有空闲时间，才会执行回调函数。从上面的信息可以得知，当前帧的运行时间少于每个帧的预算时间 <strong>16.66 毫秒</strong>时会执行回调。</p>
+<h4>使用防抖和节流</h4>
+<p>防抖节流一个常见的对象就是输入处理程序，正如上面所说，频繁执行 js 会导致卡帧，甚至导致额外（且不必要）的布局工作，另外结合其它的业务也会导致额外请求开支（例如请求校验）。</p>
+<p>防抖节流都是为了<strong>控制事件触发频率</strong>来实现性能的优化，其原理都依赖 JavaScript 的闭包。 例如输入框，我们希望用户输入<strong>停止</strong>了，再去远程校验，或者是去获取搜索信息，核心思想是<strong>等用户停下来再执行</strong>.</p>
+<p>来看下面的防抖（debounce）代码，网页中有一个输入框，用户不断输入内容，如果用户输入停止超过 1 秒则打印 <code class="language-text">Input Event</code>：</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>防抖和节流<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>请输入内容....<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>test-input<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+      <span class="token keyword">const</span> <span class="token function-variable function">debounce</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> delay</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> timer <span class="token operator">=</span> <span class="token keyword">null</span>
+        <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>timer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+          timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> arguments<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span> delay<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">const</span> input <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"test-input"</span><span class="token punctuation">)</span>
+      input<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span>
+        <span class="token string">"input"</span><span class="token punctuation">,</span>
+        <span class="token function">debounce</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+      <span class="token punctuation">)</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre></div>
+<p>来看下面的节流（throttle）代码，网页中有一个 div，用户鼠标不断在其中移动，我们监听鼠标的移动，每隔 1s 打印 <code class="language-text">Mouse Event</code>：</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>防抖和节流<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+      <span class="token selector">#test-div</span> <span class="token punctuation">{</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+        <span class="token property">background-color</span><span class="token punctuation">:</span> #409eff<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>test-div<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>测试节流<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+      <span class="token comment">// 节流函数</span>
+      <span class="token keyword">const</span> <span class="token function-variable function">throttle</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> delay</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> timer <span class="token operator">=</span> <span class="token keyword">null</span>
+        <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>timer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span>
+          <span class="token punctuation">}</span>
+          timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> arguments<span class="token punctuation">)</span> <span class="token comment">// 箭头函数没有arguments类数组对象</span>
+            timer <span class="token operator">=</span> <span class="token keyword">null</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span> delay<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">// 第二种写法 根据时间来判断</span>
+      <span class="token keyword">const</span> <span class="token function-variable function">throttle2</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> delay</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> pre <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">let</span> now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> pre <span class="token operator">></span> delay<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> arguments<span class="token punctuation">)</span>
+            pre <span class="token operator">=</span> now
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">const</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"test-div"</span><span class="token punctuation">)</span>
+      div<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span>
+        <span class="token string">"mousemove"</span><span class="token punctuation">,</span>
+        <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+      <span class="token punctuation">)</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre></div>
+<h4>使用 Web Worker</h4>
+<p>在许多情况下，可以将纯计算工作移到 <code class="language-text">Web Worker</code>，数据操作或遍历（例如排序或搜索）、复杂的加密算法、复杂 canvas 的渲染往往很适合这种模型。</p>
+<p>Web Worker 的 API 使用这里不再赘述，<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API/Using_web_workers">MDN</a>
+上讲的非常详细且通俗易懂。</p>
+<h2>参考资料</h2>
+<ul>
+<li>
+<p>Paul Lewis，<a href="https://developers.google.cn/web/fundamentals/performance/rendering">Rendering Performance</a></p>
+</li>
+<li>
+<p>MDN，<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame">requestAnimationFrame</a></p>
+</li>
+<li>
+<p>MDN，<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestIdleCallback">requestIdleCallback</a></p>
+</li>
+<li>
+<p>Mariko Kosaka，<a href="https://developers.google.com/web/updates/2018/09/inside-browser-part1">Inside look at modern web browser</a></p>
+</li>
+</ul></section></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2021-09/How-https-ensure-web-security/">← <!-- -->HTTPS如何确保安全性？</a></li><li><a rel="next" href="/2021-11/event-loop/">分析浏览器和 NodeJS 的事件循环<!-- --> →</a></li></ul></nav></main><footer><div class="header__line"></div><div class="footer__content" style="color:#005b99"><span>© <!-- -->2022<!-- --> Hao Chen, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></span><span>email:<!-- -->hey@haochen.me</span></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-219535421-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2021-11/谈谈前端性能优化/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-191f3dbf297fa5585e37.js"],"app":["/app-79479099ecbe45b719e5.js"],"component---src-pages-404-js":["/component---src-pages-404-js-b2fce7c37e9d27f40b01.js"],"component---src-pages-about-js":["/component---src-pages-about-js-6be42dad5916dff017d0.js"],"component---src-pages-coding-365-js":["/component---src-pages-coding-365-js-a617b2ce6b9c7a71555e.js"],"component---src-pages-index-js":["/component---src-pages-index-js-16bf282d32cd576016ae.js"],"component---src-pages-resource-js":["/component---src-pages-resource-js-afdf57295a9a7336a0b8.js"],"component---src-pages-tags-js":["/component---src-pages-tags-js-fbaf4be8d7a8837294bb.js"],"component---src-pages-using-typescript-tsx":["/component---src-pages-using-typescript-tsx-220d8521917836d187f1.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-a83ea2277426bf4b8caf.js"],"component---src-templates-tag-js":["/component---src-templates-tag-js-f5a2b323892302bc08d9.js"]};/*]]>*/</script><script src="/polyfill-191f3dbf297fa5585e37.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-a83ea2277426bf4b8caf.js" async=""></script><script src="/commons-351c1962957b02ce4724.js" async=""></script><script src="/app-79479099ecbe45b719e5.js" async=""></script><script src="/framework-507a82f8a4d219d3f184.js" async=""></script><script src="/webpack-runtime-ec52642a1a8969212fd6.js" async=""></script></body></html>

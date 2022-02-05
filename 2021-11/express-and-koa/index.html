@@ -1,0 +1,883 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.d10f3b41d6d3a61135b8.css" data-identity="gatsby-global-css">@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/static/montserrat-latin-100-8d7d79679b70dbe27172b6460e7a7910.woff2) format("woff2"),url(/static/montserrat-latin-100-ec38980a9e0119a379e2a9b3dbb1901a.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/static/montserrat-latin-100italic-e279051046ba1286706adc886cf1c96b.woff2) format("woff2"),url(/static/montserrat-latin-100italic-3b325a3173c8207435cd1b76e19bf501.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/static/montserrat-latin-200-9d266fbbfa6cab7009bd56003b1eeb67.woff2) format("woff2"),url(/static/montserrat-latin-200-2d8ba08717110d27122e54c34b8a5798.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/static/montserrat-latin-200italic-6e5b3756583bb2263eb062eae992735e.woff2) format("woff2"),url(/static/montserrat-latin-200italic-a0d6f343e4b536c582926255367a57da.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/static/montserrat-latin-300-00b3e893aab5a8fd632d6342eb72551a.woff2) format("woff2"),url(/static/montserrat-latin-300-ea303695ceab35f17e7d062f30e0173b.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/static/montserrat-latin-300italic-56f34ea368f6aedf89583d444bbcb227.woff2) format("woff2"),url(/static/montserrat-latin-300italic-54b0bf2c8c4c12ffafd803be2466a790.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/static/montserrat-latin-400-b71748ae4f80ec8c014def4c5fa8688b.woff2) format("woff2"),url(/static/montserrat-latin-400-0659a9f4e90db5cf51b50d005bff1e41.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/static/montserrat-latin-400italic-6eed6b4cbb809c6efc7aa7ddad6dbe3e.woff2) format("woff2"),url(/static/montserrat-latin-400italic-7583622cfde30ae49086d18447ab28e7.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/static/montserrat-latin-500-091b209546e16313fd4f4fc36090c757.woff2) format("woff2"),url(/static/montserrat-latin-500-edd311588712a96bbf435fad264fff62.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/static/montserrat-latin-500italic-c90ced68b46050061d1a41842d6dfb43.woff2) format("woff2"),url(/static/montserrat-latin-500italic-5146cbfe02b1deea5dffea27a5f2f998.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/static/montserrat-latin-600-0480d2f8a71f38db8633b84d8722e0c2.woff2) format("woff2"),url(/static/montserrat-latin-600-b77863a375260a05dd13f86a1cee598f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/static/montserrat-latin-600italic-cf46ffb11f3a60d7df0567f8851a1d00.woff2) format("woff2"),url(/static/montserrat-latin-600italic-c4fcfeeb057724724097167e57bd7801.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/static/montserrat-latin-700-7dbcc8a5ea2289d83f657c25b4be6193.woff2) format("woff2"),url(/static/montserrat-latin-700-99271a835e1cae8c76ef8bba99a8cc4e.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/static/montserrat-latin-700italic-c41ad6bdb4bd504a843d546d0a47958d.woff2) format("woff2"),url(/static/montserrat-latin-700italic-6779372f04095051c62ed36bc1dcc142.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/static/montserrat-latin-800-db9a3e0ba7eaea32e5f55328ace6cf23.woff2) format("woff2"),url(/static/montserrat-latin-800-4e3c615967a2360f5db87d2f0fd2456f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/static/montserrat-latin-800italic-bf45bfa14805969eda318973947bc42b.woff2) format("woff2"),url(/static/montserrat-latin-800italic-fe82abb0bcede51bf724254878e0c374.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/static/montserrat-latin-900-e66c7edc609e24bacbb705175669d814.woff2) format("woff2"),url(/static/montserrat-latin-900-8211f418baeb8ec880b80ba3c682f957.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/static/montserrat-latin-900italic-4454c775e48152c1a72510ceed3603e2.woff2) format("woff2"),url(/static/montserrat-latin-900italic-efcaa0f6a82ee0640b83a0916e6e8d68.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:300;src:local("Merriweather Light "),local("Merriweather-Light"),url(/static/merriweather-latin-300-fc117160c69a8ea0851b26dd14748ee4.woff2) format("woff2"),url(/static/merriweather-latin-300-58b18067ebbd21fda77b67e73c241d3b.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:300;src:local("Merriweather Light italic"),local("Merriweather-Lightitalic"),url(/static/merriweather-latin-300italic-fe29961474f8dbf77c0aa7b9a629e4bc.woff2) format("woff2"),url(/static/merriweather-latin-300italic-23c3f1f88683618a4fb8d265d33d383a.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:400;src:local("Merriweather Regular "),local("Merriweather-Regular"),url(/static/merriweather-latin-400-d9479e8023bef9cbd9bf8d6eabd6bf36.woff2) format("woff2"),url(/static/merriweather-latin-400-040426f99ff6e00b86506452e0d1f10b.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:400;src:local("Merriweather Regular italic"),local("Merriweather-Regularitalic"),url(/static/merriweather-latin-400italic-2de7bfeaf08fb03d4315d49947f062f7.woff2) format("woff2"),url(/static/merriweather-latin-400italic-79db67aca65f5285964ab332bd65f451.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:700;src:local("Merriweather Bold "),local("Merriweather-Bold"),url(/static/merriweather-latin-700-4b08e01d805fa35d7bf777f1b24314ae.woff2) format("woff2"),url(/static/merriweather-latin-700-22fb8afba4ab1f093b6ef9e28a9b6e92.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:700;src:local("Merriweather Bold italic"),local("Merriweather-Bolditalic"),url(/static/merriweather-latin-700italic-cd92541b177652fffb6e3b952f1c33f1.woff2) format("woff2"),url(/static/merriweather-latin-700italic-f87f3d87cea0dd0979bfc8ac9ea90243.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:900;src:local("Merriweather Black "),local("Merriweather-Black"),url(/static/merriweather-latin-900-f813fc6a4bee46eda5224ac7ebf1b7be.woff2) format("woff2"),url(/static/merriweather-latin-900-5d4e42cb44410674acd99153d57df032.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:900;src:local("Merriweather Black italic"),local("Merriweather-Blackitalic"),url(/static/merriweather-latin-900italic-b7901d85486871c1779c0e93ddd85656.woff2) format("woff2"),url(/static/merriweather-latin-900italic-9647f9fdab98756989a8a5550eb205c3.woff) format("woff")}
+
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{-webkit-text-size-adjust:100%;line-height:1.15}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden]{display:none}:root{--maxWidth-none:"none";--maxWidth-xs:20rem;--maxWidth-sm:24rem;--maxWidth-md:28rem;--maxWidth-lg:32rem;--maxWidth-xl:36rem;--maxWidth-2xl:42rem;--maxWidth-3xl:48rem;--maxWidth-4xl:56rem;--maxWidth-full:"100%";--maxWidth-wrapper:var(--maxWidth-4xl);--spacing-px:"1px";--spacing-0:0;--spacing-1:0.25rem;--spacing-2:0.5rem;--spacing-3:0.75rem;--spacing-4:1rem;--spacing-5:1.25rem;--spacing-6:1.5rem;--spacing-8:2rem;--spacing-10:2.5rem;--spacing-12:3rem;--spacing-16:4rem;--spacing-20:5rem;--spacing-24:6rem;--spacing-32:8rem;--fontFamily-sans:monospace,Montserrat,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--fontFamily-serif:"Merriweather","Georgia",Cambria,"Times New Roman",Times,serif;--font-body:var(--fontFamily-serif);--font-heading:var(--fontFamily-sans);--fontWeight-normal:400;--fontWeight-medium:500;--fontWeight-semibold:600;--fontWeight-bold:700;--fontWeight-extrabold:800;--fontWeight-black:900;--fontSize-root:16px;--lineHeight-none:1;--lineHeight-tight:1.1;--lineHeight-normal:1.5;--lineHeight-relaxed:1.625;--fontSize-0:0.833rem;--fontSize-1:1rem;--fontSize-2:1.2rem;--fontSize-3:1.44rem;--fontSize-4:1.728rem;--fontSize-5:2.074rem;--fontSize-6:2.488rem;--fontSize-7:2.986rem}body{transition:background-color .5s ease}body.light{--color-primary:#005b99;--color-text:#2e353f;--color-text-light:#4f5969;--color-heading:#1a202c;--color-heading-black:#000;--color-accent:#d1dce5;--inlineCode-text:#1a1a1a;--inlineCode-bg:rgba(255,229,100,0.2)}body.dark{--color-primary:#005b99;--color-text-light:hsla(0,0%,100%,0.88);--color-heading:#fff;--color-heading-black:#fff;--color-text:hsla(0,0%,100%,0.88);--color-accent:hsla(0,0%,100%,0.2);--inlineCode-text:#e6e6e6;--inlineCode-bg:rgba(115,124,153,0.2);background-color:#282c35}*,:after,:before{box-sizing:border-box}html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:var(--fontSize-root);line-height:var(--lineHeight-normal)}body{color:var(--color-text);font-family:var(--font-body);font-size:var(--fontSize-1)}footer{padding:var(--spacing-6) var(--spacing-0)}hr{background:var(--color-accent);border:0;height:1px}h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);letter-spacing:-.025em;line-height:var(--lineHeight-tight);margin-bottom:var(--spacing-6);margin-top:var(--spacing-12)}h2,h3,h4,h5,h6{color:var(--color-heading);font-weight:var(--fontWeight-bold)}h1{color:var(--color-heading-black);font-size:var(--fontSize-6);font-weight:var(--fontWeight-black)}h2{font-size:var(--fontSize-5)}h3{font-size:var(--fontSize-4)}h4{font-size:var(--fontSize-3)}h5{font-size:var(--fontSize-2)}h6{font-size:var(--fontSize-1)}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:inherit;text-decoration:none}p{--baseline-multiplier:0.179;--x-height-multiplier:0.35;line-height:var(--lineHeight-relaxed);margin:var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0)}ol,p,ul{padding:var(--spacing-0)}ol,ul{list-style-image:none;list-style-position:outside;margin-bottom:var(--spacing-8);margin-left:var(--spacing-0);margin-right:var(--spacing-0)}ol li,ul li{padding-left:var(--spacing-0)}li>p,ol li,ul li{margin-bottom:calc(var(--spacing-8)/2)}li :last-child{margin-bottom:var(--spacing-0)}li>ul{margin-left:var(--spacing-8);margin-top:calc(var(--spacing-8)/2)}blockquote{border-left:var(--spacing-1) solid var(--color-primary);color:var(--color-text-light);font-size:var(--fontSize-2);font-style:italic;margin-bottom:var(--spacing-8);margin-left:calc(var(--spacing-6)*-1);margin-right:var(--spacing-8);padding:var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6)}blockquote>:last-child{margin-bottom:var(--spacing-0)}blockquote>ol,blockquote>ul{list-style-position:inside}table{border-collapse:collapse;border-spacing:.25rem;margin-bottom:var(--spacing-8);width:100%}table thead tr th{border-bottom:1px solid var(--color-accent)}a{color:var(--color-primary)}a:focus,a:hover{text-decoration:none}.global-wrapper{margin:var(--spacing-0) auto;max-width:var(--maxWidth-wrapper);padding:var(--spacing-10) var(--spacing-5)}.header{display:flex;flex-direction:column;margin-bottom:var(--spacing-12)}.header .header__top{align-items:center;display:flex;flex-direction:row;justify-content:space-between;margin:0}.header .header__top .header__title{font-family:var(--font-heading);font-size:var(--fontSize-4);font-weight:var(--fontWeight-medium);text-decoration:none}.header .header__tags{align-items:center;display:flex;flex-flow:row nowrap;justify-content:flex-end;list-style-type:none;margin-bottom:var(--spacing-1)}.header .header__tags li{margin:0 0 0 var(--spacing-6)}.header .header__tags a{text-decoration:none}.footer__content{display:flex;flex-direction:row;justify-content:space-between}.header__line{border-top:2px solid #005b99;height:0}.post-list-item{margin-bottom:var(--spacing-8);margin-top:var(--spacing-8)}.post-list-item p{margin-bottom:var(--spacing-0)}.post-list-item h2{color:var(--color-primary);font-size:var(--fontSize-4);margin-bottom:var(--spacing-2);margin-top:var(--spacing-0)}.post-list-item header{margin-bottom:var(--spacing-4)}.bio{display:flex;margin-bottom:var(--spacing-16)}.bio-avatar,.bio p{margin-bottom:var(--spacing-0)}.bio-avatar{border-radius:100%;margin-right:var(--spacing-4);min-width:50px}.blog-post header h1{margin:var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0)}.blog-post header p{font-family:var(--font-heading);font-size:var(--fontSize-2)}.blog-post-nav ul{margin:var(--spacing-0)}.gatsby-highlight{margin-bottom:var(--spacing-8)}@media(max-width:42rem){blockquote{margin-left:var(--spacing-0);padding:var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4)}ol,ul{list-style-position:inside}.header{margin-bottom:var(--spacing-11)}.header .header__top .header__title{font-family:var(--font-heading);font-size:var(--fontSize-3);font-weight:var(--fontWeight-medium);text-decoration:none}.header .header__tags{align-items:center;display:flex;flex-flow:row nowrap;font-size:.7rem;justify-content:flex-end;list-style-type:none;margin-bottom:var(--spacing-1)}.header .header__tags li{margin:0 0 0 var(--spacing-5)}.header .header__tags a{text-decoration:none}.footer__content{align-items:center;flex-direction:column;justify-content:center}}.react-toggle{-webkit-touch-callout:none;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlight-color:transparent;background-color:transparent;border:0;cursor:pointer;display:inline-block;padding:0;position:relative;touch-action:pan-x;-webkit-user-select:none;-ms-user-select:none;user-select:none}.react-toggle-screenreader-only{clip:rect(0 0 0 0);border:0;height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.react-toggle-track{background-color:#0f1114;border-radius:30px;height:24px;padding:0;transition:all .2s ease;width:50px}.react-toggle-track-check{bottom:0;height:17px;left:5px;line-height:0;margin-bottom:auto;margin-top:auto;opacity:0;position:absolute;top:0;transition:opacity .25s ease;width:17px}.react-toggle--checked .react-toggle-track-check,.react-toggle-track-x{opacity:1;transition:opacity .25s ease}.react-toggle-track-x{bottom:0;height:17px;line-height:0;margin-bottom:auto;margin-top:auto;position:absolute;right:5px;top:0;width:17px}.react-toggle--checked .react-toggle-track-x{opacity:0}.react-toggle-thumb{background-color:#fafafa;border-radius:50%;box-sizing:border-box;height:22px;left:1px;position:absolute;top:1px;-webkit-transform:translateX(0);transform:translateX(0);transition:all .5s cubic-bezier(.23,1,.32,1) 0ms;width:22px}.react-toggle--checked .react-toggle-thumb{border-color:#19ab27;-webkit-transform:translateX(26px);transform:translateX(26px)}.react-toggle--focus .react-toggle-thumb{box-shadow:0 0 2px 3px #005b99}.react-toggle:active .react-toggle-thumb{box-shadow:0 0 5px 5px #005b99}code[class*=language-],pre[class*=language-]{-webkit-font-feature-settings:normal;font-feature-settings:normal;word-wrap:normal;background:#011627;color:#fff;font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;margin-bottom:0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{overflow:auto;padding:1.3125rem}pre[class*=language-]::selection{background:#27292a}pre[class*=language-]::selection,pre[class*=language-] ::selection{background:rgba(255,255,255,.15);text-shadow:none}:not(pre)>code[class*=language-]{background:var(--inlineCode-bg);border-radius:.3em;color:var(--inlineCode-text);padding:.15em .2em .05em;white-space:normal}.token.attr-name{color:#addb67;font-style:italic}.token.comment{color:#809393}.token.string,.token.url{color:#addb67}.token.variable{color:#d6deeb}.token.number{color:#f78c6c}.token.builtin,.token.char,.token.constant,.token.function{color:#82aaff}.token.punctuation{color:#c792ea}.token.doctype,.token.selector{color:#c792ea;font-style:"italic"}.token.class-name{color:#ffcb8b}.token.keyword,.token.operator,.token.tag{color:#ffa7c4}.token.boolean{color:#ff5874}.token.property{color:#80cbc4}.token.namespace{color:#b2ccd6}pre[data-line]{padding:1em 0 1em 3em;position:relative}</style><meta name="generator" content="Gatsby 3.11.0"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=bb25ca2011d7658635faca1dfc6f0d50" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=bb25ca2011d7658635faca1dfc6f0d50"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=bb25ca2011d7658635faca1dfc6f0d50"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=bb25ca2011d7658635faca1dfc6f0d50"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=bb25ca2011d7658635faca1dfc6f0d50"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=bb25ca2011d7658635faca1dfc6f0d50"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=bb25ca2011d7658635faca1dfc6f0d50"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=bb25ca2011d7658635faca1dfc6f0d50"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=bb25ca2011d7658635faca1dfc6f0d50"/><title data-react-helmet="true">express &amp; koa 框架对比及原理分析 | 好成的blog</title><meta data-react-helmet="true" name="description" content="node"/><meta data-react-helmet="true" property="og:title" content="express &amp; koa 框架对比及原理分析"/><meta data-react-helmet="true" property="og:description" content="node"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content=""/><meta data-react-helmet="true" name="twitter:title" content="express &amp; koa 框架对比及原理分析"/><meta data-react-helmet="true" name="twitter:description" content="node"/><link as="script" rel="preload" href="/webpack-runtime-ec52642a1a8969212fd6.js"/><link as="script" rel="preload" href="/framework-507a82f8a4d219d3f184.js"/><link as="script" rel="preload" href="/app-79479099ecbe45b719e5.js"/><link as="script" rel="preload" href="/commons-351c1962957b02ce4724.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-a83ea2277426bf4b8caf.js"/><link as="fetch" rel="preload" href="/page-data/2021-11/express-and-koa/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2841359383.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3415673938.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body class="light"><script>
+            (function() {
+              window.__onThemeChange = function() {};
+              function setTheme(newTheme) {
+                window.__theme = newTheme;
+                preferredTheme = newTheme;
+                document.body.className = newTheme;
+                window.__onThemeChange(newTheme);
+              }
+              var preferredTheme;
+              try {
+                preferredTheme = localStorage.getItem('theme');
+              } catch (err) { }
+              window.__setPreferredTheme = function(newTheme) {
+                setTheme(newTheme);
+                try {
+                  localStorage.setItem('theme', newTheme);
+                } catch (err) {}
+              }
+              var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+              darkQuery.addListener(function(e) {
+                window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+              });
+              setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+            })();
+            </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="global-wrapper"><header class="header"><div class="header__top"><a class="header__title" href="/">Hao Chen&#x27;s  blog.</a><div class="header__toggle"><div class="react-toggle"><div class="react-toggle-track"><div class="react-toggle-track-check"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KTMInWQAABlJJREFUWAm1V3tsFEUcntnXvXu0tBWo1ZZHihBjCEWqkHiNaMLDRKOtQSKaiCFKQtS/SbxiFCHGCIkmkBSMwZhQNTFoQZD0DFiwtCDFAkdDqBBBKFj63rvdnfH7zfVo5aFBj0l2Z/dm5vd98/0es8dYjlpr62azufnDQNZcU1PciMfjWvb9rvZSMk4Ayfb36pLH13189GC8LAtIRLLPt+pzwrCuLq4ISEv/gHmitrAwfPbEkXc/ad4dL6iujrvyX0jcitgd/yZlZqftP6995Mr5TVLa22Tn8XVX2g/XLSRjUu7Q79jonS7I7hS7/0oOb5VyqF52n98oj7esXX07EjlxwXWisRmSnm3b29TTM8iYrjmFBWExubxwY/uhNas4r/WySl1fc5cetDMd7ydl+lMJJRw5WC8ud62Xx5rfepzwxgZmbhUYNS5Stvsj4yo2GXJEFBVHWDBkfdbR9HpYBaaUajDnBLKKpl1xRKYcgGtMCqEzTaSnThk/SQT0uJqTqFNBmXMCsZE48DzRZRMBRjv1GHNdk3HBImF9ZUvTyxM40pMKVc4JZBXQOLOFoDeKSxdp6HIQcO4rjYT9fn0pjbz9GLt7BAAODmjSVReXUMFzNW5x5vfxp2mIxZjIuQKJxAmFa+is2DQJJQ0JyBVExNOYcJnPxx/6/utnijmP555ALEagKAGGnGn64QORBjARcIA/yJk7JMJBLRrNtybTvH88KGjCf2jK86bhzmMcwDKFZEQvbIhxFYhChoMWMzU2iWznlIBEVJOsP+1bdX/ALx9l7jApADeDAEcMkE90JnUmmGl4USKQ0xhoW3JB5XY0YrxYWhLwMZZypUyjDGH35AbNwgUGiFBPpuGbHCpAOV1ZGXf2f/taftAv31DyeymN2d1IhAFAwTOmnzF/kKcdh3me7CYCOVNgycju84u8DeVlwfFq9/ZlTfldYrMUjOlrkjkD+rU+WzCROkcEchIDHR011syZW9JHD7y07N6JvhWMpz3pugaTkB6lWFVCKkhck0zzeMp2utq+uHrmfxOgoCO/Z8CXPlEQ1bdH8wgvhSIkEG0ICcQeExIFGdimjvKka7btJFZuaXOammIGKUCFQ53j9EN1dYKWqHf0t2w407W2tgs6h89ZnImjB55flh81tt9XirjjDuSl+oIPRQ0iWPgNZ5GqTqbBe3vSzEl5n5PhWKwocyR2HlqYN61qV18WjYjE8JLARZPQsUSim8foIRYTlGr02Ly7piASFRtKJ4VfieYhxdS2JcDVMN6xVOKZyrCGm8b108lrLRVzvptLH7IoEFLFANes6KnDi+uxfmvFnF17oALq5u1agu3/YfHkcSFzeSggV5eXRfIB7CHNcO5SUI+Ih5Ir7f4MAV9IqdFzdZgNpZw1Gcs1mNvgGbTbqQ9/cz7ZuuhgyYRQ49ljTyWHhr2DwpNHHFf+5gnWZ3Bharo+0TD5dNMw5vv9RlVpSRDHK4TlnoukhtYApuOHejSZQuo5g/A9BysdKRCyLl6062fN37OXMDlvUJtUrtmxo0avrW3wTrYs3jJ9RvRVChrmSmanPMpX2OXMsmDGh6AiEIwBAlvkOqIdBy+8JyAz8pz7QxiDth4KDy5uAlwzrWTnwC8Vc4KVAMZ3YUZ+IqoIjP3h5KFFX1ZMy3uW+7RhEDHgTi0zC9rS7uhPCDiNrGFyqBeERtKN/B0YlyFCkw0NJ5C0Ojv7zvT1a1WV1TuvZDdL4NTgB7CASYpsen6gqvG5jmTf5qHedADgkBl3D0nkSgNhZACDyi0FUKZRr3IdRjgN4WPPoFMIIegIK3mqd38fS80mcJKelM4szNyzZtQbkchGePuBRS8Eg9pHU8ojRQpSqs+ajAIwTjjUMQ/nvTNM0kicwYxZIYMh/891DYi+fvedB+c1xsm4lDU6ya+Axtz+RiAzEVYbajQOpq17F0R9QevNcEhfcU+xvyQQUalGJBSesqOkgPQ4YNyUZL9fSvUPDjoNAwN8/dwFjaczNkc3ptaMud1EIDtGcmXTcefO2cGSvKIFfp/2JIJxlq7xEl3nVPM4fDeIbPkD16/ptNc0bDu7qxbsu0R2JGywWMIjF2ft3tjfloAyQAGXiOn8hrqwbVvMXzaO+QeHXP6nF0wvX74Hf4NGG5GPjSlYoyM3P/0FbCT6zvM/yYoAAAAASUVORK5CYII=" width="16" height="16" role="presentation" style="pointer-events:none"/></div><div class="react-toggle-track-x"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KTMInWQAABwNJREFUWAmtV1tsFFUY/s6Z2d22zLYlZakUCRVaQcqlWIiCiS1gTEB9UAO+GR9En3iQGI0xJiSiRB98MjEq8cEQTSBeHhQM0V7whtEGDWC90BYitxahtNtu25058/v/ZzvLbilawJNM5+yZ89+//1LgJhYRNLW1uDfBAvpGiIk2O5auvfFxqIH3ZJ8/u06GN6Z9+wVl5SjcD1IbZa/UPkPyYl2uR4dreoD2bnbYxTlBBRytkHXtAREphP5KuH4lddx9h70yxX05t7yYXwGb6W8nx1jibpl2rFlGBxcG9M18okOrn7Bnk/BAO/4bI0UeEE1zjBp3UmvjOxJXJdaKN/ZiIu4tOZrAb4aTdZAZArKmWeiiJZ6jt5tiagdCS9+6cgO1Ne6Mvhe+ixTIfyDVhipnK9p+P0Edqx9RW/YZtQVGmOLChRxNNlyPsTEgPQKMB3dbEHa0h1awYmQ83enTd2vmUtvKd1Glv2RkzBb+kZGRrKtjzG60Wguhd/lJZBingbcfWWe72vjT75bJDrhYtvA0hrurETDr5HyF2Knb1MM4ab//xIoOqueA0edRnkkinTyJdYvqLFDZO4zUPFCvVoDjJq4T7TE61IWh4x5KqxX5KVKkX8WZ/t2ov2cb3MHt4dhIyOxIJxJOOF6xRx/99BksXLoecWcXytILMNBDqKpnGZWPquYfPxY8iXGR9fK+SgFrgcRPXPjVqhehL+3EmZ5RGJQi1QBU8TPThQnOQzm+5UXGIcetUeEAfP13VwzpI+w1jGJWdSliNfvVhiMPiOsllJag4M/UGHiqM6dlBb2OTLKHHV6KkvogrJ4XhBWniWK/Gp1MQyf93FOeUXKmKk/FzJxbQtKLjFXYT4USupy8fQVir2ynVEBiZMG0qtOHMS/AW4Gwrk7BG3C1F0B5nqNKE0CME4MfVRLPnXkBKe+ipvoFhNQywOhdghvLi0F8ReyVXV4BKTBRbbe5f64zR/DHsdZw1hJfeWlHl/GNRJzDxrd5m192z78TMaVnKELZoINZS4BzQ7vtnZljSnha/pPCbkuxzXcupYwI5tIeCpGc0Yp9tWHZQy/rmYhRfNgg4bHJBYLzGkxsRJF4XKlE2jBOHNSv3kY7Tj6vthzPFl61BrYwqFlmEQhtSVXmLiksxLmtRgYXI1ULU61JJ4eVKmG3/5sCVgpbMT6OMJ2E08/29Xf3w6v4FnHdCjfWgXu/O8Z5mLdCkeRs2khHe1DqOtQwbHWTAnM5S2HNmhALYo5KjkPFrMMKjZl6HxhWIAb0BqE+/73GrBRQUsKYiBu4JX8ycI6wtw+i5ef3NZpsrKVSHYCP37jwGDgeE1SA0S/xtl5SU2fs1ApEp0qTLVRjgyycDSsLHMSwmFltZMStR3uLLg6BdLhDa5dC6ryU2pHBe1BVO9tUcwfitJt2CLJZUHoG6T7Op75u0IyK31TCPcwFqgPk/KCaD3dFOuZBCO7xvCT/j048b3I3c7F2+WuOW7qdgkucFYlcQ4qop3yzTX7WaKfOCccye3Ts1Etq0+a/BHCF1yPgF3tAUkR6OrtGmo6gl94qqcXKh3rDyrOkPa58URoWcov2Mo6M+0QjrqKB+b7++oMa9Sz+ZkM0mie6aAtnGUvhmxaI+TogPOSQedgWioGSHFLn3v4kLh4HRspNmOGv41k+55siLFp2z6xYeJjhljFcbmxJlr4ga06TbevSByz/glQq4BJx46/c+237PbBqEYKxX3HpmKZEnQnr65X20hqJYaNcLoFOLiJk2LuBbyg7Q0OEn+hm0P3honxFD6rdxYorKpeIoi4YSSvyQHQIbM5t4+YNxLj/OxhVOOE4585qGpjnq+wSx6Q9CtNxTjd5klB+g6Mv36r0+b9cZFi44WYkHdG2ZWb3TtOUOXyVAlKlpGvJIAJ3eBMyfYS5C0qRZGtC85j+4sOasDe9xznPYezhhO/2Q6eP2fSOvYHOjtuQ1a9Q1VKynVDaMc8E0tptdxUsTFpFIYjcZKcbnoaQTNdiqCwNlL4G7oziSqGnT1ALf34vhk4R5zU3qYV9ONp9K88RtouShE68JwaU8dFw5W617shWa9ykeaBIn2hcsvPgL00k45QdTCZuSVcTRNs+8fnyLvooQfR5iujAnR9bxfY2xOVOxFS8SK3Le0l48VyYu1M8HRe5JD8wKPTjYnifaK3Wfn/GChYQ8ZAi6WRzWgqLV5YrsVLnZaVSoXU1g9gOIDwFySiGi+Zdrnzr7J3r+SMuszlcQCRn8lNGcTuSy2jOI7o9mxjZo+vR3ej3tN+ifRSOyUTS0+VMOid93cCubeiy/6TImS0QxRSCq2vxKr45zV+FQnjWH6D2xg+E9EatLcLAdHTgtGGD80D6jM0+aOl4wJgO/f96R2aJKCQ3yvgftRhdFMOpd6oAAAAASUVORK5CYII=" width="16" height="16" role="presentation" style="pointer-events:none"/></div></div><div class="react-toggle-thumb"></div><input type="checkbox" class="react-toggle-screenreader-only" aria-label="Switch between Dark and Light mode"/></div></div></div><ul class="header__tags"><li><a href="/coding365">Coding365</a></li><li><a href="/tags">分类</a></li><li><a href="/resource">珍藏资料</a></li><li><a href="https://github.com/monster898">Github</a></li><li><a href="/about">About</a></li><li><a href="./rss.xml">RSS</a></li></ul><div class="header__line"></div></header><main><article class="blog-post" itemscope="" itemType="http://schema.org/Article"><header><h1 itemProp="headline">express &amp; koa 框架对比及原理分析</h1><p>November 26, 2021 • 22 min read</p></header><section itemProp="articleBody"><p>本文将结合源码剖析 <strong>node.js</strong> 的两款优秀框架 <strong>express</strong> 和 <strong>koa</strong> 的原理。本文假设读者已对这两款框架有所了解，并会简单使用。</p>
+<h2>express</h2>
+<h3>中间件的注册</h3>
+<p>来看下面的 DEMO，它可以启动一个 express 服务器：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"express"</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token comment">/* 中间件M1 */</span>
+  <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"middleware 01 in app.use"</span><span class="token punctuation">)</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">/* 中间件M2 */</span>
+  <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"middleware 02 in app.use"</span><span class="token punctuation">)</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>
+  <span class="token string">"/home"</span><span class="token punctuation">,</span>
+  <span class="token comment">/* 中间件M3 */</span>
+  <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"home and get method middleware 01"</span><span class="token punctuation">)</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">/* 中间件M4 */</span>
+  <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"home and get method middleware 02"</span><span class="token punctuation">)</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">/* 中间件M5 */</span>
+  <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"home and get method middleware 03"</span><span class="token punctuation">)</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">"hello world"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"your project is running successfully!"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<p>其中，函数体 <code class="language-text">(req, res, next) => {}</code> 被称为<strong>中间件函数</strong>（下文所有提到的中间件函数均指这种形式的函数体），中间件函数能够访问请求对象 (req)、响应对象 (res)
+以及应用程序的请求/响应循环中的下一个中间件函数。下一个中间件函数通常由名为 <strong>next</strong> 的变量来表示，通过调用函数 <code class="language-text">next()</code> 可以将控制权转移到下一个中间件函数中。</p>
+<h4>express 应用程序的创建 — require(“express”)</h4>
+<p>我们都知道，<code class="language-text">require("express")</code> 所得到的值是一个函数，JavaScript 中的函数也是对象，所以它可以拥有各种成员变量例如 <code class="language-text">app.use</code>，点进去我们就可以看到它的实现 <code class="language-text">createApplication()</code></p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">exports <span class="token operator">=</span> module<span class="token punctuation">.</span>exports <span class="token operator">=</span> createApplication
+<span class="token keyword">function</span> <span class="token function">createApplication</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> <span class="token function-variable function">app</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    app<span class="token punctuation">.</span><span class="token function">handle</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">mixin</span><span class="token punctuation">(</span>app<span class="token punctuation">,</span> <span class="token class-name">EventEmitter</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+  <span class="token function">mixin</span><span class="token punctuation">(</span>app<span class="token punctuation">,</span> proto<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+  <span class="token comment">// expose the prototype that will get set on requests</span>
+  app<span class="token punctuation">.</span>request <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    app<span class="token operator">:</span> <span class="token punctuation">{</span> configurable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> enumerable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> writable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> value<span class="token operator">:</span> app <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token comment">// expose the prototype that will get set on responses</span>
+  app<span class="token punctuation">.</span>response <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    app<span class="token operator">:</span> <span class="token punctuation">{</span> configurable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> enumerable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> writable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> value<span class="token operator">:</span> app <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  app<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> app
+<span class="token punctuation">}</span></code></pre></div>
+<p>app 从一个中间件函数开始，调用 app 会执行 <code class="language-text">app.handle(req, res, next)</code></p>
+<p>接着，通过 <code class="language-text">mixin</code> 方法将一些成员合并到 app 上，然后执行一些初始化工作：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token function">mixin</span><span class="token punctuation">(</span>app<span class="token punctuation">,</span> <span class="token class-name">EventEmitter</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+<span class="token function">mixin</span><span class="token punctuation">(</span>app<span class="token punctuation">,</span> proto<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span></code></pre></div>
+<p>我们常见的 <code class="language-text">app.use()</code>、<code class="language-text">app.get()</code> 方法就是来自上面的 <code class="language-text">proto</code>，下面我们分析 <code class="language-text">app.use()</code>。</p>
+<h3>app.use() —中间件的注册</h3>
+<p>这个函数要求我们传入一个中间件函数，我们可以传入一个路径 + 一个或多个中间件函数，或者仅传入一个或多个中间件函数。它的流程如下：</p>
+<ul>
+<li>在 this.lazyrouter() 之前的代码都是处理参数的，它会从参数中拿到路径（如果有的话）和若干个中间件函数，并调用 <code class="language-text">flatten</code> 来将他们扁平化（其实就是把它们传到一个数组里面了）：</li>
+<li>调用 <code class="language-text">this.lazyrouter()</code> 初始化路由，接下来会讲。</li>
+<li>利用 <code class="language-text">Array.prototype.forEach()</code> 遍历上面扁平化的 <code class="language-text">fns</code>。</li>
+<li>在 forEach 回调函数体中，普通的中间件会执行 <code class="language-text">router.use(path, fn)</code>。</li>
+<li>最后，返回 <strong>this</strong>，也就是 <strong>app</strong>。</li>
+</ul>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">app<span class="token punctuation">.</span><span class="token function-variable function">use</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">use</span><span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> offset <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token keyword">var</span> path <span class="token operator">=</span> <span class="token string">"/"</span>
+  <span class="token comment">// default path to '/'</span>
+  <span class="token comment">// disambiguate app.use([fn])</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> fn <span class="token operator">!==</span> <span class="token string">"function"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> arg <span class="token operator">=</span> fn
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> arg<span class="token punctuation">.</span>length <span class="token operator">!==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      arg <span class="token operator">=</span> arg<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// first arg is the path</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> arg <span class="token operator">!==</span> <span class="token string">"function"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      offset <span class="token operator">=</span> <span class="token number">1</span>
+      path <span class="token operator">=</span> fn
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">var</span> fns <span class="token operator">=</span> <span class="token function">flatten</span><span class="token punctuation">(</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">,</span> offset<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>fns<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">"app.use() requires a middleware function"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// setup router</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">lazyrouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">var</span> router <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_router
+  fns<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// non-express app</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>fn <span class="token operator">||</span> <span class="token operator">!</span>fn<span class="token punctuation">.</span>handle <span class="token operator">||</span> <span class="token operator">!</span>fn<span class="token punctuation">.</span>set<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> router<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> fn<span class="token punctuation">)</span> <span class="token comment">// 这里是重点</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">".use app under %s"</span><span class="token punctuation">,</span> path<span class="token punctuation">)</span>
+    fn<span class="token punctuation">.</span>mountpath <span class="token operator">=</span> path
+    fn<span class="token punctuation">.</span>parent <span class="token operator">=</span> <span class="token keyword">this</span>
+    <span class="token comment">// restore .app property on req and res</span>
+    router<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token function">mounted_app</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> orig <span class="token operator">=</span> req<span class="token punctuation">.</span>app
+      fn<span class="token punctuation">.</span><span class="token function">handle</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setPrototypeOf</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> orig<span class="token punctuation">.</span>request<span class="token punctuation">)</span>
+        <span class="token function">setPrototypeOf</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> orig<span class="token punctuation">.</span>response<span class="token punctuation">)</span>
+        <span class="token function">next</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// mounted an app</span>
+    fn<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"mount"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>我们可以提炼出两个核心方法，一个是 <code class="language-text">this.lazyrouter()</code>，还有一个是 <code class="language-text">router.use(path, fn)</code>。</p>
+<h3>this.lazyrouter() — 全局路由初始化</h3>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">app<span class="token punctuation">.</span><span class="token function-variable function">lazyrouter</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">lazyrouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>_router<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>_router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      caseSensitive<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">enabled</span><span class="token punctuation">(</span><span class="token string">"case sensitive routing"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      strict<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">enabled</span><span class="token punctuation">(</span><span class="token string">"strict routing"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>_router<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"query parser fn"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>_router<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>middleware<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>这个函数用来初始化路由，如果 <code class="language-text">this._router</code> 不存在（这里的 this 是 app），那么我们会 new 一个 <strong>Router</strong> 对象，并赋值给它。</p>
+<p>然后执行 <code class="language-text">this._router</code> 的 <code class="language-text">use</code> 方法，<strong>注册了两个中间件</strong> <code class="language-text">query(this.get('query parser fn'))</code> 和 <code class="language-text">middleware.init(this)</code>。</p>
+<p>还记得上面对用户传入的中间件函数的遍历吗？express 对每一个中间件函数都会调用 <code class="language-text">router.use(path, fn)</code> 方法。所以 <code class="language-text">app.use(middleWares)</code>
+<strong>本质上</strong>就是 <code class="language-text">router.use(middleWares)</code></p>
+<p>也就是说，中间件会被注册到**相对应的路由（Router 对象）**中。在上面的代码中就是全局路由，相应的路径为 <code class="language-text">/</code>。接下来我们分析 <code class="language-text">router.use(path, fn)</code>。</p>
+<h1>中间件的注册</h1>
+<h4>router.use(path, fn)</h4>
+<p>这个函数位于 <code class="language-text">router/index.js</code> 下，我们注意到：</p>
+<ul>
+<li>首先还是进行参数处理，扁平化若干个中间件函数，如果数量为 0 会抛出异常。</li>
+<li>遍历每个中间件函数，对每个中间件函数，我们会 new 一个 <strong>Layer</strong> 对象出来，然后把这个对象 push 到一个栈中，根据 this 的指向，这个栈是属于 Router 对象的，在这里是全局 Router 对象。</li>
+<li>最终返回 this，也就是 router 对象。</li>
+</ul>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">proto<span class="token punctuation">.</span><span class="token function-variable function">use</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">use</span><span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> offset <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token keyword">var</span> path <span class="token operator">=</span> <span class="token string">"/"</span>
+  <span class="token comment">// default path to '/'</span>
+  <span class="token comment">// disambiguate router.use([fn])</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> fn <span class="token operator">!==</span> <span class="token string">"function"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> arg <span class="token operator">=</span> fn
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> arg<span class="token punctuation">.</span>length <span class="token operator">!==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      arg <span class="token operator">=</span> arg<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// first arg is the path</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> arg <span class="token operator">!==</span> <span class="token string">"function"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      offset <span class="token operator">=</span> <span class="token number">1</span>
+      path <span class="token operator">=</span> fn
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">var</span> callbacks <span class="token operator">=</span> <span class="token function">flatten</span><span class="token punctuation">(</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">,</span> offset<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>callbacks<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">"Router.use() requires a middleware function"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> callbacks<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> fn <span class="token operator">=</span> callbacks<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token comment">// add the middleware</span>
+    <span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"use %o %s"</span><span class="token punctuation">,</span> path<span class="token punctuation">,</span> fn<span class="token punctuation">.</span>name <span class="token operator">||</span> <span class="token string">"&lt;anonymous>"</span><span class="token punctuation">)</span>
+    <span class="token keyword">var</span> layer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Layer</span><span class="token punctuation">(</span>
+      path<span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        sensitive<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>caseSensitive<span class="token punctuation">,</span>
+        strict<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        end<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      fn
+    <span class="token punctuation">)</span>
+    layer<span class="token punctuation">.</span>route <span class="token operator">=</span> <span class="token keyword">undefined</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>layer<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>综上所述，我们可以轻松得出以下结论：</p>
+<ul>
+<li>app.use 在没有传路径时会以 <code class="language-text">/</code> 也就是全局路由作为路径。</li>
+<li><code class="language-text">/</code> 在 express 底层代表了一个 Router 对象，它维护了一个<strong>栈</strong>，栈中的每一个元素被称为层（即上面的 Layer 对象），每一层维护相应的中间件函数。</li>
+<li>中间件的注册本质上就是将一个或者多个中间件函数压入对应的路由栈。</li>
+</ul>
+<p>带着这个结论，我们再来看看 <code class="language-text">app[method]</code> 方法。</p>
+<h4>app[method] 方法</h4>
+<p>app[method] 代码如下：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">methods<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">method</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  app<span class="token punctuation">[</span>method<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">path</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>method <span class="token operator">===</span> <span class="token string">"get"</span> <span class="token operator">&amp;&amp;</span> arguments<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// app.get(setting)</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">lazyrouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">var</span> route <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_router<span class="token punctuation">.</span><span class="token function">route</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span>
+    route<span class="token punctuation">[</span>method<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>route<span class="token punctuation">,</span> <span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<ul>
+<li>首先通过 <code class="language-text">this.lazyrouter()</code> 初始化 全局 router（如果没有被初始化过）。</li>
+<li>接着执行 <code class="language-text">this._router.route(path)</code> 来初始化<strong>当前路径</strong>所对应的路由，在上面的 DEMO 中，当前路径为 <code class="language-text">/home</code>。</li>
+<li>然后执行 <code class="language-text">route[method]</code>。</li>
+</ul>
+<p>所以 app[method] 的本质就是为所配置的路径初始化对应的路由，然后执行 <code class="language-text">route[method]</code>。</p>
+<p>下面是 <code class="language-text">this._router.route(path)</code> 代码：</p>
+<ul>
+<li>它以我们设置的路径为参数， new 了一个 <strong>Router</strong> 对象。</li>
+<li>初始化了一个 <strong>Layer</strong>，之后将这个 Layer 压入栈中，注意，这里的 <code class="language-text">this</code> 为 <code class="language-text">app.\_router</code>，也就是全局 router 对象。</li>
+</ul>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">proto<span class="token punctuation">.</span><span class="token function-variable function">route</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">route</span><span class="token punctuation">(</span><span class="token parameter">path</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> route <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Route</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span>
+  <span class="token keyword">var</span> layer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Layer</span><span class="token punctuation">(</span>
+    path<span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      sensitive<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>caseSensitive<span class="token punctuation">,</span>
+      strict<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>strict<span class="token punctuation">,</span>
+      end<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    route<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+  layer<span class="token punctuation">.</span>route <span class="token operator">=</span> route
+  <span class="token keyword">this</span><span class="token punctuation">.</span>stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>layer<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> route
+<span class="token punctuation">}</span></code></pre></div>
+<p>如果对前面的代码还有印象的话，在 执行 new Layer() 时，我们传入的第二个参数是我们的中间件函数，在这里是 <code class="language-text">route.dispatch.bind(route)</code>，这是用来处理用户请求的核心方法，我们后面会讲。</p>
+<p>再来看 <code class="language-text">route[method]</code> ，这里就是我们传入的若干个中间件函数被处理的地方，注意，这里的 this 是我们 new 的 Route 对象（对应 home 路径）：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token class-name">Route</span><span class="token punctuation">.</span>prototype<span class="token punctuation">[</span>method<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> handles <span class="token operator">=</span> <span class="token function">flatten</span><span class="token punctuation">(</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> handles<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> handle <span class="token operator">=</span> handles<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> handle <span class="token operator">!==</span> <span class="token string">"function"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> type <span class="token operator">=</span> <span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>handle<span class="token punctuation">)</span>
+      <span class="token keyword">var</span> msg <span class="token operator">=</span>
+        <span class="token string">"Route."</span> <span class="token operator">+</span> method <span class="token operator">+</span> <span class="token string">"() requires a callback function but got a "</span> <span class="token operator">+</span> type
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"%s %o"</span><span class="token punctuation">,</span> method<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>path<span class="token punctuation">)</span>
+    <span class="token keyword">var</span> layer <span class="token operator">=</span> <span class="token function">Layer</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> handle<span class="token punctuation">)</span>
+    layer<span class="token punctuation">.</span>method <span class="token operator">=</span> method
+    <span class="token keyword">this</span><span class="token punctuation">.</span>methods<span class="token punctuation">[</span>method<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>layer<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>首先依然是我们熟悉的中间件函数扁平化，然后遍历结果数组，对每一个中间件函数，执行 Layer 函数，值得注意的是，我们之前的 Layer 都是通过 new 操作符来创建的，这里有些不同。实际上 Layer 函数会根据 this
+来判断是否需要 new Layer 对象：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Layer</span><span class="token punctuation">(</span><span class="token parameter">path<span class="token punctuation">,</span> options<span class="token punctuation">,</span> fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token keyword">instanceof</span> <span class="token class-name">Layer</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Layer</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> options<span class="token punctuation">,</span> fn<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"new %o"</span><span class="token punctuation">,</span> path<span class="token punctuation">)</span>
+  <span class="token keyword">var</span> opts <span class="token operator">=</span> options <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>handle <span class="token operator">=</span> fn
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> fn<span class="token punctuation">.</span>name <span class="token operator">||</span> <span class="token string">"&lt;anonymous>"</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>params <span class="token operator">=</span> <span class="token keyword">undefined</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>path <span class="token operator">=</span> <span class="token keyword">undefined</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>regexp <span class="token operator">=</span> <span class="token function">pathRegexp</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>keys <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> opts<span class="token punctuation">)</span>
+  <span class="token comment">// set fast path flags</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>regexp<span class="token punctuation">.</span>fast_star <span class="token operator">=</span> path <span class="token operator">===</span> <span class="token string">"*"</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>regexp<span class="token punctuation">.</span>fast_slash <span class="token operator">=</span> path <span class="token operator">===</span> <span class="token string">"/"</span> <span class="token operator">&amp;&amp;</span> opts<span class="token punctuation">.</span>end <span class="token operator">===</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>可以看出，如果 this 不是 Layer 的实例，那我们会 new 一个 Layer。否则会对 this 执行一些初始化操作。</p>
+<p>也就是说，执行 <code class="language-text">new Layer()</code> 时会<strong>递归调用</strong>这个函数，但是在 new 之后的 this 已经变成了 Layer 的实例了，也就顺理成章地去处理下面一些初始化代码。</p>
+<p>接下来两行代码很好理解，一个是标记当前的请求类型，一个是标记可选的请求类型。</p>
+<p>最后，将这个 layer 压入栈中，注意，这里的 this 是 对应 home 路径的 Route 对象，和我们前面提到的全局 router 栈不一样！</p>
+<p>至此，<code class="language-text">app[method]</code> 执行完成，总结一下， 执行 <code class="language-text">app[method](path, fns)</code> 会为路径 path 新建一个与之对应的 <code class="language-text">Route</code> 对象，这个 Route 也维护了一个栈，栈里面是用 Layer
+对象包装的一个个中间件函数。</p>
+<h3>PART 1 总结</h3>
+<p>上面的内容都围绕着一个内容展开： <strong>中间件函数是如何被初始化</strong>的？</p>
+<p>一句话概括：我们通过调用 <code class="language-text">app.use</code> 方法或者 <code class="language-text">app[method]</code> 方法，为我们传入的路径初始化一个 Router 对象，这个对象维护了一个<strong>栈</strong>，相应的中间件函数通过 Layer
+对象包装，然后被压入栈中，对于子路由，它会通过中间件函数 <code class="language-text">route.dispatch</code>（后面会说）和全局路由建立关系。</p>
+<p>我们通过调试工具验证一下上述结果：</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4b51e02ea7be877a7d1f1a6abd360233/ddf4f/20210102111810.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 43.0379746835443%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABaklEQVQozy3QWY7jMAwEUB+mY2uXLFKUqMVLnJ7c/0YDGw088Kvqozgx/SbcXGCp86yzUoQCV5WiRC8waKquNluSr8VVMkWbIk1RN55KOzNfSAfinhxz6JvJu29VUZ7jWKKHE8oX+cPbVct3pH9Mv9oPqfNEZQBUt7LTaftx75c/f3x/BX4FWAAE+jBienPav7VXOgmukj42bELRBLnnsnG7Srt8HDY0A4cKzcRdGp5VgvRJeATHbV7LvKYlBolC0V0udUMa8PCOvaLVZKezMUXoPCtCOKPbo+Ns67BcFCmZ/sq8HZi6j8VD1ZqcAC8AFqAlgoBVwB63C3eAYcJNmCJUftDkoa8wfKjaZaVJyKRksuJ+dZ7X8fKsc8QzxHPFjtQoHgxvXA9l6xTpwHRg2iOOEIdxTT/MQ+uyWgZ4Wz+sLy6wc83bZm2TukzmL9eN69Z364d7POmhbI2+x3BoWxeZFkn3VWm5Z6f/Nn1sENMP7BkAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="20210102111810"
+        title="20210102111810"
+        src="/static/4b51e02ea7be877a7d1f1a6abd360233/f058b/20210102111810.png"
+        srcset="/static/4b51e02ea7be877a7d1f1a6abd360233/c26ae/20210102111810.png 158w,
+/static/4b51e02ea7be877a7d1f1a6abd360233/6bdcf/20210102111810.png 315w,
+/static/4b51e02ea7be877a7d1f1a6abd360233/f058b/20210102111810.png 630w,
+/static/4b51e02ea7be877a7d1f1a6abd360233/40601/20210102111810.png 945w,
+/static/4b51e02ea7be877a7d1f1a6abd360233/78612/20210102111810.png 1260w,
+/static/4b51e02ea7be877a7d1f1a6abd360233/ddf4f/20210102111810.png 1624w"
+        sizes="(max-width: 630px) 100vw, 630px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>下面我们重点讲述中间件如何被执行。</p>
+<h3>中间件的执行</h3>
+<p>我们以上图的代码为例，使用接口调试工具发起 get 请求，访问 <strong>localhost:8000/home</strong>，发起请求之后控制台输出如下：</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">middleware 01 in app.use
+middleware 02 in app.use
+home and get method middleware 01
+home and get method middleware 02
+home and get method middleware 03</code></pre></div>
+<p>为什么是这样的输出顺序？这些中间件是如何被回调的？我们从 <code class="language-text">app.listen()</code> 开始详细分析整个过程。</p>
+<h4>app.listen()</h4>
+<p>代码如下：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">app<span class="token punctuation">.</span><span class="token function-variable function">listen</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">listen</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>server<span class="token punctuation">,</span> arguments<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>app.listen() 实际上是执行 node.js 内部的 http 模块的 API <code class="language-text">http.createServer(this)</code> 来创建一个服务器，然后调用 <code class="language-text">server.listen()</code> 来监听端口。</p>
+<p>每当有 HTTP 请求到达服务器时，createServer 中传入的函数就被自动执行，在这里传入的回调函数是 app，这个函数我们在 <code class="language-text">createApplication()</code> 中提到过：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token function-variable function">app</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  app<span class="token punctuation">.</span><span class="token function">handle</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>所以用户发起请求之后，express 内部会去执行 <code class="language-text">app.handle()</code>：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">app<span class="token punctuation">.</span><span class="token function-variable function">handle</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> router <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_router
+  <span class="token comment">// final handler</span>
+  <span class="token keyword">var</span> done <span class="token operator">=</span>
+    callback <span class="token operator">||</span>
+    <span class="token function">finalhandler</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      env<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"env"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      onerror<span class="token operator">:</span> <span class="token function">logerror</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token comment">// no routes</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>router<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"no routes defined on app"</span><span class="token punctuation">)</span>
+    <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span>
+  <span class="token punctuation">}</span>
+  router<span class="token punctuation">.</span><span class="token function">handle</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> done<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>不难看出 <code class="language-text">app.handle()</code> 实质是执行 <code class="language-text">app._router.handle()</code> 。</p>
+<h4>router.handle()</h4>
+<p><code class="language-text">router.handle()</code> 的代码很长，下面的代码我做了精简，但足以表达中间件调用的核心流程，结合注释理解：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">proto<span class="token punctuation">.</span><span class="token function-variable function">handle</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> out</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token comment">// 将 next 函数绑定到 req 对象下</span>
+  req<span class="token punctuation">.</span>next <span class="token operator">=</span> next
+  <span class="token comment">// 执行一次 next 函数</span>
+  <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">function</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> idx <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">var</span> layer <span class="token comment">// 匹配到的层</span>
+    <span class="token keyword">var</span> match <span class="token comment">// 是否匹配成功</span>
+    <span class="token keyword">var</span> route <span class="token comment">// 该层是路由层，它会从 undefined 变成相应的路由对象</span>
+    <span class="token comment">// 这个循环遍历 stack 数组，匹配对应的层，一旦匹配成功就会跳出循环</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>match <span class="token operator">!==</span> <span class="token boolean">true</span> <span class="token operator">&amp;&amp;</span> idx <span class="token operator">&lt;</span> stack<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 当前层</span>
+      layer <span class="token operator">=</span> stack<span class="token punctuation">[</span>idx<span class="token operator">++</span><span class="token punctuation">]</span>
+      <span class="token comment">// 执行路由匹配</span>
+      match <span class="token operator">=</span> <span class="token function">matchLayer</span><span class="token punctuation">(</span>layer<span class="token punctuation">,</span> path<span class="token punctuation">)</span>
+      <span class="token comment">// layer.route，如果该层对应的是路由中间件，那么这个 route 是有值的，它就是相应的 Route 对象。</span>
+      route <span class="token operator">=</span> layer<span class="token punctuation">.</span>route
+      <span class="token comment">// 如果没有匹配到，再循环</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>match <span class="token operator">!==</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">continue</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">// 没有 route 对象，会被忽略</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>route<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">continue</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>match <span class="token operator">!==</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">done</span><span class="token punctuation">(</span>layerError<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 保存 route 对象</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>route<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      req<span class="token punctuation">.</span>route <span class="token operator">=</span> route
+    <span class="token punctuation">}</span>
+    <span class="token comment">// self.process_params 会调用回调函数，</span>
+    self<span class="token punctuation">.</span><span class="token function">process_params</span><span class="token punctuation">(</span>layer<span class="token punctuation">,</span> paramcalled<span class="token punctuation">,</span> req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 如果当前层是路由层</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>route<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> layer<span class="token punctuation">.</span><span class="token function">handle_request</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">// 一般的中间件层，这个方法的主要内容是 url 路径的处理</span>
+      <span class="token comment">// 最后会调用 layer.handle_request(req, res, next) 来处理请求</span>
+      <span class="token function">trim_prefix</span><span class="token punctuation">(</span>layer<span class="token punctuation">,</span> layerError<span class="token punctuation">,</span> layerPath<span class="token punctuation">,</span> path<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>上面的代码我们可以分为两部分，第一部分是层匹配，第二部分是层执行。</p>
+<p>层匹配即根据<strong>当前路径</strong>匹配对应的层，如果当前路径是 <code class="language-text">/home</code>，那么全局路由的每一层、<code class="language-text">/home</code> 路由的每一层都会匹配成功。</p>
+<p>层执行指的是对于匹配到的层，我们会通过 <code class="language-text">layer.handle_request()</code> 执行其中的 <code class="language-text">handler</code> 函数。</p>
+<p>对于普通层，执行的是我们注册的中间件。</p>
+<p>对于路由层，执行的是 <code class="language-text">Route.prototype.dispatch</code>。（它本质上也是一个中间件）。</p>
+<p>从上面的代码我们可以看出来普通层多了一步 <code class="language-text">trim_prefix()</code>，它主要是对路径进行了处理，但最终还是会去调用 <code class="language-text">layer.handle_request()</code>。</p>
+<p>在 <code class="language-text">layer.handle_request()</code> 中，中间件函数在一个 <code class="language-text">try..catch</code> 块中被执行。</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token class-name">Layer</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">handle_request</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> fn <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>handle
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>fn<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// not a standard request handler</span>
+    <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token function">fn</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">next</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>当我们的中间件函数继续调用 next 时，我们就会去栈中寻找上一层，然后以同样的方法执行它。</p>
+<h4>Route.prototype.dispatch()</h4>
+<p>对于非全局路由，我们也会执行一个中间件，这个中间件在路由注册的时候就被导入，下面的代码做了一些精简，删去了一些边界错误处理：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token class-name">Route</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">dispatch</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> done</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> idx <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token keyword">var</span> stack <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>stack
+  req<span class="token punctuation">.</span>route <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">function</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> layer <span class="token operator">=</span> stack<span class="token punctuation">[</span>idx<span class="token operator">++</span><span class="token punctuation">]</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>layer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">done</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>layer<span class="token punctuation">.</span>method <span class="token operator">&amp;&amp;</span> layer<span class="token punctuation">.</span>method <span class="token operator">!==</span> method<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    layer<span class="token punctuation">.</span><span class="token function">handle_request</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>不难看出，这部分逻辑和前面的 <code class="language-text">proto.handle()</code> 极为相似。</p>
+<p>前面我们说过，每个路由（Route）对象也会维护一个栈，存储自身匹配的中间件。并且他们会通过这个中间件函数和全局路由进行关联。</p>
+<p>在上面的代码中，我们首先执行了 next 函数，它会获取当前路由栈的第一层，通过 <code class="language-text">handle_request()</code> 执行之，如果用户在回调函数中执行 next 函数，那么又会重复上述操作，直到栈完全遍历位置。</p>
+<h3>PART 2 总结</h3>
+<p>在这一部分里面，我们讨论了 express 框架中间件的执行流程，首先在全局路由中找到第一个符合的层，然后将执行下一个匹配层的 next 作为回调函数的参数传给中间件，在中间件内部调用 next() 函数就可以实现中间件逐层调用的效果。</p>
+<p>在最后，我们解决一下这部分开头的输出问题：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"express"</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token comment">/* 中间件 M1 */</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"middleware 01 in app.use"</span><span class="token punctuation">)</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">/* 中间件 M2 */</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"middleware 02 in app.use"</span><span class="token punctuation">)</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>
+  <span class="token string">"/home"</span><span class="token punctuation">,</span>
+  <span class="token comment">/* 中间件 M3 */</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"home and get method middleware 01"</span><span class="token punctuation">)</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">/* 中间件 M4 */</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"home and get method middleware 02"</span><span class="token punctuation">)</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">/* 中间件 M5 */</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"home and get method middleware 03"</span><span class="token punctuation">)</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">"hello world"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"your project is running successfully!"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<p>根据第一部分的知识，上面的代码将会构造如下的数据结构：</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a42842e89e1cd2af20d2c4bb144daec9/8ce52/20210102152616.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 48.10126582278481%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABJElEQVQoz5WS246CMBBA/R1pOy0ELIVgqYVpLRSMRvf//2TDkqirZpM9T/MwJ3PdwBuUUkIIpXSNkyQhhDDGCCFCiDRNOedZljHGNs8aY0xKGUKIMSKiEELr1nvf9/0SOL/f753z8zR3XQcAD5lzDgB5XiC60+lkrc3z3BgTxzgMQ13XVVVprRFxnn/LnHNK6Xa7LaV0zk3T1Fl7H+HetpSyR5ymyRizyJVSUkq5k1pr771Squu6GEdr7drLM0op5/2jMvbY6ta0RilV13XTNNbaOI6Hw0EI8SLviqJtW+dc0zSLzH9Y85IkKYrieDxeLhdEhI8wth5i2TZ/AgCK3S6E8HW7hRDgTz6cqizL8/l8u16HYfifDABpmmZZtj7D+8wv8jcWVX3opo1k5gAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="20210102152616"
+        title="20210102152616"
+        src="/static/a42842e89e1cd2af20d2c4bb144daec9/f058b/20210102152616.png"
+        srcset="/static/a42842e89e1cd2af20d2c4bb144daec9/c26ae/20210102152616.png 158w,
+/static/a42842e89e1cd2af20d2c4bb144daec9/6bdcf/20210102152616.png 315w,
+/static/a42842e89e1cd2af20d2c4bb144daec9/f058b/20210102152616.png 630w,
+/static/a42842e89e1cd2af20d2c4bb144daec9/8ce52/20210102152616.png 681w"
+        sizes="(max-width: 630px) 100vw, 630px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>:::tip 注意</p>
+<p>stack 中的每一层都是通过 <strong>Layer</strong> 对象来封装的，layer 对象中的 handle 成员变量才是真正的中间件函数。
+:::</p>
+<p>一旦有请求进来，那么会如此调用：</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f381ceae5847006975cf7680bccea93a/a0b80/20210102153824.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 67.08860759493672%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAIAAAAmMtkJAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABj0lEQVQoz22SjY6jIBSFfZxaLhdQ4FrAUtH6M2Zm0mbf/1k24m7XbeZLTCC5J+dwrgVmeCYfAIAxtn2IKKUUQgCAlNJ737atc45lELE4ijnnUso6U1UVEd3v93EabzHe7/eU0jzPMUattbUWAAqevV5iIlqWZV3Xvu/btr1er9ZaIuu971I3z3NKyWY458WuhExZllrrruv6oQ8hWGuVUufz+XQ6CSFSStM0OefquiYixlhRVZUx1hpDRDFG59wwDMuyeO+JSGuNiETkvb91mzjebs3FKaW22MaYLV28Ou+apvHep5TGcQw+NE1T17UQYlmW5/P5tY7P5+PX9+fjY7TG/HvzHv58ZlrraZrWdY0xZucaABBRCIF8axgBkJWcA0cs+AEAIGq+vz4fj0cIm7PW+lUnAN+PkLeDnP/XtpSSMnvgfZ+vATiwX4u//8aGMVt3SqmyLI/7O84cr9uqqqqy1kopjf2DUupN8LOYMZYLbxExhDDP0zD0l4t7BT7mfI+9ldQ0IYS30R+t3px/A4eknIl6hjLOAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="20210102153824"
+        title="20210102153824"
+        src="/static/f381ceae5847006975cf7680bccea93a/f058b/20210102153824.png"
+        srcset="/static/f381ceae5847006975cf7680bccea93a/c26ae/20210102153824.png 158w,
+/static/f381ceae5847006975cf7680bccea93a/6bdcf/20210102153824.png 315w,
+/static/f381ceae5847006975cf7680bccea93a/f058b/20210102153824.png 630w,
+/static/f381ceae5847006975cf7680bccea93a/40601/20210102153824.png 945w,
+/static/f381ceae5847006975cf7680bccea93a/a0b80/20210102153824.png 955w"
+        sizes="(max-width: 630px) 100vw, 630px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>再看下面的代码，结合上述内容，如果访问 <code class="language-text">home</code> 接口，会输出什么？</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"express"</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"middleware 01 in app.use"</span><span class="token punctuation">)</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"after m1 next"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"middleware 02 in app.use"</span><span class="token punctuation">)</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"after m2 next"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>
+  <span class="token string">"/home"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"home and get method middleware 01"</span><span class="token punctuation">)</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"after m3 next"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"home and get method middleware 02"</span><span class="token punctuation">)</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"after m4 next"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"home and get method middleware 03"</span><span class="token punctuation">)</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">"hello world"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"your project is running successfully!"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<p>输出结果如下，具体的分析过程不再赘述：</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">your project is running successfully!
+middleware 01 in app.use
+middleware 02 in app.use
+home and get method middleware 01
+home and get method middleware 02
+home and get method middleware 03
+after m4 next
+after m3 next
+after m2 next
+after m1 next</code></pre></div>
+<h2>Koa</h2>
+<p>相比 express，<strong>koa</strong> 是一个<strong>更加轻量级的框架</strong>。express 和 Koa 的核心都是<strong>中间件</strong>，但是他们的执行机制略有不同。</p>
+<h3>中间件的注册与执行</h3>
+<p>下面的代码启动了一个 koa 服务器：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> Koa <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"koa"</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koa</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"middleware in app.use"</span><span class="token punctuation">)</span>
+  <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"success!"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<p>和 express 不同，这里 new 的 Koa 是一个类，所有的核心方法都包含在这里面，我们先看它的构造函数的实现：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token class-name">Application</span> <span class="token keyword">extends</span> <span class="token class-name">Emitter</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    options <span class="token operator">=</span> options <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>proxy <span class="token operator">=</span> options<span class="token punctuation">.</span>proxy <span class="token operator">||</span> <span class="token boolean">false</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>subdomainOffset <span class="token operator">=</span> options<span class="token punctuation">.</span>subdomainOffset <span class="token operator">||</span> <span class="token number">2</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>proxyIpHeader <span class="token operator">=</span> options<span class="token punctuation">.</span>proxyIpHeader <span class="token operator">||</span> <span class="token string">"X-Forwarded-For"</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>maxIpsCount <span class="token operator">=</span> options<span class="token punctuation">.</span>maxIpsCount <span class="token operator">||</span> <span class="token number">0</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>env <span class="token operator">=</span> options<span class="token punctuation">.</span>env <span class="token operator">||</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">||</span> <span class="token string">"development"</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>keys<span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>keys <span class="token operator">=</span> options<span class="token punctuation">.</span>keys
+    <span class="token keyword">this</span><span class="token punctuation">.</span>middleware <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>context <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>request <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>response <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>util<span class="token punctuation">.</span>inspect<span class="token punctuation">.</span>custom<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">[</span>util<span class="token punctuation">.</span>inspect<span class="token punctuation">.</span>custom<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>inspect
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>大部分都是一些参数的初始化，例如环境变量、代理配置，从 <code class="language-text">this.middleware = []</code> 开始，我们看到了一些熟悉的内容：</p>
+<ul>
+<li>中间件 <code class="language-text">middleware</code>（可得知所有的中间件最终会被存放到这个数组中）</li>
+<li>context、request、response 对象，其中 context 是我们中间件的第一个参数。</li>
+</ul>
+<p>现在我们还不清楚它们在何时会被用上。在实例化 Koa 对象之后，我们执行了 <code class="language-text">app.use()</code>，来看它的源码：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token class-name">Application</span> <span class="token keyword">extends</span> <span class="token class-name">Emitter</span> <span class="token punctuation">{</span>
+  <span class="token function">use</span><span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> fn <span class="token operator">!==</span> <span class="token string">"function"</span><span class="token punctuation">)</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">"middleware must be a function!"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isGeneratorFunction</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">deprecate</span><span class="token punctuation">(</span>
+        <span class="token string">"Support for generators will be removed in v3. "</span> <span class="token operator">+</span>
+          <span class="token string">"See the documentation for examples of how to convert old middleware "</span> <span class="token operator">+</span>
+          <span class="token string">"https://github.com/koajs/koa/blob/master/docs/migration.md"</span>
+      <span class="token punctuation">)</span>
+      fn <span class="token operator">=</span> <span class="token function">convert</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"use %s"</span><span class="token punctuation">,</span> fn<span class="token punctuation">.</span>_name <span class="token operator">||</span> fn<span class="token punctuation">.</span>name <span class="token operator">||</span> <span class="token string">"-"</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>middleware<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>use 的代码非常简单，其最终就是把你传入的中间件 push 到前面提到的 <code class="language-text">middleware</code> 数组。</p>
+<p>相比 express 对中间件的初始化方式（用 Layer 封装、特殊的路由中间件），koa 的处理更为简单粗暴。</p>
+<p>服务器的启动依靠 <code class="language-text">listen()</code> 方法：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token class-name">Application</span> <span class="token keyword">extends</span> <span class="token class-name">Emitter</span> <span class="token punctuation">{</span>
+  <span class="token function">listen</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"listen"</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>和 express 如出一辙，都是调用了 http 库的 <code class="language-text">createServer()</code>，并传入相应的回调函数 — 这个回调函数会在用户发送请求时执行。</p>
+<p>值得注意的是，这里的回调函数是 <code class="language-text">this.callback()</code> 的<strong>返回值</strong>，也就是下面的 <code class="language-text">handleRequest()</code>：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token class-name">Application</span> <span class="token keyword">extends</span> <span class="token class-name">Emitter</span> <span class="token punctuation">{</span>
+  <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> fn <span class="token operator">=</span> <span class="token function">compose</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>middleware<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">listenerCount</span><span class="token punctuation">(</span><span class="token string">"error"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"error"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onerror<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">handleRequest</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> ctx <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">createContext</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleRequest</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> fn<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> handleRequest
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>用户发送请求，<code class="language-text">handleRequest()</code> 被执行，首先调用 <code class="language-text">createContext()</code> 初始化上下文对象（context），也就是中间件函数的第一个参数，例如把 http 模块的 res、req 对象绑定到 context 对象上。</p>
+<p>最终执行核心方法 <code class="language-text">this.handleRequest()</code>：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token class-name">Application</span> <span class="token keyword">extends</span> <span class="token class-name">Emitter</span> <span class="token punctuation">{</span>
+  <span class="token function">handleRequest</span><span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> fnMiddleware</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> res <span class="token operator">=</span> ctx<span class="token punctuation">.</span>res
+    res<span class="token punctuation">.</span>statusCode <span class="token operator">=</span> <span class="token number">404</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">onerror</span> <span class="token operator">=</span> <span class="token parameter">err</span> <span class="token operator">=></span> ctx<span class="token punctuation">.</span><span class="token function">onerror</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">handleResponse</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">respond</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span>
+    <span class="token function">onFinished</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> onerror<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token function">fnMiddleware</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>handleResponse<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span>onerror<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>第一个参数是 context，第二个参数是 <code class="language-text">fnMiddleware</code>，在上面提到的 <code class="language-text">callback()</code> 函数中可以看出，它是在 <code class="language-text">callback()</code> 执行时，通过对 <code class="language-text">this.middleware</code>执行 <code class="language-text">compose()</code> 得到的。</p>
+<p>所以关键就是这里的 <code class="language-text">compose()</code> 方法了，它来自单独的一个库，叫做 <code class="language-text">koa-compose</code>：</p>
+<ul>
+<li>这个函数要求传入 middleware 数组。</li>
+<li>首先是数组的判断、以及每个成员是不是函数的判断。</li>
+<li>然后返回一个函数，这个会在上面 <code class="language-text">handleRequest()</code> 中被执行。</li>
+<li>这个函数又返回一个函数 <code class="language-text">dispatch(0)</code>，不难看出这里的 0 表示下标。</li>
+<li>dispatch 函数会通过 <code class="language-text">let fn = middleware[i]</code> 得到某个中间件。</li>
+<li>接着调用 <code class="language-text">fn(context, dispatch.bind(null, i + 1))</code>，fn 是中间件函数，context 是上下文，<code class="language-text">dispatch.bind(null, i + 1))</code> 就是 第二个参数 next 了。</li>
+<li>很明显，这是一个递归调用，它会一直去调用每一个中间件，直到遍历并执行完所有的中间件，退出递归。</li>
+</ul>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">compose</span><span class="token punctuation">(</span><span class="token parameter">middleware</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>middleware<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">"Middleware stack must be an array!"</span><span class="token punctuation">)</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> fn <span class="token keyword">of</span> middleware<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> fn <span class="token operator">!==</span> <span class="token string">"function"</span><span class="token punctuation">)</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">"Middleware must be composed of functions!"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">context<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+    <span class="token keyword">return</span> <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token keyword">function</span> <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token parameter">i</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> index<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">"next() called multiple times"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      index <span class="token operator">=</span> i
+      <span class="token keyword">let</span> fn <span class="token operator">=</span> middleware<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">===</span> middleware<span class="token punctuation">.</span>length<span class="token punctuation">)</span> fn <span class="token operator">=</span> next
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>fn<span class="token punctuation">)</span> <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token function">fn</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> <span class="token function">dispatch</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 这里使用了Promise进行包装</span>
+      <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>可以看出，Koa 执行中间件的流程也非常简单，请看下面的代码，试推测出它的输出：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> Koa <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"koa"</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koa</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"middleware 01 in app.use"</span><span class="token punctuation">)</span>
+  <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"middleware 01 in app.use after next"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"middleware 02 in app.use"</span><span class="token punctuation">)</span>
+  <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"middleware 02 in app.use after next"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"middleware 03 in app.use"</span><span class="token punctuation">)</span>
+  ctx<span class="token punctuation">.</span>response<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token string">"hi~"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"success!"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">success!
+middleware 01 in app.use
+middleware 02 in app.use
+middleware 03 in app.use
+middleware 02 in app.use after next
+middleware 01 in app.use after next</code></pre></div>
+<h3>PART 3 总结</h3>
+<p>Koa 作为一个轻量级框架，其底层逻辑也非常的清晰易懂：</p>
+<p>对于中间件的注册，只是将中间件函数放入 Koa 类的 middleware 数组中，并没有像 express 那样用层封装、进行路由的区分。</p>
+<p>对于中间件的执行，和 express 有异曲同工之妙，只不过每次请求初始化中间件时，它是将中间件数组的每个中间件 <strong>compose</strong> 了（可以理解为<strong>组合</strong>），组合的方式是通过递归 —
+将触发下一个中间件的函数用 <code class="language-text">dispatch.bind()</code> 封装，作为上一个中间件函数的第二个参数。</p>
+<h2>express 和 Koa 对比</h2>
+<p>express 和 Koa 的共同之处在于核心都是<strong>中间件</strong>，那么又有什么区别？各有什么优势？下面我们来探究一下。</p>
+<h3>Koa 更加轻量级</h3>
+<p>从上面的源码分析中不难看出，express 是一个比较全面的 web 框架，内置了参数解析、路由匹配等功能。</p>
+<p>而 Koa 则是一个<strong>轻量级的框架</strong>，短小精悍，所有的额外功能都要通过第三方的库进行扩展。</p>
+<p>他们类似于 Python Web 开发中的 Django 和 flask。</p>
+<h3>针对异步代码</h3>
+<p>express 框架在处理某些异步操作时略有些捉襟见肘，来看下面的代码，这两份代码都使用了类似的异步中间件：</p>
+<p><strong>express</strong></p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"express"</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token function-variable function">myPromise</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span>
+  <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">"promise resolved!"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"middleware 01"</span><span class="token punctuation">)</span>
+  <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"after middleware 01 next"</span><span class="token punctuation">)</span>
+  res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">"hello~"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> timeRes <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">myPromise</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>timeRes<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"listening!"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<p><strong>koa</strong></p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> Koa <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"koa"</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koa</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token function-variable function">myPromise</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span>
+  <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">"promise resolved!"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"middleware 01"</span><span class="token punctuation">)</span>
+  <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"after middleware 01 next"</span><span class="token punctuation">)</span>
+  ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token string">"hello~"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> timeRes <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">myPromise</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>timeRes<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"listening!"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<p>在 express 的代码中，我们得到输出：</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">middleware 01
+after middleware 01 next
+promise resolved!</code></pre></div>
+<p>在 Koa 的代码中，我们得到输出，并且响应会有约两秒的延迟：</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">middleware 01
+promise resolved!
+after middleware 01 next</code></pre></div>
+<p>我们想达成这样一个目的 — 在第一个中间件中利用 <strong>await</strong> 来等待下一个异步中间件函数（它使用 await 执行了一个 <code class="language-text">setTimeout()</code> 并打印结果）执行完成，但是只有 Koa 的版本能实现需求。</p>
+<p>为什么？本质就在于 await 关键词的特性 — await 关键字期待（但实际上并不要求）一个实现 thenable 接口的对象，但常规的值也可以。如果是实现 thenable 接口的对象，则这个对象可以由 await 来“解包”。如果不是，则这个值就被当作已经 <strong>resolved 的 Promise</strong>。</p>
+<p>那么问题就成了 express 中间件参数的 next 是一个异步函数吗？答案为不是异步函数。你可能会问，我不是给 await 后面的 next 加了 async 了吗？实际上，express 对原本的 next 还做了一层封装，此部分的代码前面已经讲了：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token class-name">Layer</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">handle_request</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> fn <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>handle
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>fn<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token function">fn</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">next</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>上面 <code class="language-text">try</code> 块中包裹的 <code class="language-text">fn</code> 就是我们真正的中间件函数 — 但是我们 await 后面跟着的 next 并不是它,而是封装它的同步函数。</p>
+<p>而对于 koa 的实现（只保留主干部分），其 next 函数如下:</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">context<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">function</span> <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token parameter">i</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> fn <span class="token operator">=</span> middleware<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token function">fn</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> <span class="token function">dispatch</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>fn 是我们的中间件函数，它执行的结果是一个 promise，而 <code class="language-text">Promise.resolve()</code> 是幂等的，next() 的返回值本质上就是我们的中间件函数，这就解释了为什么 <code class="language-text">await next()</code> 是有效的。</p>
+<p>:::tip Promise.resolve() 的幂等性</p>
+<p>所谓 <code class="language-text">Promise.resolve()</code> 的幂等性，就是说如果传入的值本身是一个 promise，其行为相当于一个空包装，即：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> p <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>
+<span class="token function">setTimeout</span><span class="token punctuation">(</span>console<span class="token punctuation">.</span>log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> p <span class="token operator">===</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// true</span>
+<span class="token function">setTimeout</span><span class="token punctuation">(</span>console<span class="token punctuation">.</span>log<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> p <span class="token operator">===</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// true</span></code></pre></div>
+<p>:::</p>
+<h2>参考资料</h2>
+<p>expressjs，<a href="https://github.com/expressjs/express">express 代码仓库</a></p>
+<p>koa，<a href="https://github.com/koajs/koa">koa 代码仓库</a></p></section></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2021-11/es6/">← <!-- -->一些有趣的es6案例分析</a></li><li><a rel="next" href="/2021-11/better-perfermance-react/">谈谈React的性能优化<!-- --> →</a></li></ul></nav></main><footer><div class="header__line"></div><div class="footer__content" style="color:#005b99"><span>© <!-- -->2022<!-- --> Hao Chen, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></span><span>email:<!-- -->hey@haochen.me</span></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-219535421-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2021-11/express-and-koa/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-191f3dbf297fa5585e37.js"],"app":["/app-79479099ecbe45b719e5.js"],"component---src-pages-404-js":["/component---src-pages-404-js-b2fce7c37e9d27f40b01.js"],"component---src-pages-about-js":["/component---src-pages-about-js-6be42dad5916dff017d0.js"],"component---src-pages-coding-365-js":["/component---src-pages-coding-365-js-a617b2ce6b9c7a71555e.js"],"component---src-pages-index-js":["/component---src-pages-index-js-16bf282d32cd576016ae.js"],"component---src-pages-resource-js":["/component---src-pages-resource-js-afdf57295a9a7336a0b8.js"],"component---src-pages-tags-js":["/component---src-pages-tags-js-fbaf4be8d7a8837294bb.js"],"component---src-pages-using-typescript-tsx":["/component---src-pages-using-typescript-tsx-220d8521917836d187f1.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-a83ea2277426bf4b8caf.js"],"component---src-templates-tag-js":["/component---src-templates-tag-js-f5a2b323892302bc08d9.js"]};/*]]>*/</script><script src="/polyfill-191f3dbf297fa5585e37.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-a83ea2277426bf4b8caf.js" async=""></script><script src="/commons-351c1962957b02ce4724.js" async=""></script><script src="/app-79479099ecbe45b719e5.js" async=""></script><script src="/framework-507a82f8a4d219d3f184.js" async=""></script><script src="/webpack-runtime-ec52642a1a8969212fd6.js" async=""></script></body></html>
