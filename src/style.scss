@@ -371,6 +371,37 @@ a:focus {
   ol {
     list-style-position: inside;
   }
+  .header {
+    margin-bottom: var(--spacing-11);
+    .header__top {
+      .header__title {
+        font-weight: var(--fontWeight-medium);
+        font-family: var(--font-heading);
+        text-decoration: none;
+        font-size: var(--fontSize-3);
+      }
+    }
+    .header__tags {
+      list-style-type: none;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      align-items: center;
+      font-size: 0.7rem;
+      li {
+        margin: 0 0 0 var(--spacing-5);
+      }
+      margin-bottom: var(--spacing-1);
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  .footer__content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 // toggle style

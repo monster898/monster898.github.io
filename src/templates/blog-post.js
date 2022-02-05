@@ -8,6 +8,8 @@ const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
+  let isShowOtherPageLink = location.state?.isShowOtherPageLink
+  if (isShowOtherPageLink == undefined) isShowOtherPageLink = true
 
   return (
     <Layout title={siteTitle}>
@@ -29,7 +31,7 @@ const BlogPostTemplate = ({ data, location }) => {
           itemProp="articleBody"
         />
       </article>
-      {location.state.isShowOtherPageLink && (
+      {isShowOtherPageLink && (
         <nav className="blog-post-nav">
           <ul
             style={{

@@ -72,12 +72,9 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          "G-W3MB9ZE1B2", // Google Analytics / GA
-        ],
+        trackingId: `UA-219535421-1`,
       },
     },
     {

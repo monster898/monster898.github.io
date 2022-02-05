@@ -7,6 +7,9 @@ const TagTemplate = ({ pageContext: { data: posts, fieldValue } }) => {
   return (
     <Layout>
       <Seo title={`tag:${fieldValue}`} />
+      <h1
+        style={{ color: "#005b99", marginBottom: `4rem` }}
+      >{`${fieldValue}:`}</h1>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
