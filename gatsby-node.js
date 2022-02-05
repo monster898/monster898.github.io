@@ -6,6 +6,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Define a template for blog post
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const tagPage = path.resolve(`./src/templates/tag.js`)
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
@@ -34,8 +35,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const posts = result.data.allMarkdownRemark.nodes
-
+  let posts = result.data.allMarkdownRemark.nodes.slice(
+    0,
+    result.data.allMarkdownRemark.nodes.length - 3
+  )
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
@@ -52,6 +55,42 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           id: post.id,
           previousPostId,
           nextPostId,
+        },
+      })
+    })
+  }
+
+  // create tag page
+  const tagResult = await graphql(
+    `
+      {
+        allMarkdownRemark(limit: 1000, filter: {}) {
+          group(field: frontmatter___tags) {
+            nodes {
+              frontmatter {
+                title
+                date(formatString: "MMMM DD,YYYY")
+              }
+              timeToRead
+              fields {
+                slug
+              }
+            }
+            fieldValue
+          }
+        }
+      }
+    `
+  )
+  let allTagGroup = tagResult.data.allMarkdownRemark.group
+  if (allTagGroup.length > 0) {
+    allTagGroup.forEach(tag => {
+      createPage({
+        path: `tags/${tag.fieldValue}`,
+        component: tagPage,
+        context: {
+          data: tag.nodes,
+          fieldValue: tag.fieldValue,
         },
       })
     })

@@ -1,17 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `let today = new beginnings()`,
+    title: `好成的blog`,
     author: {
-      name: `Sam Guo`,
-      summary: `Learn & Share & Love`,
+      name: `hao chen`,
     },
-    description: `Sam's personal blog.`,
-    siteUrl: `https://samguo.me/`,
-    social: {
-      twitter: `fengzzf2`,
-    },
+    description: `Hao Chen's  blog.`,
+    siteUrl: `https://haochen.me`,
+    email: `hey@haochen.me`,
+    github: `https://github.com/monster898`,
   },
-  pathPrefix: '/',
+  pathPrefix: "/",
   plugins: [
     `gatsby-plugin-image`,
     {
@@ -26,6 +24,27 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `about`,
+        path: `${__dirname}/content/about`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `coding365`,
+        path: `${__dirname}/content/coding365`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `resource`,
+        path: `${__dirname}/content/resource`,
       },
     },
     {
@@ -52,12 +71,15 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: `ADD YOUR TRACKING ID HERE`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-W3MB9ZE1B2", // Google Analytics / GA
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -113,17 +135,18 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Hao Chen's blog.`,
+        short_name: `好成`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-sass`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

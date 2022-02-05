@@ -1,7 +1,10 @@
 ---
 title: 分析浏览器和 NodeJS 的事件循环
 date: "2021-11-09T11:12:03.284Z"
-description:
+description: event loop
+tags:
+  - JavaScript
+  - Node
 ---
 
 ## 总述
@@ -146,12 +149,10 @@ NodeJS 的事件循环的核心是 **[libuv](https://zh.wikipedia.org/wiki/Libuv
 
 下图是事件循环的流程，一次事件循环又被称为一次 **Tick**，**每个阶段都有一个队列来执行回调**。不同类型的事件在它们自己的队列中排队。
 
-- **定时器（timers）**：本阶段执行已经被 `setTimeout()` 和 `setInterval()` 的调度回调函数。
-- **待定回调（pending callbacks）**：执行延迟到下一个循环迭代的 I/O 回调。
-- **idle, prepare**：仅系统内部使用。
-- **轮询（poll）**：检索新的 I/O 事件、执行与 I/O 相关的回调（几乎所有情况下，除了关闭的回调函数，那些由计时器和 `setImmediate()` 调度的之外），其余情况 node 将在适当的时候在此阻塞。
-- **检测（check）**：`setImmediate()` 回调函数在这里执行。
-- **关闭的回调函数（close callbacks）**：一些关闭的回调函数，如：`socket.on('close', ...)`。
+- **Expired Timers And Intervals Queue**：本阶段执行已经被 `setTimeout()` 和 `setInterval()` 的调度回调函数。
+- **IO Events Queue**：已完成的 IO 事件
+- **Immediate Queue**：`setImmediate()` 回调函数在这里执行。
+- **Close Handlers Queue**：一些关闭的回调函数，如：`socket.on('close', ...)`。
 
 下图展示了这个流程：
 
@@ -166,18 +167,60 @@ NodeJS 的事件循环的核心是 **[libuv](https://zh.wikipedia.org/wiki/Libuv
 
 事件循环的启动从定时器（timers）阶段开始，**一旦一个阶段完成**，事件循环就会检查上面说到的两个中间队列中是否有可用的回调。如果有，事件循环将立即开始处理它们，直到清空这两个队列为止。
 
+#
+
+2021-11-19 修正:
+
+上面说到的一旦一个阶段完成再去检查两个中间队列(nextTick queue 和 Other Microtasks queue)中是否有可用的回调**有误**
+
+实际上在高低版本的 Node 中表现不同，低版本（v11.0 以前）的 Node 表现的行为和浏览器环境有很大的不同，是因为低版本下的 Node 在执行完一个阶段的所有宏任务再执行微任务；而高版本的 Node 表现和浏览器一致，即执行完一个宏任务再执行微任务。
+
+以下的这段代码在不同版本的 Node 下表现的行为就会有所不同
+
+```js
+setImmediate(function () {
+  console.log(1)
+  process.nextTick(function () {
+    console.log(4)
+  })
+})
+process.nextTick(function () {
+  console.log(2)
+  setImmediate(function () {
+    console.log(3)
+  })
+})
+```
+
+1. 当我们遇到 setImmediate 后，将其回调函数放进 check 阶段的宏队列中。
+2. 当我们遇到 process.nextTick 后，将其回调函数放进 nextTick 队列中。因为此时同步代码（或者说最初的宏任务）执行完毕，那么执行 nextTick 队列中的任务。
+3. 输出 2， 遇到 setImmediate 后，将其回调函数放进 check 阶段的宏队列中。
+4. 开始执行 check 队列中的宏任务。
+5. 执行 check 第一个宏任务，输出 1，将 nextTick 的回调放进队列里。
+   以上五步，无论版本如何都是一致的，接下来就是高低版本 Node 的不同。
+
+低版本 Node
+
+因为低版本 Node 是执行完一个阶段中的全部宏任务后，再执行微队列的全部任务。所以先输出 3，再输出 4。
+
+高版本 Node
+
+因为高版本 Node 是执行完一个宏任务，就执行微队列的全部任务。所以先输出 4，再输出 3。
+
+在`nextTick queue`和`Other Microtasks Queue`中，表现与低版本相同，会执行完`Other Microtasks Queue`中的所有任务再去执行`nextTick queue`中的任务。
+
 ### Timer 阶段
 
 这是事件循环的第一个阶段，Node 会去检查有无已过期的**timer**，如果有则把它的回调压入**timer**的任务队列中等待执行，事实上，Node 并不能保证**timer**在预设时间到了就会立即执行，因为 Node 对**timer**的过期检查不一定靠谱，它会受机器上其它运行程序影响，或者那个时间点主线程不空闲。比如下面的代码，`setTimeout()` 和 `setImmediate()` 的执行顺序是不确定的。
 
+```node
 setTimeout(() => {
-console.log("setTimeout");
-}, 0);
+  console.log("setTimeout")
+}, 0)
 setImmediate(() => {
-console.log("setImmediate");
-});
-
-````
+  console.log("setImmediate")
+})
+```
 
 可以得到输出：
 
@@ -188,7 +231,7 @@ immediate
 $ node timeout_vs_immediate.js
 immediate
 setTimeout
-````
+```
 
 这是因为 setTimeout 最少为 1 毫秒，所以关键就在这个 1 毫秒，如果同步代码执行时间较长，进入 Event Loop 的时候 1 毫秒已经过了，setTimeout 执行，如果 1 毫秒还没到，就先执行了 setImmediate。
 
@@ -289,3 +332,84 @@ set immediate2
 set immediate3
 set immediate4
 ```
+
+#
+
+### 最佳实践(BEST PRACTICE)
+
+#### 避免在重复调用的代码块中进行同步 IO
+
+尽量避免在重复调用的代码块中同步 I/O 函数(fs.readFileSync、 fs.renameSync 等) ，比如循环和经常调用的函数。
+
+这会在很大程度上降低应用程序的性能，因为每次执行同步 I/O 操作时，事件循环都会一直被阻塞，直到完成。
+
+#### 函数应该完全异步或者完全同步
+
+请看下面代码
+
+```js
+const cache = {}
+function ReadFile(filename, callback) {
+  if (cache[filename]) {
+    return callback(null, cache[filename])
+  }
+
+  fs.readFile(filename, (err, content) => {
+    if (err) return callback(err)
+
+    cache[filename] = content
+    return callback(null, content)
+  })
+}
+
+function letsRead() {
+  readFile("myfile.txt", (err, result) => {
+    // error handler redacted
+    console.log("file read complete")
+  })
+  console.log("file read initiated")
+}
+```
+
+如果我们调用两次 `letsRead` 将输出：
+
+```plain
+file read initiated
+file read complete
+file read complete
+file read initiated
+```
+
+前后顺序不一致！不难推测出后面的代码是完全同步的，而前面的代码执行掺杂了异步的操作。
+
+当我们的应用程序变得越来越复杂时，这种不一致的同步 - 异步混合函数可能会导致许多问题，这些问题极难调试和修复。
+
+因此，强烈建议始终遵循上面的同步或异步规则，例如上面的代码可以改为：
+
+```js
+const cache = {}
+function ReadFile(filename, callback) {
+  if (cache[filename]) {
+    return process.nextTick(() => callback(null, cache[filename]))
+  }
+
+  fs.readFile(filename, (err, content) => {
+    if (err) return callback(err)
+
+    cache[filename] = content
+    return callback(null, content)
+  })
+}
+
+function letsRead() {
+  readFile("myfile.txt", (err, result) => {
+    // error handler redacted
+    console.log("file read complete")
+  })
+  console.log("file read initiated")
+}
+```
+
+## 参考资料
+
+nodejs
