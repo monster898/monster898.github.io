@@ -24,6 +24,7 @@ const Layout = ({ children }) => {
   const description = data.site.siteMetadata.description
   const githubLink = data.site.siteMetadata.github
   const email = data.site.siteMetadata.email
+  const mailto = "mailto:" + email
 
   React.useEffect(() => {
     setTheme({ theme: window.__theme })
@@ -98,7 +99,7 @@ const Layout = ({ children }) => {
             {` `}
             <a href="https://www.gatsbyjs.com">Gatsby</a>
           </span>
-          <span>email:{email}</span>
+          <a href={mailto}>email:{email}</a>
         </div>
       </footer>
     </div>

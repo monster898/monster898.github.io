@@ -1,16 +1,13 @@
 ---
-title: 一些有趣的es6案例分析
+title: 一些ES6案例分析
 date: "2021-11-10T18:16:03.284Z"
-description: es6
 tags:
   - JavaScript
 ---
 
 ## 总述
 
-本文收集了个人在平时学习中的一些有趣的 ES6 案例。
-
-本文不定期更新，随着我的学习，这篇文章会不断地补充完善。
+本文收集了个人在平时学习中的一些 ES6 案例。
 
 ## Symbol
 
@@ -164,13 +161,9 @@ wm.get(element)
 
 Proxy 非常优雅地解决了这些问题，我们以 vue3 的 `reactive()` API 为例了解一下，来看看官方这个 test：
 
-:::tip
-
 - 下面的代码只列出主干部分的代码，更多细节可自行阅读源码。我们主要的目的是了解 Proxy 和 Reflect 的特性。
 
 - 响应式 API 的源码位于 `vue-next/packages/reactivity` 下。
-
-:::
 
 ```typescript
 test("original value change should reflect in observed value (Object)", () => {
