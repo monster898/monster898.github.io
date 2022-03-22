@@ -5,7 +5,7 @@ module.exports = {
       name: `hao chen`,
     },
     description: `Hao Chen's  blog.`,
-    siteUrl: `https://haochen.me`,
+    siteUrl: `https://blog.haochen.me`,
     email: `hey@haochen.me`,
     github: `https://github.com/monster898`,
   },
@@ -144,6 +144,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-cname`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
