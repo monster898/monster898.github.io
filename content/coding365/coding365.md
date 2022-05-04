@@ -4,7 +4,7 @@ date: 2099-01-01
 
 # 个人的 coding 365 计划
 
-我给自己定了一个小目标，每天都要学习一些数据结构和算法相关的内容，在这里记录一些自己学到的东西和一些`leetcode`题解，主要目的是提高自己的编程能力同时培养兴趣。
+再接下来的 365 天里，每天完成一道编程题，主要目的是提高自己的编程能力同时培养兴趣。
 
 ## DAY 1：2 进制和 10 的转换
 
@@ -76,7 +76,7 @@ n > 0 && (n & (n - 1) == 0) && n % 3 == 1
 如果在某一步骤数组为空，则代表找不到。这种搜索算法**每一次比较都使搜索范围缩小一半**。
 
 来看下面例题：leetcode 704
-![](./images/Snipaste_2022-01-30_19-26-54.png)
+![](https://media.haochen.me/Snipaste_2022-01-30_19-26-54.png)
 
 ```ts
 function search(nums: number[], target: number): number {
@@ -100,7 +100,7 @@ function search(nums: number[], target: number): number {
 ```
 
 下面这题:
-![](./images/Snipaste_2022-01-30_21-05-28.png)
+![](https://media.haochen.me/Snipaste_2022-01-30_21-05-28.png)
 
 它要我们输出数组中第一个大于等于查找值的位置，我们依旧使用二分查找法。
 
@@ -136,7 +136,7 @@ export function upper_bound_(n: number, v: number, a: number[]): number {
 ```
 
 下面来看这一道题：leetcode 33
-![](./images/Snipaste_2022-01-30_20-42-25.png)
+![](https://media.haochen.me/Snipaste_2022-01-30_20-42-25.png)
 
 什么叫转动？来看下面的例子：
 
@@ -154,7 +154,8 @@ export function upper_bound_(n: number, v: number, a: number[]): number {
 
 那么问题就成了**如何找旋转临界点**。我们可以用二分查找的方式寻找临界点！
 
-我们可以维护一个 **low** 和 一个 **high** 下标，获取中间值，如果中间值小于 `num[0]`，说明轴点可能是个临界点，让`high = mid`,继续搜索即可！最终，`high`的值就是轴点的值。
+我们可以维护一个 **low** 和 一个 **high** 下标，获取中间值，如果中间值小于 `num[0]`，说明
+轴点可能是个临界点，让`high = mid`,继续搜索即可！最终，`high`的值就是轴点的值。
 
 反之，如果中间值大于 `num[0]`,说明临界值一定在轴点的右边，让`low = mid + 1`,缩小范围继续搜索。
 
@@ -175,7 +176,8 @@ function search(nums: number[], target: number): number {
   }
   const pivot = high
 
-  // if target >= nums[0],we find target on left sorted array,otherwise we find target on right sorted array.
+  // if target >= nums[0],we find target on left sorted array,otherwise we
+  //find target on right sorted array.
   return target >= nums[0]
     ? binarySearch(0, pivot)
     : binarySearch(pivot, nums.length - 1)
@@ -288,7 +290,7 @@ function isUnique2(astr:string):boolean {
 
 请看下题
 
-![](./images/Snipaste_2022-02-12_20-40-41.png)
+![](https://media.haochen.me/Snipaste_2022-02-12_20-40-41.png)
 
 ```ts
 // 方法一
@@ -343,7 +345,7 @@ var isPalindrome = function (s) {
 ## DAY8: Two Sum 问题
 
 请看下面这题：leetcode 1
-![](./images/Snipaste_2022-02-15_19-04-47.png)
+![](https://media.haochen.me/Snipaste_2022-02-15_19-04-47.png)
 
 ```ts
 // 方法一：我们很容易想到暴力枚举  时间复杂度约等于O(n^2/2)
@@ -368,7 +370,9 @@ function twoSum(nums: number[], target: number): number[] {
     notebook.set(nums[i], i)
   }
 }
-// 方法三：我们可以维护left，right两个下标在数组的两端，如果left + right > target，我们将right左移一位，反之将left右移一位，但是这种方法的前提条件是数组已经是排好序的了 所以在此题中不能使用(test case 中存在乱序的数组，且题目中需要我们返回元素下标)
+// 方法三：我们可以维护left，right两个下标在数组的两端，如果left + right > target，
+// 我们将right左移一位，反之将left右移一位，但是这种方法的前提条件是数组已经是排好序的了
+// 所以在此题中不能使用(test case 中存在乱序的数组，且题目中需要我们返回元素下标)
 function twoSum(nums: number[], target: number): number[] {
   // first of all,we need  the array to be sorted
   nums.sort((a, b) => a - b)
@@ -433,7 +437,7 @@ function InverseFactorials2(n) {
 ## DAY10: sum of digits
 
 请看 leetcode 1837：
-![](./images/Snipaste_2022-02-17_14-05-09.png)
+![](https://media.haochen.me/Snipaste_2022-02-17_14-05-09.png)
 
 ```ts
 // 1.
@@ -475,9 +479,10 @@ var sumBase = function (n, k) {
 
 ## DAY11: 判断两个字符串是否为异位词(Anagrams)
 
-什么叫异位词？"ate"和“eat”，"net" 和 "ten"。"baa" 和 "ba" 则不为异位词。解决这类问题我们可以维护两个`map`去统计每个字母的数量，然后再去比较两个`map`是否相等。
+什么叫异位词？"ate"和“eat”，"net" 和 "ten"。"baa" 和 "ba" 则不为异位词。
+解决这类问题我们可以维护两个`map`去统计每个字母的数量，然后再去比较两个`map`是否相等。
 请看 leetcode 438:
-![](./images/Snipaste_2022-02-17_16-04-30.png)
+![](https://media.haochen.me/Snipaste_2022-02-17_16-04-30.png)
 
 ```ts
 // 我们首先想到最暴力的方法：遍历 然后 去判断是否位异位词
@@ -522,7 +527,7 @@ function compareMaps(map1:Map<string,number>,map2:Map<string,number>):Boolean{
 }
 ```
 
-![](./images/Snipaste_2022-02-17_16-08-11.png)
+![](https://media.haochen.me/Snipaste_2022-02-17_16-08-11.png)
 
 可以看到实在是太慢了。
 
@@ -549,7 +554,8 @@ function findAnagrams(s: string, p: string): number[] {
     // 窗口左边界
     let char = s[endIndex]
     windowMap.set(char, (windowMap.get(s[endIndex]) || 0) + 1)
-    while (windowMap.get(s[endIndex]) > (targetMap.get(s[endIndex]) || 0)) {
+    let isVaild = windowMap.get(s[endIndex]) > (targetMap.get(s[endIndex]) || 0)
+    while (isVaild) {
       // 当窗口内有元素的数量跟目标元素的数量不同时
       windowMap.set(s[startIndex], windowMap.get(s[startIndex++]) - 1) // 左边界右移
     }
@@ -562,7 +568,7 @@ function findAnagrams(s: string, p: string): number[] {
 }
 ```
 
-![](./images/Snipaste_2022-03-04_19-38-48.png)
+![](https://media.haochen.me/Snipaste_2022-03-04_19-38-48.png)
 
 ## DAY12:求最大公约数和最小公倍数
 
@@ -594,7 +600,7 @@ function BFS(nums: number, start: number, target: number): boolean {
       return true
     }
     for (const i of [-1, 1]) {
-      const next = element + nums[element]
+      const next = element + i * nums[element]
       if (next >= 0 && next <= nums.length - 1 && !seen[next]) {
         queue.push(next)
       }
@@ -605,7 +611,7 @@ function BFS(nums: number, start: number, target: number): boolean {
 ```
 
 请看下面这题：leetcode 55
-![](./images/Snipaste_2022-02-19_21-45-56.png)
+![](https://media.haochen.me/Snipaste_2022-02-19_21-45-56.png)
 
 这题我们可以维护一个最大能到达的 index 值，遍历数组并与当前下标进行比较然后更新最大 index 值。
 
@@ -690,11 +696,11 @@ function merge(a: number[], b: number[]): number[] {
       j += 1
     }
   }
-  if (i < a.length) {
-    c = c.concat(a)
+  while (i < a.length) {
+    c.push(a[i++])
   }
   while (j < b.length) {
-    c = c.concat(b)
+    c.push(b[j++])
   }
   return c
 }
@@ -841,7 +847,7 @@ function sortArray(nums: number[]): number[] {
 ## DAY21：使括号有效的最少添加
 
 请看 leetcode 921：
-![](./images/Snipaste_2022-02-26_09-37-13.png)
+![](https://media.haochen.me/Snipaste_2022-02-26_09-37-13.png)
 
 ```ts
 function minAddToMakeValid(s: string): number {
@@ -865,7 +871,7 @@ function minAddToMakeValid(s: string): number {
 ## DAY22：二叉树的验证
 
 请看 leetcode: 98
-![](./images/Snipaste_2022-02-27_11-27-21.png)
+![](https://media.haochen.me/Snipaste_2022-02-27_11-27-21.png)
 这里我们利用递归，维护两个边界，当数值超出了边界,返回 false 即可。
 
 ```ts
@@ -898,7 +904,7 @@ function isValidBST(
 - BFS
 
 LNR(中序遍历): 请看 leetcode 94
-![](./images/Snipaste_2022-02-27_10-40-18.png)
+![](https://media.haochen.me/Snipaste_2022-02-27_10-40-18.png)
 
 ```ts
 /**
@@ -926,7 +932,7 @@ function inorderTraversal(root: TreeNode | null, ans: number[] = []): number[] {
 ```
 
 LRN(后续遍历)：请看 leetcode 145
-![](./images/Snipaste_2022-02-27_10-44-39.png)
+![](https://media.haochen.me/Snipaste_2022-02-27_10-44-39.png)
 
 ```ts
 function postorderTraversal(
@@ -1067,7 +1073,7 @@ function sumOfFirstEven(n) {
 ## DAY26:完全二叉树的节点个数
 
 leetcode 222:
-![](./images/Snipaste_2022-03-01_15-26-59.png)
+![](https://media.haochen.me/Snipaste_2022-03-01_15-26-59.png)
 
 ```ts
 // BFS
@@ -1102,10 +1108,10 @@ function countNodes(root: TreeNode | null): number {
 ## DAY27:区间列表的交集
 
 leetcode 986：
-![](./images/Snipaste_2022-03-02_09-54-50.png)
+![](https://media.haochen.me/Snipaste_2022-03-02_09-54-50.png)
 
 ```ts
-// 通过观察可知，左区间中小的减去右区间中大的即为交集
+// 通过观察可知，右区间中小的减去左区间中大的即为交集
 function intervalIntersection(
   firstList: number[][],
   secondList: number[][]
@@ -1217,7 +1223,7 @@ function prefixComputeIntervalSums(
 ```
 
 我们看 leetcode 930:
-![](Snipaste_2022-03-04_09-49-36.png)
+![](https://media.haochen.me/Snipaste_2022-03-04_09-49-36.png)
 这题我们可以利用前缀和来解，记录每个前缀和的个数，那么每个位置对应的目标数就是此位置前缀和 - goal 对应的前缀和个数
 
 ```ts
@@ -1237,7 +1243,7 @@ function numSubarraysWithSum(nums: number[], goal: number): number {
 ## DAY30: 滑动窗口
 
 leetcode 209：
-![](./images/Snipaste_2022-03-04_17-28-28.png)
+![](https://media.haochen.me/Snipaste_2022-03-04_17-28-28.png)
 
 ```ts
 function minSubArrayLen(target: number, nums: number[]): number {
@@ -1263,7 +1269,7 @@ function minSubArrayLen(target: number, nums: number[]): number {
 ## DAY31：单链表的中间节点
 
 leetcode 876：返回单链表的中间节点
-![](./images/Snipaste_2022-03-05_09-48-23.png)
+![](https://media.haochen.me/Snipaste_2022-03-05_09-48-23.png)
 
 我们可以定义双指针`slow`，`fast`，让`fast`右移的速度是`slow`的两倍即可
 
@@ -1284,7 +1290,7 @@ function middleNode(head: ListNode | null): ListNode | null {
 解螺旋矩阵的要点是：确定边界！
 维护四个边界，上下左右，每跑完一条边就更新边界
 leetcode：54
-![](./images/Snipaste_2022-03-05_14-21-39.png)
+![](https://media.haochen.me/Snipaste_2022-03-05_14-21-39.png)
 
 ```ts
 function spiralOrder(matrix: number[][]): number[] {
@@ -1303,7 +1309,6 @@ function spiralOrder(matrix: number[][]): number[] {
       ans.push(matrix[i][endColumn])
     }
     endColumn--
-    // 由于上面两个for循环之后更新了边界值，所以我们要确定一下边界是否还是有效的
     if (beginRow <= endRow) {
       for (let i = endColumn; i >= beginColumn; i--) {
         ans.push(matrix[endRow][i])
@@ -1323,7 +1328,7 @@ function spiralOrder(matrix: number[][]): number[] {
 
 同理
 leetcode: 59
-![](./images/Snipaste_2022-03-05_14-27-09.png)
+![](https://media.haochen.me/Snipaste_2022-03-05_14-27-09.png)
 
 ```ts
 function generateMatrix(n: number): number[][] {
@@ -1431,7 +1436,7 @@ function removeElements(head: ListNode | null, val: number): ListNode | null {
 
 ## DAY35：链表相交
 
-![](./images/Snipaste_2022-03-07_11-08-10.png)
+![](https://media.haochen.me/Snipaste_2022-03-07_11-08-10.png)
 
 ```js
 /**
@@ -1519,7 +1524,7 @@ function getIntersectionNode(
 
 ## DAY36：两两交换链表中的节点
 
-![](./images/Snipaste_2022-03-08_14-41-30.png)
+![](https://media.haochen.me/Snipaste_2022-03-08_14-41-30.png)
 
 ```ts
 function swapPairs(head: ListNode | null): ListNode | null {
@@ -1706,7 +1711,7 @@ function threeSum(nums: number[]): number[][] {
 ## DAY41: 四数之和
 
 leetcode 18:
-![](./images/Snipaste_2022-03-13_12-42-07.png)
+![](https://media.haochen.me/Snipaste_2022-03-13_12-42-07.png)
 
 ```ts
 function fourSum(nums: number[], target: number): number[][] {
@@ -1881,7 +1886,7 @@ function merge(a: ListNode | null, b: ListNode | null): ListNode | null {
 
 ## DAY45： 链表两数相加
 
-![](./images/Snipaste_2022-03-18_11-43-40.png)
+![](https://media.haochen.me/Snipaste_2022-03-18_11-43-40.png)
 
 ```ts
 function addTwoNumbers(
@@ -1957,5 +1962,809 @@ function hammingWeight(n: number): number {
     n >>= 1
   }
   return ans
+}
+```
+
+## DAY48：二叉树的右视图
+
+leetcode 199:
+![](https://media.haochen.me/Snipaste_2022-03-23_10-17-31.png)
+
+```ts
+// BFS:一层一层的处理， 取最右侧的节点
+function rightSideView(root: TreeNode | null): number[] {
+  let ans: number[] = []
+  let queue: TreeNode[] = []
+  if (root === null) {
+    return ans
+  }
+  queue.push(root)
+  while (queue.length) {
+    let size = queue.length
+    for (let i = 0; i < size; i++) {
+      let currentNode = queue.shift()
+      if (i === 0) {
+        ans.push(currentNode.val)
+      }
+      if (currentNode.right !== null) {
+        queue.push(currentNode.right)
+      }
+      if (currentNode.left !== null) {
+        queue.push(currentNode.left)
+      }
+    }
+  }
+  return ans
+}
+// DFS  NRL 遍历
+function rightSideView(root: TreeNode | null): number[] {
+  let ans: number[] = []
+  dfs(root, ans, 0)
+  return ans
+}
+function dfs(root: TreeNode | null, ans: number[], depth: number) {
+  if (root === null) {
+    return
+  }
+  if (!(depth in ans)) {
+    ans[depth] = root.val
+  }
+  dfs(root.right, ans, depth + 1)
+  dfs(root.left, ans, depth + 1)
+}
+```
+
+## DAY49: 只出现一次的数字
+
+leetcode 136:
+![](https://media.haochen.me/Snipaste_2022-03-23_11-35-10.png)
+
+```ts
+// 不需要额外空间，就往位运算上想！！！
+function singleNumber(nums: number[]): number {
+  let ans: number = 0
+  for (let i = 0; i < nums.length; i++) {
+    ans ^= nums[i]
+  }
+  return ans
+}
+```
+
+## DAY50: 链表插入排序
+
+```ts
+function insertionSortList(head: ListNode | null): ListNode | null {
+  let dummy = new ListNode(0, head)
+  let pre
+  while (head !== null && head.next !== null) {
+    if (head.val <= head.next.val) {
+      head = head.next
+      continue
+    }
+    pre = dummy
+    while (pre.next.val < head.next.val) {
+      pre = pre.next
+    }
+
+    let curr = head.next
+    head.next = curr.next
+    curr.next = pre.next
+    pre.next = curr
+  }
+  return dummy.next
+}
+```
+
+## DAY51: sqrt
+
+```ts
+// 保留n位小数版本
+function mySqrt(x: number): number {
+  if (x <= 1) {
+    return x
+  }
+  let low: number = 0
+  let high: number = x
+  let current = 0,
+    middle = 0
+  while (Math.abs(current - x) > 1e-8) {
+    middle = (low + high) / 2
+    current = middle * middle
+    if (current < x) {
+      low = middle
+    } else {
+      high = middle
+    }
+  }
+  return Math.floor(middle) // toFixed()
+}
+```
+
+## DAY52: DP
+
+leetcode 198: 打家劫舍
+![](https://media.haochen.me/Snipaste_2022-03-28_17-29-09.png)
+
+```ts
+// top down
+// 对于k来说，可以分为选和不选,取这两种情况的最大值即为答案
+// 1. 选：nums[k] + f(k - 2)
+// 2. 不选： f(k - 1)
+function rob(nums: number[]): number {
+  return fn(nums, nums.length - 1)
+}
+
+function fn(
+  nums: number[],
+  k: number,
+  nootbook: Map<number, number> = new Map()
+): number {
+  if (k === 0) {
+    return nums[0]
+  } else if (k === 1) {
+    return Math.max(nums[0], nums[1])
+  }
+  if (nootbook.has(k)) {
+    return nootbook.get(k)
+  }
+  let val = Math.max(
+    nums[k] + fn(nums, k - 2, nootbook),
+    fn(nums, k - 1, nootbook)
+  )
+  nootbook.set(k, val)
+  return val
+}
+
+// bottom up
+function rob(nums: number[]): number {
+  let n: number = nums.length
+  if (n === 1) {
+    return nums[0]
+  } else if (n === 2) {
+    return Math.max(nums[0], nums[1])
+  }
+  let dp: number[] = new Array(n).fill(0)
+  ;(dp[0] = 0), (dp[1] = nums[0]), (dp[2] = Math.max(nums[0], nums[1]))
+  for (let i = 3; i <= n; i++) {
+    dp[i] = Math.max(nums[i - 1] + dp[i - 2], dp[i - 1])
+  }
+  return dp[n]
+}
+```
+
+## DAY53: 二叉树剪枝
+
+![](https://media.haochen.me/Snipaste_2022-04-07_10-24-59.png)
+
+从底部向上消除为 0 的子树即可
+
+```ts
+function pruneTree(root: TreeNode | null): TreeNode | null {
+  if (root === null) {
+    return null
+  }
+  root.left = pruneTree(root.left)
+  root.right = pruneTree(root.right)
+
+  if (root.val === 0 && !root.left && !root.right) {
+    return null
+  } else {
+    return root
+  }
+}
+```
+
+## DAY54：路径总和
+
+leetcode 112:
+
+```ts
+function hasPathSum(root: TreeNode | null, targetSum: number): boolean {
+  if (root === null) {
+    return false
+  }
+  let counter: number = 0
+  let flag: boolean = false
+  dfs(root)
+  return flag
+  function dfs(root: TreeNode | null) {
+    if (root === null) {
+      return
+    }
+    counter += root.val
+    dfs(root.left)
+    if (root.left === null && root.right === null) {
+      if (counter === targetSum) {
+        flag = true
+      }
+    }
+    dfs(root.right)
+    counter -= root.val
+  }
+}
+
+// 简洁版
+function hasPathSum(root: TreeNode | null, targetSum: number): boolean {
+  if (root === null) {
+    return false
+  }
+  if (root.left === null && root.right === null) {
+    return root.val === targetSum
+  }
+  return (
+    hasPathSum(root.left, targetSum - root.val) ||
+    hasPathSum(root.right, targetSum - root.val)
+  )
+}
+```
+
+## DAY55
+
+leetcode 236: 二叉树的最近公共祖先
+
+对每个子树来说，包含这两个节点都为公共祖先，我们取第一个即可。
+
+```ts
+function lowestCommonAncestor(
+  root: TreeNode | null,
+  p: TreeNode | null,
+  q: TreeNode | null
+): TreeNode | null {
+  let res = null
+  dfs(root, p, q)
+  return res
+
+  function dfs(root: TreeNode | null, p: TreeNode | null, q: TreeNode | null) {
+    if (root === null) {
+      return 0
+    }
+    let left = dfs(root.left, p, q)
+    let right = dfs(root.right, p, q)
+    let self = root === q || root === p
+    let count = left + right + Number(self)
+    if (count === 2 && res === null) {
+      res = root
+    }
+    return count
+  }
+}
+```
+
+leetcode 297: 序列化二叉树
+
+层序遍历
+
+```ts
+/*
+ * Encodes a tree to a single string.
+ */
+function serialize(root: TreeNode | null): string {
+  if (root === null) {
+    return JSON.stringify([])
+  }
+  let res: Array<null | number> = []
+  let queue: Array<null | TreeNode> = [root]
+  while (queue.length) {
+    let node = queue.shift()
+    if (node) {
+      res.push(node.val)
+      queue.push(node.left)
+      queue.push(node.right)
+    } else {
+      res.push(null)
+    }
+  }
+  return JSON.stringify(res)
+}
+
+/*
+ * Decodes your encoded data to tree.
+ */
+function deserialize(data: string): TreeNode | null {
+  let tree = JSON.parse(data)
+  if (!tree.length) {
+    return null
+  }
+  let root: TreeNode = new TreeNode(tree.shift())
+  let node: TreeNode, left: number | null, right: number | null
+  let queue: TreeNode[] = [root]
+  while (tree.length && tree.length) {
+    node = queue.shift()
+    left = tree.shift()
+    right = tree.shift()
+    if (left !== null) {
+      node.left = new TreeNode(left)
+      queue.push(node.left)
+    }
+    if (right !== null) {
+      node.right = new TreeNode(right)
+      queue.push(node.right)
+    }
+  }
+  return root
+}
+```
+
+## DAY56: 二叉树最大路径和
+
+leetcode 124:
+![](https://media.haochen.me/Snipaste_2022-04-10_15-22-45.png)
+
+思路：将每个节点都作为一个拐点，我们先算出对此节点来说最大的路径和，然后顺便处理拐点的情况。
+
+```ts
+function maxPathSum(root: TreeNode | null): number {
+  let result = Number.MIN_SAFE_INTEGER
+  MaxDownPath(root)
+  return result
+  function MaxDownPath(node: TreeNode | null) {
+    if (node === null) {
+      return 0
+    }
+    const leftSum = MaxDownPath(node.left)
+    const rightSum = MaxDownPath(node.right)
+
+    let maxTurnSum = node.val
+    if (leftSum >= 0) {
+      maxTurnSum += leftSum
+    }
+    if (rightSum >= 0) {
+      maxTurnSum += rightSum
+    }
+    result = Math.max(maxTurnSum, result)
+
+    if (leftSum < 0 && rightSum < 0) {
+      return node.val
+    } else {
+      return Math.max(leftSum, rightSum) + node.val
+    }
+  }
+}
+```
+
+## DAY57: 比特位计数
+
+lc 338:
+![](https://media.haochen.me/Snipaste_2022-04-11_19-45-43.png)
+
+```ts
+// > O(n)
+function countBits(n: number): number[] {
+  const res: number[] = []
+  for (let i = 0; i <= n; i++) {
+    let num: number = i
+    let counter: number = 0
+    while (num > 0) {
+      counter++
+      num &= num - 1 // 消除低位1
+    }
+    res.push(counter)
+  }
+  return res
+}
+// O(n)
+function countBits(n: number): number[] {
+  const res = [0]
+  for (let i = 1; i <= n; i++) {
+    res[i] = res[i & (i - 1)] + 1
+  }
+  return res
+}
+```
+
+## DAY58: 多数元素
+
+```ts
+// O(n) / O(1)
+function majorityElement(nums: number[]): number {
+  let majority: number = nums[0]
+  let count: number = 1
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] === majority) {
+      count++
+    } else if (--count === 0) {
+      majority = nums[i]
+      count = 1
+    }
+  }
+  return majority
+}
+```
+
+## DAY59：回文子串
+
+lc 647： 回文子串数量
+
+```ts
+// 中心扩展
+function countSubstrings(s: string): number {
+  let res: number = 0
+  function count(left: number, right: number) {
+    while (left >= 0 && right < s.length && s[left] === s[right]) {
+      res++
+      left--
+      right++
+    }
+  }
+  for (let i = 0; i < s.length; i++) {
+    // odd number substrings
+    count(i, i)
+    if (i + 1 < s.length) {
+      // even number substrings
+      count(i, i + 1)
+    }
+  }
+  return res
+}
+// 马拉车算法
+function countSubstrings(s: string): number {
+  let t = "#"
+  for (const char of s) {
+    t = t + char + "#"
+  }
+  const n = t.length
+  const P = new Array(t.length).fill(1)
+  let maxRight = -1
+  let maxCenter = -1
+  for (let i = 0; i < n; i++) {
+    let r
+    if (maxRight >= i) {
+      let j = maxCenter * 2 - i
+      r = Math.min(P[j], maxRight - i)
+      while (i - r >= 0 && i + r < n && t[i - r] == t[i + r]) {
+        r++
+      }
+    } else {
+      r = 0
+      while (i - r >= 0 && i + r < n && t[i - r] === t[i + r]) {
+        r++
+      }
+    }
+    P[i] = r - 1
+    if (i + P[i] > maxRight) {
+      maxRight = i + P[i]
+      maxCenter = i
+    }
+  }
+  let res = 0
+  for (const r of P) {
+    res += Math.floor((r + 1) / 2)
+  }
+  return res
+}
+```
+
+此题几乎和第五题一模一样，我们同样可以用两种方法来做
+
+```ts
+// 中心扩展 O(n^2)
+function longestPalindrome(s: string): string {
+  let max: number = 0
+  let maxString: string = ""
+  function count(left: number, right: number) {
+    while (left >= 0 && right < s.length && s[left] === s[right]) {
+      left--
+      right++
+    }
+    if (right - left > max) {
+      max = right - left
+      maxString = s.slice(left + 1, right)
+    }
+  }
+  for (let i = 0; i < s.length; i++) {
+    count(i, i)
+    if (i + 1 < s.length) {
+      count(i, i + 1)
+    }
+  }
+  return maxString
+}
+// 马拉车 O(n)
+function longestPalindrome(s: string): string {
+  // 马拉车
+  let t: string = "#"
+  for (const char of s) {
+    t = t + char + "#"
+  }
+  const n = t.length
+  let dp = new Array(n).fill(1)
+  let maxRight = -1
+  let maxCenter = -1
+  let maxR = 0
+  let center = 0
+  for (let i = 0; i < n; i++) {
+    let r
+    if (maxRight >= i) {
+      let j = 2 * maxCenter - i
+      r = Math.min(dp[j], maxRight - i)
+      while (i - r >= 0 && i + r < n && t[i - r] === t[i + r]) {
+        r++
+      }
+    } else {
+      r = 0
+      while (i - r >= 0 && i + r < n && t[i - r] === t[i + r]) {
+        r++
+      }
+    }
+    dp[i] = r - 1
+    if (dp[i] > maxR) {
+      maxR = dp[i]
+      center = i
+    }
+    if (dp[i] + i > maxRight) {
+      maxRight = dp[i] + i
+      maxCenter = i
+    }
+  }
+
+  return s.slice((center - maxR) / 2, (center + maxR) / 2)
+}
+```
+
+## DAY60：修复二叉树
+
+leetcode: 99
+
+```ts
+function recoverTree(root: TreeNode | null): void {
+  let pre = new TreeNode(Number.MIN_SAFE_INTEGER)
+  let target1 = null
+  let target2 = null
+  dfs(root)
+  const temp = target1.val
+  target1.val = target2.val
+  target2.val = temp
+  function dfs(node: TreeNode | null): void {
+    if (node === null) {
+      return
+    }
+    dfs(node.left)
+    if (pre.val <= node.val) {
+      pre = node
+    } else {
+      if (!target1) {
+        target1 = pre
+        target2 = node
+        pre = node
+      } else {
+        target2 = node
+        return
+      }
+    }
+    dfs(node.right)
+  }
+}
+```
+
+## DAY61： 二叉树的完全性检验
+
+leetcode 958
+关键： null 出现在节点之前即为非完全性二叉树
+
+```ts
+function isCompleteTree(root: TreeNode | null): boolean {
+  let queue: TreeNode[] = [root]
+  let hole: boolean = false
+  while (queue.length) {
+    let node = queue.shift()
+    if (!node) {
+      hole = true
+    } else {
+      if (hole) {
+        return false
+      }
+      queue.push(node.left)
+      queue.push(node.right)
+    }
+  }
+  return true
+}
+```
+
+## DAY62：下降路径最小和
+
+```ts
+// 时间序列性的DP
+function minFallingPathSum(grid: number[][]): number {
+  const n = grid.length
+  const dp = new Array(n).fill(null).map(() => new Array(n).fill(0))
+  dp[0] = grid[0]
+  for (let i = 1; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      let minPathSum = Number.MAX_SAFE_INTEGER
+      let index = 0
+      while (index < n) {
+        if (index !== j) {
+          minPathSum = Math.min(minPathSum, dp[i - 1][index])
+        }
+        index++
+      }
+      dp[i][j] = minPathSum + grid[i][j]
+    }
+  }
+  let min = Number.MAX_SAFE_INTEGER
+  for (let i = 0; i < dp[n - 1].length; i++) {
+    min = Math.min(min, dp[n - 1][i])
+  }
+  return min
+}
+```
+
+## DAY63: 计算右侧小于当前元素的个数
+
+Leetcode 315: ![](https://media.haochen.me/Snipaste_2022-04-25_19-58-46.png)
+
+```ts
+// 经典分治，值得细细品味
+function countSmaller(nums: number[]): number[] {
+  // merge sort
+  const len = nums.length
+  let origin = [...nums]
+  const aux = new Array(len).fill(0)
+  let result = new Array(len).fill(0)
+  sort(nums, 0, len - 1)
+  return result
+
+  function sort(nums: number[], start: number, end: number) {
+    if (start >= end) {
+      return
+    }
+    let middle = (start + end) >> 1
+    sort(nums, start, middle)
+    sort(nums, middle + 1, end)
+    for (let i = start; i <= middle; i++) {
+      let res = end + 1
+      let low = middle + 1
+      let high = end
+      while (low <= high) {
+        let mid = (low + high) >> 1
+        if (nums[mid] >= origin[i]) {
+          res = mid
+          high = mid - 1
+        } else {
+          low = mid + 1
+        }
+      }
+      result[i] += res - middle - 1
+    }
+    merge(nums, start, middle, end)
+  }
+
+  function merge(nums: number[], start: number, middle: number, end: number) {
+    let i = start,
+      j = middle + 1
+    for (let k = start; k <= end; k++) {
+      aux[k] = nums[k]
+    }
+
+    for (let k = start; k <= end; k++) {
+      if (i > middle) {
+        nums[k] = aux[j++]
+      } else if (j > end) {
+        nums[k] = aux[i++]
+      } else if (aux[i] < aux[j]) {
+        nums[k] = aux[i++]
+      } else {
+        nums[k] = aux[j++]
+      }
+    }
+  }
+}
+```
+
+## DAY64: 生成括号
+
+回溯，学习一下
+
+关键点在于能用左右括号的条件
+
+```ts
+function generateParenthesis(n: number): string[] {
+  const ret: string[] = []
+  backTrace("", 0, 0)
+  return ret
+  function backTrace(current: string, left: number, right: number) {
+    if (current.length === n * 2) {
+      if (left === right) {
+        ret.push(current)
+      }
+      return
+    }
+    if (left < n) {
+      backTrace(current + "(", left + 1, right)
+    }
+    if (left > right) {
+      backTrace(current + ")", left, right + 1)
+    }
+  }
+}
+```
+
+## DAY65: 反转链表 II
+
+这题还是很有意思的，主要是反转之后的细节处理
+
+```ts
+function reverseBetween(
+  head: ListNode | null,
+  left: number,
+  right: number
+): ListNode | null {
+  if (!head.next || left === right) {
+    return head
+  }
+  let leftP = head,
+    rightP = head
+  let step = right - left
+  while (step) {
+    rightP = rightP.next
+    step--
+  }
+  let pre = null
+  while (left - 1) {
+    pre = leftP
+    leftP = leftP.next
+    rightP = rightP.next
+    left--
+  }
+  const last = rightP.next
+  rightP.next = null
+  // do reverse
+  let prev = null
+  let current = leftP
+  while (current) {
+    let next = current.next
+    current.next = prev
+    prev = current
+    current = next
+  }
+  // 分四种情况
+  // 1.left right 在中间
+  // 2.left 在头 right 在中间
+  // 3.left 在中间 right 在尾
+  // 4.left 在头 right在尾
+  let ret = null
+  if (last !== null && leftP !== head) {
+    leftP.next = last
+    pre.next = rightP
+    ret = head
+  } else if (leftP === head && last !== null) {
+    leftP.next = last
+    ret = rightP
+  } else if (leftP !== head && last === null) {
+    pre.next = rightP
+    ret = head
+  } else {
+    ret = rightP
+  }
+  return ret
+}
+```
+
+## DAY66：经典大数相乘
+
+```ts
+// lc 43
+function multiply(num1: string, num2: string): string {
+  if (num1 === "0" || num2 === "0") {
+    return "0"
+  }
+  const num1Array = num1.split("").reverse()
+  const num2Array = num2.split("").reverse()
+  let ret = new Array(num1.length + num2.length).fill(0)
+  for (let i = 0; i < num1.length; i++) {
+    for (let j = 0; j < num2.length; j++) {
+      ret[i + j] += parseInt(num1Array[i]) * parseInt(num2Array[j])
+      ret[i + j + 1] += Math.floor(ret[i + j] / 10)
+      ret[i + j] %= 10
+    }
+  }
+  // 去除前置0
+  ret = ret.reverse()
+  let index = 0
+  while (ret[index] === 0) {
+    index++
+  }
+  return ret.join("").slice(index)
 }
 ```
